@@ -1,0 +1,42 @@
+---
+import { Picture } from "astro:assets";
+import logoImage from "assets/logo.svg";
+import Link from "@components/ui/link.astro";
+import { Icon } from "astro-icon";
+---
+
+<main
+  class="grid lg:grid-cols-2 place-items-center pt-16 pb-8 md:pt-12 md:pb-24">
+  <div class="py-6 md:order-1 hidden md:block">
+    <Picture
+      src={logoImage}
+      alt="NumenGames_Logo"
+      widths={[200, 400, 600]}
+      sizes="(max-width: 800px) 100vw, 620px"
+      loading="eager"
+      format="avif"
+    />
+  </div>
+  <div>
+    <h1
+      class="text-5xl lg:text-6xl xl:text-7xl font-bold lg:tracking-tight xl:tracking-tighter">
+      Build games to make work better
+    </h1>
+    <p class="text-lg mt-4 text-slate-600 max-w-xl">
+      Develop engaging, immersive infinite games that foster collaboration and innovation, 
+      <wbr />creating fun and meaningful experiences to unlock new potentials in creativity, collaboration, and efficiency.
+    </p>
+    <div class="mt-6 flex flex-col sm:flex-row gap-3">
+      <Link
+        size="lg"
+        style="outline"
+        rel="noopener"
+        href="https://oncyber.io/steiners_dreams"
+        class="flex gap-1 items-center justify-center"
+        target="_blank">
+        <!-- <Icon class="text-black w-4 h-4" name="bx:bxl-github" /> -->
+         Play now
+      </Link>
+    </div>
+  </div>
+</main>
