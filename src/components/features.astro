@@ -1,0 +1,56 @@
+---
+// @ts-ignore
+import { Icon } from "astro-icon";
+
+const features = [
+  {
+    title: "Equable",
+    description:
+      "Creating a tranquil and intimate space, fostering deep connections, and understanding among players.",
+    icon: "bx:bxs-briefcase",
+  },
+  {
+    title: "Engagement",
+    description:
+      "Skin in The Game. Encouraging proactive engagement and dynamic participation within the game's interactive framework.",
+    icon: "bx:bxs-window-alt",
+  },
+  {
+    title: "Curiosity",
+    description:
+      "Inspiring exploration and inquisitiveness, pushing boundaries of knowledge and creativity.",
+    icon: "bx:bxs-data",
+  },
+  {
+    title: "Harmony",
+    description:
+      "Balancing challenge and accessibility, ensuring a harmonious and sustainable gaming experience.",
+    icon: "bx:bxs-bot",
+  },
+];
+---
+
+<div class="mt-16 md:mt-0">
+  <h2 class="text-center text-4xl lg:text-5xl font-bold lg:tracking-tight">
+    Fostering an immersive experience for all
+  </h2>
+  <p class="text-center text-lg mt-4 text-slate-600">
+    At this organization, we combine play and work to achieve an innovative and harmonious development of our project, creating a tangible impact on each mission.
+  </p>
+</div>
+
+<div class="grid sm:grid-cols-2 md:grid-cols-2 mt-16 gap-16">
+  {
+    features.map((item) => (
+      <div class="flex gap-4 items-start">
+        <div class="mt-1 bg-black rounded-full p-2 w-8 h-8 shrink-0">
+          <Icon class="text-white" name={item.icon} />
+        </div>
+        <div>
+          <h3 class="font-semibold text-lg">{item.title}</h3>{" "}
+          <p class="text-slate-500 mt-2 leading-relaxed">{item.description}</p>
+        </div>
+      </div>
+    ))
+  }
+</div>
