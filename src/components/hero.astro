@@ -8,14 +8,12 @@ import { Icon } from "astro-icon";
 <main
   class="grid lg:grid-cols-2 place-items-center pt-16 pb-8 md:pt-12 md:pb-24">
   <div class="py-6 md:order-1 hidden md:block">
-    <Picture
-      src={logoImage}
-      alt="NumenGames_Logo"
-      widths={[200, 400, 600]}
-      sizes="(max-width: 800px) 100vw, 620px"
-      loading="eager"
-      format="avif"
-    />
+    <!-- <video class="shadow-lg" controls>
+      <source src="" type="video/mp4">      
+    </video> -->
+    <div class="aspect-w-16 aspect-h-9 max-w-full mx-auto">
+      <iframe class="w-full h-full" src="https://www.youtube.com/embed/_jyiw1Ul3Yg?si=GnLMT0q1Cx-64XL-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
   </div>
   <div>
     <h1
