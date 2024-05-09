@@ -31,9 +31,9 @@ const features = [
 ---
 
 <div class="mt-16 md:mt-0">
-  <h2 class="text-center text-4xl lg:text-5xl font-bold lg:tracking-tight">
+  <h3 class="text-center text-4xl lg:text-5xl font-bold lg:tracking-tight">
     Values and Principles
-  </h2>
+  </h3>
   <p class="text-center text-lg mt-4 text-slate-600">
     We champion this values, to craft a gaming experience that's not only sustainable but deeply connects and resonates with our users.
   </p>
@@ -43,11 +43,11 @@ const features = [
   {
     features.map((item) => (
       <div class="flex gap-4 items-start">
-        <div class="mt-1 bg-black rounded-full p-2 w-8 h-8 shrink-0">
+        <div class="mt-1 bg-black rounded-full p-2 w-14 h-14 shrink-0">
           <Icon class="text-white" name={item.icon} />
         </div>
         <div>
-          <h3 class="font-semibold text-lg">{item.title}</h3>{" "}
+          <h3 class="font-semibold text-xl">{item.title}</h3>{" "}
           <p class="text-slate-500 mt-2 leading-relaxed">{item.description}</p>
         </div>
       </div>
