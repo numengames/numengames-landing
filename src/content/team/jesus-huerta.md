@@ -7,5 +7,7 @@ avatar: {
     alt: "Jesús_Huerta_Arrabal"
 }
 publishDate: "2024-05-09 00:28"
-linkedin_url: https://www.linkedin.com/in/jesushuertaarrabal/
+links: {
+    linkedin: https://www.linkedin.com/in/jesushuertaarrabal/
+}
 ---

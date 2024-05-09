@@ -7,5 +7,7 @@ avatar: {
     alt: "Clio_Beruete"
 }
 publishDate: "2024-05-09 00:22"
-linkedin_url: https://www.linkedin.com/in/clio-beruete/
+links: {
+    linkedin: https://www.linkedin.com/in/clio-beruete/
+}
 ---

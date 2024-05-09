@@ -46,6 +46,8 @@ const publishedTeamMembers = await getCollection("team", ({ data }) => {
 							<h2 class="text-lg text-gray-800">{teamMemberEntry.data.name}</h2>
 							<h3 class="text-sm text-slate-500">
 								{teamMemberEntry.data.title}
+								{teamMemberEntry.data.links.oncyber && (<> - <a href={teamMemberEntry.data.links.oncyber}>Profile</a></>)}
+								{teamMemberEntry.data.links.linkedin && (<> - <a href={teamMemberEntry.data.links.linkedin}>Profile</a></>)}
 							</h3>
 						</div>
 					</div>

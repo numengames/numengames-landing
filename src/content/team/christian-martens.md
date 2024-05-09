@@ -7,5 +7,7 @@ avatar: {
     alt: "Christian_Märtens​"
 }
 publishDate: "2024-05-09 00:29"
-oncyber_url: https://oncyber.io/christian_martens_numinia
+links: {
+    oncyber: https://oncyber.io/christian_martens_numinia
+}
 ---

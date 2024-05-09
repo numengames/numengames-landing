@@ -12,7 +12,7 @@ const blogCollection = defineCollection({
       alt: z.string(),
     }),
     publishDate: z.string().transform(str => new Date(str)),
-    author: z.string().default('Astroship'),
+    author: z.string().default('Numen Games'),
     category: z.string(),
     tags: z.array(z.string()),
   }),
@@ -26,6 +26,10 @@ const teamCollection = defineCollection({
     avatar: z.object({
       src: z.string(),
       alt: z.string(),
+    }),
+    links: z.object({
+      oncyber: z.string().optional(),
+      linkedin: z.string().optional(),
     }),
     publishDate: z.string().transform(str => new Date(str)),
   }),

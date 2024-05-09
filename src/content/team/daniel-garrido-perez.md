@@ -7,5 +7,7 @@ avatar: {
     alt: "Daniel_Garrido​"
 }
 publishDate: "2024-05-09 00:30"
-linkedin_url: https://www.linkedin.com/in/daniel-garrido-pérez/
+links: {
+    linkedin: https://www.linkedin.com/in/daniel-garrido-pérez/
+}
 ---
