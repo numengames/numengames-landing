@@ -9,6 +9,14 @@ module.exports = {
         sans: ["geist", 'sans-serif'],
         mono: ["geist", 'serif'],
       },
+      textDecorationColor: ['responsive', 'hover', 'focus'],
+      textDecorationThickness: ['responsive', 'hover', 'focus'],
+      textUnderlineOffset: ['responsive', 'hover', 'focus'], 
+    },
+    variants: {
+      extend: {
+        textDecoration: ['hover', 'focus'],
+      },
     },
   },
   plugins: [require("@tailwindcss/typography")],

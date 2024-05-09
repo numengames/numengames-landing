@@ -1,40 +1,27 @@
 ---
 import { Picture } from "astro:assets";
-import logoImage from "assets/logo.svg";
 import Link from "@components/ui/link.astro";
-import { Icon } from "astro-icon";
+import imageNuminia from "assets/pic.jpg";
 ---
 
 <main
-  class="grid lg:grid-cols-2 place-items-center pt-16 pb-8 md:pt-12 md:pb-24">
-  <div class="py-6 md:order-1 hidden md:block">
-    <!-- <video class="shadow-lg" controls>
-      <source src="" type="video/mp4">      
-    </video> -->
-    <div class="aspect-w-16 aspect-h-9 max-w-full mx-auto">
-      <iframe class="w-full h-full" src="https://www.youtube.com/embed/_jyiw1Ul3Yg?si=GnLMT0q1Cx-64XL-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    </div>
-  </div>
-  <div>
-    <h1
-      class="text-5xl lg:text-6xl xl:text-7xl font-bold lg:tracking-tight xl:tracking-tighter">
-      Build games to make work better
-    </h1>
-    <p class="text-lg mt-4 text-slate-600 max-w-xl">
-      Develop engaging, immersive infinite games that foster collaboration and innovation, 
-      <wbr />creating fun and meaningful experiences to unlock new potentials in creativity, collaboration, and efficiency.
-    </p>
-    <div class="mt-6 flex flex-col sm:flex-row gap-3">
-      <Link
-        size="lg"
-        style="outline"
-        rel="noopener"
-        href="https://oncyber.io/steiners_dreams"
-        class="flex gap-1 items-center justify-center"
-        target="_blank">
-        <!-- <Icon class="text-black w-4 h-4" name="bx:bxl-github" /> -->
-         Play now
-      </Link>
-    </div>
-  </div>
+	class="grid lg:grid-cols-2 pt-16 pb-8 md:pt-12 md:pb-24">
+	<Picture class="w-max px-4 rounded" src={imageNuminia} alt="image_numinia" />
+	<div class="py-6 md:order-1 hidden md:block">
+		<h1
+			class="text-4xl lg:text-5xl xl:text-6xl font-bold lg:tracking-tight xl:tracking-tighter">
+			Leveling up organizations to build better relationships
+		</h1>
+		<div class="mt-6 flex flex-col sm:flex-row gap-3">
+			<Link
+				size="lg"
+				style="outline"
+				rel="noopener"
+				href="https://hyperfy.io/steinersdreams"
+				class="flex gap-1 items-center justify-center"
+				target="_blank">
+				Play now
+			</Link>
+		</div>
+	</div>
 </main>
