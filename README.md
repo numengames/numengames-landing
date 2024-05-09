@@ -1,4 +1,4 @@
-# NumenGames - Landing Page
+# Numen Games - Landing Page
 
 A website built with Astro website template & TailwindCSS.
 
@@ -47,7 +47,7 @@ pnpm astro --help
 
 ## Project Structure
 
-Inside of your NumenGames project, you'll see the following folders and files:
+Inside of your Numen Games project, you'll see the following folders and files:
 
 ```
 /
