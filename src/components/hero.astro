@@ -1,13 +1,12 @@
 ---
 import { Picture } from "astro:assets";
-import Link from "@components/ui/link.astro";
 import imageNuminia from "assets/pic.jpg";
+import Link from "@components/ui/link.astro";
 ---
 
-<main
-	class="grid lg:grid-cols-2 pt-16 pb-8 md:pt-12 md:pb-24">
+<section class="grid lg:grid-cols-2 pt-16 pb-8 md:pt-12 md:pb-24">
 	<Picture class="w-max px-4 rounded" src={imageNuminia} alt="image_numinia" />
-	<div class="py-6 md:order-1 hidden md:block">
+	<div class="py-6 px-10 md:order-1 hidden md:flex flex-col justify-center">
 		<h1
 			class="text-4xl lg:text-5xl xl:text-6xl font-bold lg:tracking-tight xl:tracking-tighter">
 			Leveling up organizations to build better relationships
@@ -24,4 +23,4 @@ import imageNuminia from "assets/pic.jpg";
 			</Link>
 		</div>
 	</div>
-</main>
+</section>

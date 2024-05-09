@@ -2,33 +2,33 @@
 import { Icon } from "astro-icon";
 ---
 
-<main>
-	<h1
+<section>
+	<h3
 		class="text-3xl lg:text-4xl xl:text-5xl font-bold lg:tracking-tight xl:tracking-tighter text-center">
 		We consider this in every decision
-	</h1>
+	</h3>
 	<div
 		class="grid lg:grid-cols-3 place-items-center pt-16 pb-8 md:pt-12 md:pb-24">
 		<div>
-			<div class="flex items-center">
-				<Icon class="h-8 w-8" name="craft" />
-				<h1 class="font-bold">Craft</h1>
+			<div class="flex items-center flex-col">
+				<Icon class="h-16 w-16" name="craft" />
+				<h4 class="font-bold text-xl">Craft</h4>
+				<p class="text-lg">Art as a driver</p>
 			</div>
-			<p>Art as a driver</p>
 		</div>
 		<div>
-			<div class="flex items-center">
-				<Icon class="h-8 w-8" name="learn" />
-				<h1 class="font-bold">Learn</h1>
+			<div class="flex items-center flex-col">
+				<Icon class="h-16 w-16" name="learn" />
+				<h4 class="font-bold text-xl">Learn</h4>
+				<p class="text-lg">Humans play to learn</p>
 			</div>
-			<p>Humans play to learn</p>
 		</div>
 		<div>
-			<div class="flex items-center">
-				<Icon class="h-8 w-8" name="remix" />
-				<h1 class="font-bold">Remix</h1>
+			<div class="flex items-center flex-col">
+				<Icon class="h-16 w-16" name="remix" />
+				<h4 class="font-bold text-xl">Remix</h4>
+				<p class="text-lg">Feel free to copy and make it better</p>
 			</div>
-			<p>Feel free to copy and make it better</p>
 		</div>
 	</div>
-</main>
+</section>
