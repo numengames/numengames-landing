@@ -1,94 +1,52 @@
 ---
+import {
+	Astronav,
+	MenuItems,
+	MenuIcon,
+	Dropdown,
+	DropdownItems,
+	DropdownSubmenu,
+	StickyHeader,
+} from "astro-navbar";
 import { Picture } from "astro:assets";
-import Container from "@components/container.astro";
-import Link from "@components/ui/link.astro";
-import Dropdown from "./dropdown.astro";
-import logoImage from "assets/logo.svg";
-import { Astronav, MenuItems, MenuIcon } from "astro-navbar";
 
-const menuitems = [
-	{
-		title: "Menu",
-		path: "/",
-		children: [
-			{ title: "Home", path: "/" },
-			{ title: "FAQ", path: "/faq" },
-			{ title: "About us", path: "/about" },
-			{ title: "Manifesto", path: "/manifesto" },
-			{ title: "Lemuria Academy", path: "/lemuria-academy" },
-			// { title: "Contact", path: "/contact" },
-		],
-	},
-	{
-		title: "Numen Games",
-		path: "/",
-	},
-	{
-		title: "FAQ",
-		path: "/faq",
-	},
-	{
-		title: "Lemuria Academy",
-		path: "/lemuria-academy",
-	},
-	{
-		title: "About",
-		path: "/about",
-	},
-	{
-		title: "Manifesto",
-		path: "/manifesto",
-	},
-	// {
-	//   title: "Contact",
-	//   path: "/contact",
-	// },
-];
+import logoImage from "assets/logo.svg";
 ---
 
-<header
-	class="fixed bg-white z-10 flex flex-col lg:flex-row justify-between items-center w-full p-5">
-	<Astronav>
-		<div class="flex justify-between w-full">
-			<a href="/" class="text-lg flex items-center">
-				<Picture width="300" src={logoImage} alt="logo" />
-			</a>
-			<div class="block lg:hidden">
-				<MenuIcon class="w-4 h-4 text-gray-500" />
+<StickyHeader
+	class="sticky top-0 border-b z-20 transition-all"
+	scrollY={40}
+	defaultClass="py-5 border-transparent"
+	activeClass="py-2 bg-white/80 border-gray-200 backdrop-blur-lg">
+	<header class="lg:flex justify-between p-5 gap-5 mx-auto container">
+		<Astronav closeOnClick>
+			<div class="flex w-full lg:w-auto justify-between">
+				<a href="/" class="text-lg flex items-center">
+					<Picture width="300" src={logoImage} alt="logo" />
+				</a>
+				<div class="block lg:hidden">
+					<MenuIcon class="w-4 h-4 text-gray-800" />
+				</div>
 			</div>
-		</div>
-		<MenuItems class="hidden w-full lg:w-auto mt-2 lg:flex lg:mt-0 ml-auto">
-			<ul class="flex flex-col lg:flex-row lg:gap-4">
-				{
-					menuitems.map((item, index) => {
-						const isBrowser = typeof window !== "undefined";
-						const isMobile = isBrowser && window.innerWidth < 768;
-
-						return (
-							<>
-								{item.children && isMobile && (
-									<Dropdown
-										title={item.title}
-										children={item.children}
-										lastItem={index === menuitems.length - 1}
-									/>
-								)}
-
-								{!item.children && !isMobile && (
-									<li class="p-2 text-center flex items-center">
-										<Link
-											href={item.path}
-											style="base"
-											class="p-2 hover:bg-gray-300">
-											{item.title}
-										</Link>
-									</li>
-								)}
-							</>
-						);
-					})
-				}
-			</ul>
-		</MenuItems>
-	</Astronav>
-</header>
+			<MenuItems class="hidden lg:flex">
+				<ul class="flex flex-col lg:flex-row lg:gap-10">
+					<li>
+						<a href="/">Home</a>
+					</li>
+					<li>
+						<a href="/faq">FAQ</a>
+					</li>
+					<li>
+						<a href="/about">About us</a>
+					</li>
+					<li>
+						<a href="/manifesto">Manifesto</a>
+					</li>
+					<li>
+						<a href="/lemuria-academy">Lemuria Academy</a>
+					</li>
+				</ul>
+			</MenuItems>
+		</Astronav>
+	</header>
+</StickyHeader>
