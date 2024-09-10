@@ -6,12 +6,18 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["geist", 'sans-serif'],
-        mono: ["geist", 'serif'],
+        geist: ["Geist", 'serif'],
+        geistMono: ["GeistMono", 'serif'],
+      },
+      fontWeight: {
+        light: 300,
+        medium: 500,
+        semibold: 600,
+        bold: 700,
       },
       textDecorationColor: ['responsive', 'hover', 'focus'],
       textDecorationThickness: ['responsive', 'hover', 'focus'],
-      textUnderlineOffset: ['responsive', 'hover', 'focus'], 
+      textUnderlineOffset: ['responsive', 'hover', 'focus'],
     },
     variants: {
       extend: {
