@@ -1,8 +1,21 @@
-<main
-	class="grid lg:grid-cols-1 pt-16 pb-8 md:pt-12 md:pb-24"
-	style="height: 760px;">
+---
+import { Picture } from "astro:assets";
+import overlayOncyber from "assets/overlay-oncyber.png";
+---
+
+<section
+	class="relative grid lg:grid-cols-1"
+	style="height: calc(100vh - 5rem);">
+	<div class="absolute z-10 w-32 md:w-64">
+		<Picture
+			class="w-full h-auto top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 lg:top-0 lg:left-0 lg:translate-x-0 lg:translate-y-0"
+			src={overlayOncyber}
+			alt="overlay_oncyber"
+		/>
+	</div>
+
 	<iframe
-		class="w-full h-full h-auto px-4"
+		class="w-full h-full"
 		src="https://v2.oncyber.io/numen_games"
 		allowfullscreen></iframe>
-</main>
+</section>

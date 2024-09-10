@@ -1,25 +1,26 @@
 ---
 import Cta from "@components/cta.astro";
+import Game from "@components/game.astro";
 import Hero from "@components/hero.astro";
 import Layout from "@layouts/Layout.astro";
 import Values from "@components/values.astro";
 import Legacy from "@components/offering-section.astro";
 import Pillars from "@components/high-impact-results.astro";
 import Purpose from "@components/scenario-settings.astro";
-import Game from "@components/game-hyperfy.astro";
 import Container from "@components/container.astro";
+import NavBar from "@components/navbar/navbar.astro";
 import KeyMessage from "@components/key-message.astro";
 ---
 
-<Layout title="Lemuria Academy">
+<Layout title="Numen Games - Brand Kit">
 	<Container>
 		<Hero />
 		<Legacy />
-		<Game />
 		<Purpose />
 		<Pillars />
 		<KeyMessage />
 		<Values />
 		<Cta />
 	</Container>
+	<Game />
 </Layout>

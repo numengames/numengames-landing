@@ -1,11 +1,19 @@
 ---
-import Layout from "@layouts/Layout.astro";
+import Layout from "@layouts/LayoutWithFooter.astro";
 import Container from "@components/container.astro";
 ---
 
-<Layout title="FAQ">
+<Layout title="Numen Games - FAQ">
 	<Container>
-		<h1 class="text-3xl font-bold my-8">FAQ</h1>
+		<div
+			class="flex flex-col justify-center items-center text-center px-4 sm:px-6 lg:px-12">
+			<h1 class="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight">
+				FAQ
+			</h1>
+			<p class="text-center text-lg md:text-xl lg:text-2xl md:pt-12 md:pb-8">
+				Find clear answers to key questions about Numen Games and our offerings
+			</p>
+		</div>
 		<div class="mx-auto max-w-screen-xl p-4">
 			<details
 				class="mb-5 bg-white border border-gray-200 rounded-lg shadow-sm overflow-hidden">
@@ -52,7 +60,10 @@ import Container from "@components/container.astro";
 				<p class="p-4 mt-1">
 					If you want more information about early access or purchase a Numinia
 					pass for the 2nd of November, follow up our social networks or join
-					our <a href="https://discord.gg/qv6pyYHr" class="text-blue-500 underline underline-offset-2">Discord</a>
+					our <a
+						href="https://discord.gg/qv6pyYHr"
+						class="text-blue-500 underline underline-offset-2">Discord</a
+					>
 				</p>
 			</details>
 			<details

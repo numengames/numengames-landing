@@ -1,7 +1,8 @@
 ---
-import { getCollection } from "astro:content";
 import { Picture } from "astro:assets";
-import Layout from "@layouts/Layout.astro";
+import { getCollection } from "astro:content";
+
+import Layout from "@layouts/LayoutWithFooter.astro";
 import Container from "@components/container.astro";
 import Sectionhead from "@components/sectionhead.astro";
 
@@ -11,10 +12,10 @@ const publishedTeamMembers = await getCollection("team", ({ data }) => {
 });
 ---
 
-<Layout title="About">
+<Layout title="Numen Games - Team">
 	<Container>
 		<Sectionhead>
-			<Fragment slot="title">About</Fragment>
+			<Fragment slot="title">Team</Fragment>
 			<Fragment slot="desc">We are a small passionate team.</Fragment>
 		</Sectionhead>
 
@@ -46,15 +47,25 @@ const publishedTeamMembers = await getCollection("team", ({ data }) => {
 							<h2 class="text-lg text-gray-800">{teamMemberEntry.data.name}</h2>
 							<h3 class="text-sm text-slate-500">
 								{teamMemberEntry.data.title}
-								{teamMemberEntry.data.links.oncyber && (<> - <a href={teamMemberEntry.data.links.oncyber}>Profile</a></>)}
-								{teamMemberEntry.data.links.linkedin && (<> - <a href={teamMemberEntry.data.links.linkedin}>Profile</a></>)}
+								{teamMemberEntry.data.links.oncyber && (
+									<>
+										{" "}
+										- <a href={teamMemberEntry.data.links.oncyber}>Profile</a>
+									</>
+								)}
+								{teamMemberEntry.data.links.linkedin && (
+									<>
+										{" "}
+										- <a href={teamMemberEntry.data.links.linkedin}>Profile</a>
+									</>
+								)}
 							</h3>
 						</div>
 					</div>
 				))
 			}
 		</div>
-		<div class="grid md:grid-cols-3 gap-10 mx-auto max-w-4xl mt-12">
+		<!-- <div class="grid md:grid-cols-3 gap-10 mx-auto max-w-4xl mt-12">
 			<div>
 				<p>PERSONAL BOND</p>
 				<p>Friends</p>
@@ -86,6 +97,6 @@ const publishedTeamMembers = await getCollection("team", ({ data }) => {
 					well as storytelling and communication.
 				</p>
 			</div>
-		</div>
+		</div> -->
 	</Container>
 </Layout>

@@ -1,0 +1,68 @@
+---
+import { Picture } from "astro:assets";
+
+import Container from "@components/container.astro";
+import SelfPacedTrainingImage from "assets/self-paced-training.webp";
+import VirtualExpertGuidedTrainingImage from "assets/virtual-expert-guided-training.webp";
+import CollaborativeMultiplayerSkillTrainingImage from "assets/collaborative-multiplayer-skill-training.webp";
+---
+
+<Container
+	class="grid lg:grid-cols-1 place-items-center pt-12 pb-8 md:pt-40 md:pb-12">
+	<h2
+		class="text-center mb-5 text-4xl lg:text-5xl xl:text-6xl font-bold lg:tracking-tight xl:tracking-tighter">
+		Discover what we offer
+	</h2>
+	<p class="text-center text-lg md:text-xl lg:text-2xl md:pt-12">
+		High adaptability experiences to different organizational needs
+	</p>
+
+	<div class="grid lg:grid-cols-3 gap-8 pt-4 pb-8 md:pt-10 md:pb-16">
+		<div class="flex items-center flex-col p-8">
+			<Picture
+				src={SelfPacedTrainingImage}
+				class="w-full max-w-xs mb-6"
+				alt="self_paced_training_image"
+			/>
+			<h4 class="font-bold text-2xl text-center max-w-xs mb-4">
+				Single-Player Training
+			</h4>
+			<p class="text-lg text-slate-500 text-center max-w-xs">
+				Our single-player training courses offer the flexibility to complete
+				them at your own pace, from anywhere, and on your own schedule.
+			</p>
+		</div>
+
+		<div class="flex items-center flex-col p-8">
+			<Picture
+				src={VirtualExpertGuidedTrainingImage}
+				class="w-full max-w-xs mb-6"
+				alt="virtual_expect_guided_training_image"
+			/>
+			<h4 class="font-bold text-2xl text-center max-w-xs mb-4">
+				Expert-Guided Training
+			</h4>
+			<p class="text-lg text-slate-500 text-center max-w-xs">
+				Receive expert guidance from a game master specialized in your team's
+				needs, leading live, interactive scenarios in our Virtual Expert-Guided
+				Training.
+			</p>
+		</div>
+
+		<div class="flex items-center flex-col p-8">
+			<Picture
+				src={CollaborativeMultiplayerSkillTrainingImage}
+				class="w-full max-w-xs mb-6"
+				alt="collaborative_multiplayer_skill_training_image"
+			/>
+			<h4 class="font-bold text-2xl text-center max-w-xs mb-4">
+				Collaborative Skill Training
+			</h4>
+			<p class="text-lg text-slate-500 text-center max-w-xs">
+				Develop immersive, team-centered evaluations that foster collaboration
+				and skill testing in an interactive multiplayer setting, ensuring
+				effective and engaging assessments.
+			</p>
+		</div>
+	</div>
+</Container>

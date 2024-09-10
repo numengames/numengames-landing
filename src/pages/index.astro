@@ -1,26 +1,30 @@
 ---
-import Cta from "@components/cta.astro";
 import Game from "@components/game.astro";
 import Hero from "@components/hero.astro";
 import Layout from "@layouts/Layout.astro";
-import Values from "@components/values.astro";
-import Legacy from "@components/legacy.astro";
-import Pillars from "@components/pillars.astro";
-import Purpose from "@components/purpose.astro";
-import Container from "@components/container.astro";
-import NavBar from "@components/navbar/navbar.astro";
-import KeyMessage from "@components/key-message.astro";
+import Footer from "@components/footer.astro";
+import Partners from "@components/partners.astro";
+import Testimonials from "@components/testimonials.astro";
+import OfferingSection from "@components/offering-section.astro";
+import TrainingBenefits from "@components/training-benefits.astro";
+import ScenarioSettings from "@components/scenario-settings.astro";
+import HighImpactResults from "@components/high-impact-results.astro";
+import GamificationImpact from "@components/gamification-impact.astro";
+import CollaborationProcess from "@components/collaboration-process.astro";
 ---
 
 <Layout title="Numen Games">
-	<Container>
+	<main>
 		<Hero />
-		<Legacy />
+		<OfferingSection />
+		<ScenarioSettings />
+		<HighImpactResults />
+		<GamificationImpact />
+		<CollaborationProcess />
+		<TrainingBenefits />
+		<Partners />
+		<Testimonials />
+		<Footer />
 		<Game />
-		<Purpose />
-		<Pillars />
-		<KeyMessage />
-		<Values />
-		<Cta />
-	</Container>
+	</main>
 </Layout>
