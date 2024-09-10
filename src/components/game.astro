@@ -15,7 +15,21 @@ import overlayOncyber from "assets/overlay-oncyber.png";
 	</div>
 
 	<iframe
-		class="w-full h-full"
+		id="game"
+		class="w-full h-full hidden"
 		src="https://v2.oncyber.io/numen_games"
 		allowfullscreen></iframe>
 </section>
+
+<script>
+	const gameComponent = document.getElementById("game");
+
+	window.addEventListener("scroll", () => {
+		const scrollPosition = window.scrollY;
+		const triggerPoint = 300; // Cambia este valor según cuándo quieres que cargue
+
+		if (scrollPosition > triggerPoint) {
+			gameComponent?.classList.remove("hidden");
+		}
+	});
+</script>
