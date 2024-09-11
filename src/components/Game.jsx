@@ -1,4 +1,3 @@
-// src/components/Game.jsx
 import { useEffect, useState } from 'react';
 
 export default function Game() {
@@ -7,8 +6,7 @@ export default function Game() {
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
-      // Aquí defines la lógica de cuándo debería ser visible el componente
-      if (scrollPosition > 300) { // Cambia esto según tu necesidad
+      if (scrollPosition > 300) {
         setIsVisible(true);
       }
     };
@@ -18,8 +16,24 @@ export default function Game() {
   }, []);
 
   return (
-    <div>
-      {isVisible ? <p>Componente cargado al hacer scroll</p> : <p>Scroll down</p>}
-    </div>
+    <section
+      className={`relative grid lg:grid-cols-1`}
+      style={{ height: 'calc(100vh - 5rem)' }}>
+      <div className="absolute z-10 w-32 md:w-64">
+        <img
+          className="w-full h-auto top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 lg:top-0 lg:left-0 lg:translate-x-0 lg:translate-y-0"
+          src="/overlay-oncyber.png"
+          alt="overlay_oncyber"
+        />
+      </div>
+
+      {isVisible && (
+        <iframe
+          id="game"
+          className="w-full h-full"
+          src="https://v2.oncyber.io/numen_games"
+          allowFullScreen></iframe>
+      )}
+    </section>
   );
 }
