@@ -1,5 +1,9 @@
-<section
-	class="grid lg:grid-cols-1 place-items-center pt-16 pb-8 md:pt-12 md:pb-24">
+---
+import Container from "@components/container.astro";
+---
+
+<Container
+	class="grid lg:grid-cols-1 place-items-center pt-12 pb-8 md:pt-12 md:pb-12">
 	<div class="container mx-auto">
 		<div class="flex justify-center">
 			<h3
@@ -16,13 +20,13 @@
 			<p class="badge">Unlike the old ways of companies</p>
 		</div>
 	</div>
-</section>
+</Container>
 <style>
 	.badge {
 		padding: 4px 15px;
 		border-radius: 8px;
 		margin: 3px;
-    color: #475569;
+		color: #475569;
 		font-size: 1.1rem;
 		display: flex;
 		align-items: center;
