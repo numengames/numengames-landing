@@ -1,26 +1,18 @@
 ---
-import Cta from "@components/cta.astro";
 import Game from "@components/Game.jsx";
-import Hero from "@components/hero.astro";
 import Layout from "@layouts/Layout.astro";
-import Values from "@components/values.astro";
-import Legacy from "@components/offering-section.astro";
-import Pillars from "@components/high-impact-results.astro";
-import Purpose from "@components/scenario-settings.astro";
-import Container from "@components/container.astro";
-import NavBar from "@components/navbar/navbar.astro";
-import KeyMessage from "@components/key-message.astro";
+import Footer from "@components/footer.astro";
+import Hero from "@components/hero-numinia.astro";
+import GamifiedStructure from "@components/gamified-structure.astro";
+import LetTheAdventureBegin from "@components/let-the-adventure-begin.astro";
 ---
 
 <Layout title="Numen Games - Numinia">
-	<Container>
+	<main>
 		<Hero />
-		<Legacy />
-		<Purpose />
-		<Pillars />
-		<KeyMessage />
-		<Values />
-		<Cta />
-	</Container>
-	<Game />
+		<GamifiedStructure />
+		<LetTheAdventureBegin />
+		<Footer />
+		<Game url="https://v2.oncyber.io/the_gates_of_numinia" client:load />
+	</main>
 </Layout>

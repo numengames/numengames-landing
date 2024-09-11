@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-export default function Game() {
+export default function Game({ url }) {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -31,7 +31,7 @@ export default function Game() {
         <iframe
           id="game"
           className="w-full h-full"
-          src="https://v2.oncyber.io/numen_games"
+          src={url}
           allowFullScreen></iframe>
       )}
     </section>
