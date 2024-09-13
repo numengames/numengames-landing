@@ -20,10 +20,11 @@ import BoostsProductivityImage from "assets/boosts-productivity.jpg";
 		</p>
 		<div class="mt-6 mb-8 flex justify-center lg:justify-start">
 			<Link
+				id="gamification-impact-link"
 				size="lg"
 				style="custom"
 				rel="noopener"
-				href="https://v2.oncyber.io/numen_games"
+				href="/contact"
 				class="px-6 py-3 rounded-lg inline-block"
 				target="_blank">
 				Talk to us
@@ -36,3 +37,13 @@ import BoostsProductivityImage from "assets/boosts-productivity.jpg";
 		alt="self_paced_training_image"
 	/>
 </Container>
+
+<script type="module">
+	import { handleClick } from "../utils/analytics.js";
+
+	document
+		.getElementById("gamification-impact-link")
+		.addEventListener("click", function (event) {
+			handleClick(event, "Index - gamification-impact CTA Button", "/contact");
+		});
+</script>

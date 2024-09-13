@@ -1,8 +1,8 @@
 ---
 import Cta from "@components/cta.astro";
 import Game from "@components/Game.jsx";
-import Hero from "@components/hero.astro";
-import Layout from "@layouts/Layout.astro";
+import Hero from "@components/hero-brand-kit.astro";
+import Layout from "@layouts/LayoutWithFooter.astro";
 import Values from "@components/values.astro";
 import Legacy from "@components/offering-section.astro";
 import Pillars from "@components/high-impact-results.astro";
@@ -13,14 +13,48 @@ import KeyMessage from "@components/key-message.astro";
 ---
 
 <Layout title="Numen Games - Brand Kit">
-	<Container>
-		<Hero />
-		<Legacy />
-		<Purpose />
-		<Pillars />
-		<KeyMessage />
-		<Values />
-		<Cta />
-	</Container>
-	<Game />
+	<section class="py-16 text-center">
+		<div class="container mx-auto">
+			<h1 class="text-4xl font-bold mb-4">Numinia Logos</h1>
+			<p class="text-lg mb-8">
+				Official logos and usage guidelines for Numinia branding.
+			</p>
+			<a href="#logos" class="text-white px-6 py-3 rounded-full shadow"
+				>View Logos</a
+			>
+		</div>
+	</section>
+
+	<!-- Logos Section -->
+	<section id="logos" class="py-16">
+		<div class="container mx-auto">
+			<h2 class="text-3xl font-bold text-center mb-8">Logos</h2>
+			<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+				<div class="bg-white p-6 shadow-md rounded-lg">
+					<img src="/path-to-logo-1.png" alt="Logo 1" class="mb-4" />
+					<h3 class="text-xl font-semibold">Numinia Logo 1</h3>
+				</div>
+				<div class="bg-white p-6 shadow-md rounded-lg">
+					<img src="/path-to-logo-2.png" alt="Logo 2" class="mb-4" />
+					<h3 class="text-xl font-semibold">Numinia Logo 2</h3>
+				</div>
+				<div class="bg-white p-6 shadow-md rounded-lg">
+					<img src="/path-to-logo-3.png" alt="Logo 3" class="mb-4" />
+					<h3 class="text-xl font-semibold">Numinia Logo 3</h3>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Usage Section -->
+	<section id="usage" class="bg-gray-50 py-16">
+		<div class="container mx-auto">
+			<h2 class="text-3xl font-bold text-center mb-8">Usage Guidelines</h2>
+			<p class="text-lg text-center max-w-3xl mx-auto">
+				Here are the official guidelines for using Numinia logos in your
+				projects. Please follow the rules and use the logos in accordance with
+				these guidelines.
+			</p>
+		</div>
+	</section>
 </Layout>

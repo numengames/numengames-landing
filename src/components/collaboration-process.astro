@@ -7,10 +7,10 @@ import Container from "@components/container.astro";
 
 <Container
 	class="grid lg:grid-cols-1 place-items-center pt-12 pb-8 md:pt-40 md:pb-12">
-	<h2
+	<h3
 		class="text-center mb-5 text-4xl lg:text-5xl xl:text-6xl font-bold lg:tracking-tight xl:tracking-tighter">
 		How We Collaborate
-	</h2>
+	</h3>
 
 	<div class="grid lg:grid-cols-3 gap-8 pt-4 pb-8 md:pt-10 md:pb-16">
 		<div class="flex items-center flex-col p-8">
@@ -50,6 +50,7 @@ import Container from "@components/container.astro";
 	</div>
 	<div class="mt-6 mb-8 flex justify-center lg:justify-start">
 		<Link
+			id="collaboration-process-link"
 			size="lg"
 			style="custom"
 			rel="noopener"
@@ -60,3 +61,13 @@ import Container from "@components/container.astro";
 		</Link>
 	</div>
 </Container>
+
+<script type="module">
+	import { handleClick } from "../utils/analytics.js";
+
+	document
+		.getElementById("collaboration-process-link")
+		.addEventListener("click", function (event) {
+			handleClick(event, "Index - gamification-impact CTA Button", "/contact");
+		});
+</script>
