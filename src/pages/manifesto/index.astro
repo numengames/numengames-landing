@@ -1,0 +1,160 @@
+---
+import { Picture } from "astro:assets";
+
+import Layout from "@layouts/Layout.astro";
+import Container from "@components/Container.astro";
+import heroImage from "@assets/hero-culture.webp";
+---
+
+<Layout title="Numen Games - Culture">
+	<main>
+		<article>
+			<Container
+				class="text-basics-white flex flex-col items-center relative bg-primary-panther">
+				<div class="mt-44 mb-4 max-w-[45%]">
+					<div class="relative w-full aspect-[8/4]">
+						<Picture
+							alt="Descripción de la imagen"
+							src={heroImage}
+							class="w-full h-full object-cover"
+						/>
+						<div
+							class="absolute bottom-0 left-0 w-full flex flex-col items-start justify-center font-light bg-black/50 p-4">
+							<div>
+								<span class="text-primary-coralRed text-[1.5rem]">[</span>
+								<span class="text-primary-beige/75">OUR PARTNERS</span>
+								<span class="text-primary-coralRed text-[1.5rem]">]</span>
+							</div>
+							<h3 class="text-[1.5rem] font-medium leading-[2rem] text-white">
+								Dream without limits
+							</h3>
+						</div>
+					</div>
+					<section class="my-10">
+						<p
+							class="text-[18px] font-normal leading-[27px] text-left text-primary-beige/75 mb-4">
+							Numen Games believes in the ability of humans to learn through
+							play and the power of games to enrich and improve the quality of
+							human relationships, as well as their inherent necessity to be
+							organized in groups.
+						</p>
+
+						<p
+							class="text-[18px] font-normal leading-[27px] text-left text-primary-beige/75 mb-4">
+							Numen Games se centrará en la capacidad de cada individuo para
+							hacer un cambio a través de la curiosidad y la creatividad,
+							mejorando las relaciones dentro de las organizaciones. Estamos
+							construyendo un juego para trabajar mejor.
+						</p>
+
+						<p
+							class="text-[18px] font-normal leading-[27px] text-left text-primary-beige/75 mb-4">
+							Para que el cambio ocurra, creemos que es necesario un cambio en
+							las organizaciones. Creemos que la herencia de las organizaciones
+							de la Segunda Revolución Industrial ha llegado a su fin y
+							necesitamos abrir un nuevo camino para las organizaciones
+							digitales para que los humanos prosperen. Aunque honramos lo
+							aprendido en el pasado, creemos que las cosas se pueden hacer de
+							manera diferente, enfocándonos en el ser humano y la construcción
+							de relaciones más justas y fuertes.
+						</p>
+					</section>
+					<section class="my-10">
+						<h2
+							class="text-[16px] font-medium leading-[22.72px] tracking-[0.1em] text-center text-primary-coralRed">
+							Strategy Plan
+						</h2>
+						<p
+							class="text-[18px] font-normal leading-[27px] text-left text-primary-beige/75 mb-4">
+							Numen Games tiene como objetivo crear un internet descentralizado
+							y viviente donde los jugadores participen en un marco estructural
+							gamificado que combina educación, exploración y colaboración
+							creativa. Organizado en distritos distintos alineados con
+							facciones especializadas, Numinia aprovecha el poder del
+							conocimiento descentralizado y la innovación continua para
+							mantener la experiencia fresca y atractiva. Esta estrategia
+							fomenta una comunidad donde los jugadores no son solo
+							participantes, sino co-creadores de una narrativa en constante
+							evolución, asegurando que Numinia siga siendo un espacio de
+							vanguardia e inclusivo para el aprendizaje y la aventura.
+						</p>
+					</section>
+					<section class="my-10">
+						<h2
+							class="text-[16px] font-medium leading-[22.72px] tracking-[0.1em] text-center text-primary-coralRed">
+							Pillars
+						</h2>
+						<ul
+							class="text-[18px] font-normal leading-[27px] text-left text-primary-beige/75">
+							<li class="mb-4">El arte como motor</li>
+							<li class="mb-4">Los humanos juegan para aprender</li>
+							<li class="mb-4">Siéntete libre de copiarlo y mejorarlo</li>
+						</ul>
+					</section>
+					<section class="my-10">
+						<h2
+							class="text-[16px] font-medium leading-[22.72px] tracking-[0.1em] text-center text-primary-coralRed">
+							Values and Principles
+						</h2>
+						<p
+							class="text-[18px] font-normal leading-[27px] text-left text-primary-beige/75 mb-4">
+							Defendemos estos valores para crear una experiencia de juego que
+							no solo sea sostenible, sino que también conecte profundamente y
+							resuene con nuestros usuarios.
+						</p>
+						<ul
+							class="text-[18px] font-normal leading-[27px] text-left text-primary-beige/75">
+							<li class="mb-4">
+								Los numinianos sirven y equilibran la vida, guiados por acciones
+								con propósito, asegurando la prosperidad para todos.
+							</li>
+							<li class="mb-4">
+								Para los numinianos, la equidad da forma a cada decisión,
+								fomentando la realidad, la unidad y la honestidad constructiva.
+							</li>
+							<li class="mb-4">
+								A los numinianos les gusta ser conscientes de sí mismos,
+								infiriendo activamente para minimizar la sorpresa, explorando
+								más allá de los territorios familiares, aprendemos haciendo.
+							</li>
+							<li class="mb-4">
+								Los numinianos forjan relaciones y creaciones duraderas,
+								nutriendo el bien público; La sostenibilidad guía nuestros
+								pasos.
+							</li>
+						</ul>
+					</section>
+					<section class="my-10">
+						<h2
+							class="text-[16px] font-medium leading-[22.72px] tracking-[0.1em] text-center text-primary-coralRed">
+							Consciousness
+						</h2>
+						<p
+							class="text-[18px] font-normal leading-[27px] text-left text-primary-beige/75 mb-4">
+							Estamos convencidos de que nuestra generación tiene el deber de
+							proponer nuevos modelos para las organizaciones, más equilibrados,
+							más cercanos al ser humano. Queremos un mundo mejor para quienes
+							vengan después de nosotros. No nos perdonaríamos por no
+							intentarlo. El capitalismo con corazón tiene un lugar en el
+							futuro, la prosperidad será el resultado de una sociedad más
+							feliz, más equilibrada y más justa.
+						</p>
+					</section>
+					<section class="my-10">
+						<h2
+							class="text-[16px] font-medium leading-[22.72px] tracking-[0.1em] text-center text-primary-coralRed">
+							Legacy
+						</h2>
+						<p
+							class="text-[18px] font-normal leading-[27px] text-left text-primary-beige/75 mb-4">
+							En nuestro epitafio se podría leer, soñaron y experimentaron la
+							vida, imaginaban y tomaban acción. Fueron parte de la lucha para
+							cambiar el modelo, no nos dejaron solos, construyeron un juego con
+							el que crear un mundo mejor.
+						</p>
+					</section>
+				</div>
+			</Container>
+		</article>
+	</main>
+</Layout>

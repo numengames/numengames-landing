@@ -1,0 +1,11 @@
+---
+import Container from "@components/Container.astro";
+
+import WhyNumenContainer from "./WhyNumen.svelte";
+---
+
+<Container
+	class="h-screen relative flex flex-col items-center justify-center pt-[7rem]"
+	bgColor="bg-primary-panther">
+	<WhyNumenContainer client:only="svelte" />
+</Container>

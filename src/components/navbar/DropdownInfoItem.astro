@@ -1,0 +1,64 @@
+---
+import { Icon } from "astro-icon/components";
+
+const { customClass = "" } = Astro.props;
+---
+
+<div class={`w-full h-full ${customClass} hidden`}>
+	<div class="w-full flex flex-col gap-3 justify-between">
+		<a class="h-full" href="/team">
+			<div
+				class="h-full flex flex-col p-6 bg-basics-white/20 hover:bg-basics-white/30 border border-white/10 rounded-lg">
+				<div class="flex items-center">
+					<div class="border-[0.5px] border-white rounded-full bg-white/10">
+						<Icon name="ghost" class="w-6 h-6 p-1 text-white" />
+					</div>
+					<h2
+						class="ml-3 text-base font-medium tracking-tight text-left text-white">
+						Team
+					</h2>
+				</div>
+				<p class="mt-3 mx-10 text-sm font-normal text-white/60">
+					We design fully customized gamified experiences to meet specific
+					business objectives.
+				</p>
+			</div>
+		</a>
+		<a class="h-full" href="/manifesto">
+			<div
+				class="h-full flex flex-col p-6 bg-basics-white/20 hover:bg-basics-white/30 border border-white/10 rounded-lg">
+				<div class="flex items-center">
+					<div class="border-[0.5px] border-white rounded-full bg-white/10">
+						<Icon name="scroll" class="w-6 h-6 p-1 text-white" />
+					</div>
+					<h2
+						class="ml-3 text-base font-medium tracking-tight text-left text-white">
+						Manifesto
+					</h2>
+				</div>
+				<p class="mt-3 pr-8 ml-9 text-sm font-normal text-white/60">
+					We design fully customized gamified experiences to meet specific
+					business objectives.
+				</p>
+			</div>
+		</a>
+		<a class="h-full" href="/blog">
+			<div
+				class="h-full flex flex-col p-6 bg-basics-white/20 hover:bg-basics-white/30 border border-white/10 rounded-lg">
+				<div class="flex items-center">
+					<div class="border-[0.5px] border-white rounded-full bg-white/10">
+						<Icon name="bookmarks" class="w-6 h-6 p-1 text-white" />
+					</div>
+					<h2
+						class="ml-3 text-base font-medium tracking-tight text-left text-white">
+						Blog
+					</h2>
+				</div>
+				<p class="mt-3 pr-8 ml-9 text-sm font-normal text-white/60">
+					We design fully customized gamified experiences to meet specific
+					business objectives.
+				</p>
+			</div>
+		</a>
+	</div>
+</div>

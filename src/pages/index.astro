@@ -1,8 +1,28 @@
 ---
 import Layout from "@layouts/Layout.astro";
-import Container from "@components/container.astro";
+import DesktopHeroSection from "@pages/hero/Hero.astro";
+import DesktopServicesSection from "@pages/hero/Services.astro";
+import WorkProcessSection from "@components/desktop/WorkProcessMain.astro";
+import DesktopWhyNumenSection from "@pages/hero/WhyNumen.astro";
+import TestimonialsSection from "@components/desktop/TestimonialsMain.astro";
 ---
 
 <Layout title="Numen Games">
-	<Container />
+	<main>
+		<DesktopHeroSection />
+		<DesktopServicesSection />
+		<DesktopWhyNumenSection />
+		<WorkProcessSection />
+		<TestimonialsSection />
+	</main>
 </Layout>
+
+<!-- <script type="module">
+	import { handleClick } from "../utils/analytics.js";
+
+	document
+		.getElementById("hero-link")
+		.addEventListener("click", function (event) {
+			handleClick(event, "Index - Hero CTA Button", "/contact");
+		});
+</script> -->

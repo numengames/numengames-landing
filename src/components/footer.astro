@@ -1,0 +1,149 @@
+---
+import { Icon } from "astro-icon/components";
+---
+
+<footer class="flex flex-col bg-primary-panther pt-24 pb-6 px-10">
+	<section
+		class="flex h-[495px] bg-custom-gradient rounded-lg relative d-image mb-10">
+		<div
+			class="w-1/2 flex items-center justify-center pr-0 pt-10 pb-10 pl-10 h-full ml-auto z-20">
+			<div class="text-primary-beige text-left">
+				<h2 class="text-h2 font-medium mb-8 mr-24" style="line-height: 57.6px;">
+					Start creating your own
+					<span class="text-primary-coralRed">3D immersive</span>
+					experience with us now!
+				</h2>
+				<div class="flex flex-row text-base">
+					<a
+						href="/contact"
+						class="text-primary-beige py-3 px-7 mr-9 rounded-lg hover:bg-opacity-90 transition-all font-medium"
+						style="box-shadow: 0 0 5px #F35059, 0 0 10px #F35059, 0 0 15px #F35059;">
+						Ready to talk?
+					</a>
+					<a
+						href="https://v2.oncyber.io/the_gates_of_numinia"
+						class="text-primary-beige py-3 px-7 rounded-lg hover:bg-opacity-90 transition-all"
+						style="border: 1px solid #FFFFFF4D;">
+						Try a demo
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section
+		class="flex flex-row items-start justify-between bg-primary-panther mb-10">
+		<div class="flex flex-col justify-between text-primary-beige h-44">
+			<img
+				src="assets/numen-logo.svg"
+				alt="Numen Logo"
+				loading="lazy"
+				class="w-[44vw] h-auto"
+			/>
+			<div class="flex flex-row space-x-4">
+				<a
+					href="https://x.com/numinia_xyz"
+					target="_blank"
+					rel="noopener noreferrer"
+					class="flex items-center justify-center h-10 w-10 rounded-full bg-white/10">
+					<Icon class="h-6 w-6" name="x-logo" style="fill: white;" />
+				</a>
+				<a
+					href="https://www.linkedin.com/company/numengamessl/"
+					target="_blank"
+					rel="noopener noreferrer"
+					class="flex items-center justify-center h-10 w-10 rounded-full bg-white/10">
+					<Icon class="h-6 w-6" name="linkedin-logo" style="fill: white;" />
+				</a>
+				<a
+					href="https://discord.gg/ASwwdd24pp"
+					target="_blank"
+					rel="noopener noreferrer"
+					class="flex items-center justify-center h-10 w-10 rounded-full bg-white/10">
+					<Icon class="h-6 w-6" name="discord-logo" style="fill: white;" />
+				</a>
+				<a
+					href="https://github.com/numengames"
+					target="_blank"
+					rel="noopener noreferrer"
+					class="flex items-center justify-center h-10 w-10 rounded-full bg-white/10">
+					<Icon class="h-6 w-6" name="github-logo" style="fill: white;" />
+				</a>
+			</div>
+		</div>
+		<div class="flex flex-row justify-end space-x-28">
+			<section class="flex flex-col text-primary-beige font-extralight">
+				<h3 class="mb-6">Services</h3>
+				<ul class="space-y-3 text-primary-beige/75">
+					<li><a href="/engage">Engage</a></li>
+					<li>
+						<a href="/training">Training</a>
+					</li>
+					<li>
+						<a href="/experience">Experience</a>
+					</li>
+				</ul>
+			</section>
+			<section class="flex flex-col text-primary-beige font-extralight">
+				<h3 class="mb-6">Company</h3>
+				<ul class="space-y-3 text-primary-beige/75">
+					<li><a href="/about">About Us</a></li>
+					<li>
+						<a href="/contact">Contact us</a>
+					</li>
+					<li>
+						<a href="/manifesto">Manifesto</a>
+					</li>
+					<li><a href="/blog">Blog</a></li>
+				</ul>
+			</section>
+			<section class="flex flex-col text-primary-beige font-extralight">
+				<h3 class="mb-6">Other</h3>
+				<ul class="space-y-3 text-primary-beige/75">
+					<li>
+						<a href="/help-center">Help center</a>
+					</li>
+					<li><a href="/numinia">Numinia</a></li>
+					<li>
+						<a target="_blank" href="https://docs.numen.games/docs/intro"
+							>Documentation</a
+						>
+					</li>
+				</ul>
+			</section>
+		</div>
+	</section>
+	<hr class="border border-solid border-[#262626]" />
+	<section
+		class="flex flex-row justify-between w-full text-primary-beige/50 text-sm font-extralight mt-3">
+		<p>Made with love by the Numen Games team</p>
+		<ul class="flex flex-row center">
+			<li>
+				<a href="/terms-conditions">Terms & Conditions</a>
+			</li>
+		</ul>
+	</section>
+</footer>
+
+<style>
+	.bg-custom-gradient {
+		background: linear-gradient(
+			to bottom right,
+			rgba(1, 142, 161, 0.2) 10%,
+			rgba(211, 52, 64, 0.1) 40%,
+			rgba(33, 33, 35, 0.9) 70%
+		);
+	}
+	.d-image::after {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		background-repeat: no-repeat;
+		height: 100%;
+		background-image: url("assets/footer-img.png");
+		background-size: contain;
+		background-position: left;
+		z-index: 1;
+	}
+</style>

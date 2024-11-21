@@ -1,0 +1,10 @@
+---
+import Container from "@components/Container.astro";
+import ServicesContainer from "./Services.svelte";
+---
+
+<Container
+	class="h-screen relative flex flex-col items-center justify-center pt-[7rem]"
+	bgColor="bg-primary-panther">
+	<ServicesContainer client:only="svelte" />
+</Container>
