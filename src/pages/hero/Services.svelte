@@ -3,6 +3,7 @@
 
 	import CardWithVRM from "@components/CardWithVRM.svelte";
 	import LoadingButton from "@components/LoadingButton.svelte";
+	import BracketedContent from "@components/BracketedContent.svelte";
 
 	let timeoutId;
 	let rotationInterval = 10000;
@@ -59,16 +60,15 @@
 	});
 </script>
 
-<div class="h-screen flex justify-between items-center relative custom-before custom-after">
+<div
+	class="h-screen flex justify-between items-center relative before:bg-[url('/icons/khepri.svg')] before:bg-repeat before:bg-[length:15%] before:content-[''] before:absolute before:w-[calc(100%+4.5rem)] before:h-full before:left-[-2.5rem] after:content-[''] after:absolute after:w-full after:left-[-2.5rem] after:h-[90%] after:top-1/2 after:transform after:-translate-y-1/2">
 	<section class="max-w-[50%] space-y-6 z-10">
 		<header>
-			<div class="flex items-center gap-1.5 tracking-[0.1em] font-light font-IBMPlexMono">
-				<span class="text-primary-coralRed text-lg 2xl:text-xl">[</span>
-				<span class="text-xs 2xl:text-base text-primary-beige">SERVICES</span>
-				<span class="text-primary-coralRed text-lg 2xl:text-xl">]</span>
-			</div>
-			<h2 class="text-4xl leading-tight 2xl:text-5xl 2xl:leading-tight font-light text-left mt-3 text-white">
-				High <span class="text-primary-coralRed">adaptability experiences</span> to different organizational needs
+			<BracketedContent text="SERVICES" />
+			<h2
+				class="text-4xl leading-tight 2xl:text-5xl 2xl:leading-tight font-light text-left mt-3 text-primary-beige">
+				High <span class="text-primary-coralRed">adaptability experiences</span>
+				to different organizational needs
 			</h2>
 		</header>
 		<div class="flex gap-6">
@@ -89,7 +89,8 @@
 				isAnimating={activeContent === "experience-design"} />
 		</div>
 	</section>
-	<aside class="max-w-[37%] 2xl:max-w-[40%] bg-black rounded-xl shadow-[0_0_1.25rem_0_#F3505980] z-10">
+	<aside
+		class="max-w-[37%] 2xl:max-w-[40%] bg-black rounded-xl shadow-[0_0_1.25rem_0_#F3505980] z-10">
 		<CardWithVRM
 			title="Immersive 3D environments"
 			logoFileName="zombie.svg"
@@ -115,7 +116,7 @@
 			description="Create immersive 3D environments that strengthen your organization's talent retention, values, and culture. Our gamified solutions ensure that processes like onboarding are both effective and engaging, helping to build a cohesive and motivated workforce." />
 
 		<CardWithVRM
-			title="Fully customized gamified experiences"
+			title="Customized gamified experiences"
 			logoFileName="zombie.svg"
 			logoName="adigital"
 			buttonHref="/experience"
@@ -127,26 +128,3 @@
 			description="We design fully customized gamified experiences that align with your organization's goals. Whether it's enhancing leadership development or creating a unique personal event—such as a custom proposal—our experiences deliver lasting impact and engagement." />
 	</aside>
 </div>
-
-<style>
-	.custom-before::before {
-		background: url('icons/khepri.svg') repeat initial;
-		background-size: 15%;
-		width: calc(100% + 2rem);
-		height: calc(100% + 3rem);
-		position: absolute;
-		left: -2.5rem;
-		content: '';
-	}
-
-	.custom-after::after {
-		content: '';
-		position: absolute;
-		width: 100%;
-		left: -2.5rem;
-		height: 90%;
-		top: 50%;
-		transform: translateY(-50%);
-		background: linear-gradient(to bottom, rgba(21, 7, 8, 0.1) 0%, rgba(21, 7, 8, 0.99) 15%, rgba(21, 7, 8, 1) 85%, rgba(21, 7, 8, 0.1) 100%);
-	}
-</style>

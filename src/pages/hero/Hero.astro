@@ -1,5 +1,7 @@
 ---
 import Container from "@components/Container.astro";
+
+import BracketedContent from "@components/BracketedContent.svelte";
 ---
 
 <Container
@@ -16,20 +18,13 @@ import Container from "@components/Container.astro";
 				</span>
 			</h1>
 			<aside>
-				<div
-					class="flex items-center gap-1.5 tracking-[0.1em] font-light font-IBMPlexMono">
-					<span class="text-primary-coralRed text-lg 2xl:text-xl">[</span>
-					<span class="text-xs 2xl:text-base text-primary-beige"
-						>THREE.JS, WEB3, WEB2, THREE.JS, WEB</span
-					>
-					<span class="text-primary-coralRed text-lg 2xl:text-xl">]</span>
-				</div>
+				<BracketedContent text="THREE.JS, WEB3, WEB2, THREE.JS, WEB" />
 			</aside>
 		</div>
 
 		<div class="flex justify-between items-end">
 			<p
-				class="text-base w-[40vw] 2xl:text-xl font-[84] text-left text-primary-beige">
+				class="text-base w-[40vw] 3xl:w-[35vw] 2xl:text-xl 3xl:text-2xl font-[84] text-left text-primary-beige/75">
 				We don’t just create 3D environments; we build immersive, scalable
 				learning and training experiences that help organizations improve
 				efficiency, outcomes, and stakeholder engagement.

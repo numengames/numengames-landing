@@ -1,0 +1,10 @@
+---
+import Container from "@components/Container.astro";
+import TestimonialsContainer from "./Testimonials.svelte";
+---
+
+<Container
+	class="flex flex-col items-center justify-center pt-24"
+	bgColor="bg-primary-panther">
+	<TestimonialsContainer client:only="svelte" />
+</Container>

@@ -58,6 +58,22 @@ module.exports = {
         h5: ['0.875rem', { lineHeight: '1' }],
         h6: ['0.625rem', { lineHeight: '1' }],
       },
+      perspective: {
+        none: '0',
+        sm: '600px',
+        md: '800px',
+        lg: '1000px',
+        xl: '1200px',
+      },
+      perspectiveOrigin: {
+        center: 'center',
+        top: 'top',
+        'top-left': 'top left',
+        'top-right': 'top right',
+        bottom: 'bottom',
+        'bottom-left': 'bottom left',
+        'bottom-right': 'bottom right',
+      },
       keyframes: {
         portalEntrance: {
           '0%': { opacity: '0', transform: 'scale(0.5) translateZ(-150px)' },
@@ -82,6 +98,10 @@ module.exports = {
         '400ms': '400ms',
         '600ms': '600ms',
       },
+      screens: {
+        '3xl': '1920px'
+      },
+
     },
   },
 };
