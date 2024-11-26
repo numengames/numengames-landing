@@ -1,6 +1,7 @@
 ---
 import Layout from "@layouts/Layout.astro";
-import DesktopHeroSection from "@pages/hero/Hero.astro";
+import DesktopHeroSection from "@pages/hero/HeroDesktop.astro";
+import MobileHeroSection from "@pages/hero/HeroMobile.astro";
 import WorkProcessSection from "@pages/hero/WorkProcess.astro";
 import DesktopServicesSection from "@pages/hero/Services.astro";
 import DesktopWhyNumenSection from "@pages/hero/WhyNumen.astro";
@@ -9,7 +10,8 @@ import TestimonialsSection from "@pages/hero/Testimonials.astro";
 
 <Layout title="Numen Games">
 	<main>
-		<DesktopHeroSection />
+		<DesktopHeroSection class="xl:flex" />
+		<MobileHeroSection class="xl:hidden" />
 		<DesktopServicesSection />
 		<DesktopWhyNumenSection />
 		<WorkProcessSection />

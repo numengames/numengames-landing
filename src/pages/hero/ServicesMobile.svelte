@@ -60,22 +60,21 @@
 	});
 </script>
 
-<div
-	class="h-screen flex justify-between items-center relative before:bg-[url('/icons/khepri.svg')] before:bg-repeat before:bg-[length:15%] before:content-[''] before:absolute before:w-[calc(100%+4.5rem)] before:h-full before:left-[-2.5rem] after:content-[''] after:absolute after:w-full after:left-[-2.5rem] after:h-[90%] after:top-1/2 after:transform after:-translate-y-1/2">
-	<section class="max-w-[50%] space-y-6 z-10">
-		<header>
+<div class="w-full flex flex-col items-center z-10">
+	<div class="w-full flex flex-col items-center">
+		<header class="w-full">
 			<BracketedContent text="SERVICES" />
 			<h2
-				class="text-4xl leading-tight 2xl:text-5xl 2xl:leading-tight font-light text-left mt-3 text-primary-beige">
+				class="text-4xl leading-tight 2xl:text-5xl 2xl:leading-tight font-normal text-left mt-3 text-primary-beige pr-10">
 				High <span class="text-primary-coralRed">adaptability experiences</span>
 				to different organizational needs
 			</h2>
 		</header>
 		<div class="flex gap-6">
-			<LoadingButton
+			<!-- <LoadingButton
 				on:click={() => handleButtonClick("engaging")}
 				iconFileName="google-cardboard-logo.svg"
-				buttonText="Engaging"
+				buttonText="Engage"
 				isAnimating={activeContent === "engaging"} />
 			<LoadingButton
 				on:click={() => handleButtonClick("training")}
@@ -86,11 +85,11 @@
 				on:click={() => handleButtonClick("experience-design")}
 				iconFileName="game-controller.svg"
 				buttonText="Experience Design"
-				isAnimating={activeContent === "experience-design"} />
+				isAnimating={activeContent === "experience-design"} /> -->
 		</div>
-	</section>
-	<aside
-		class="max-w-[37%] 2xl:max-w-[40%] bg-black rounded-xl shadow-[0_0_1.25rem_0_#F3505980] z-10">
+	</div>
+	<!-- <aside
+		class="w-full bg-black rounded-xl shadow-[0_0_1.25rem_0_#F3505980] z-10">
 		<CardWithVRM
 			title="Immersive 3D environments"
 			logoFileName="zombie.svg"
@@ -116,7 +115,7 @@
 			description="Create immersive 3D environments that strengthen your organization's talent retention, values, and culture. Our gamified solutions ensure that processes like onboarding are both effective and engaging, helping to build a cohesive and motivated workforce." />
 
 		<CardWithVRM
-			title="Customized gamified experiences"
+			title="Fully customized gamified experiences"
 			logoFileName="zombie.svg"
 			logoName="adigital"
 			buttonHref="/experience"
@@ -126,5 +125,5 @@
 			isAnimating={activeContent === "experience-design"}
 			highlightMetricDescription="Engagement boost"
 			description="We design fully customized gamified experiences that align with your organization's goals. Whether it's enhancing leadership development or creating a unique personal event—such as a custom proposal—our experiences deliver lasting impact and engagement." />
-	</aside>
+	</aside> -->
 </div>

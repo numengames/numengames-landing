@@ -18,13 +18,17 @@
 </script>
 
 <button
-	class="button flex items-center gap-4 px-4 py-3 border border-solid rounded-md relative overflow-hidden"
+	class="button flex items-center gap-4 px-4 py-3 2xl:px-6 2xl:py-4 border border-solid rounded-md relative overflow-hidden"
 	class:animate
 	on:click>
 	<div class="p-2 bg-white/10 rounded-full">
-		<img class="h-6 w-6" loading="lazy" src={`icons/${iconFileName}`} alt="icon" />
+		<img
+			class="h-6 w-6"
+			loading="lazy"
+			src={`icons/${iconFileName}`}
+			alt="icon" />
 	</div>
-	<span class="text-base 2xl:text-xl font-[84] text-left text-basics-white">
+	<span class="text-base 2xl:text-xl font-light text-left text-basics-white">
 		{buttonText}
 	</span>
 </button>

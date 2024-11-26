@@ -41,7 +41,7 @@
 </script>
 
 <div
-	class={`viewer-3d ${isAnimating ? "flex" : "hidden"} aspect-[3/2] cursor-pointer`}
+	class={`viewer-3d ${isAnimating ? "flex" : "hidden"} aspect-[16/9] cursor-pointer`}
 	id={`three-d-viewer-${viewerId}`}
 	data-d8s-type="3d"
 	data-d8s-id={viewerId}>

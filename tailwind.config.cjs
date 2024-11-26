@@ -10,6 +10,7 @@ module.exports = {
           coralRed: '#F35059',
           darkRed: '#D33440',
           panther: '#212123',
+          mediterranean: '##A6DAD5'
         },
         supportDetails: {
           mediterranean: '#A6DAD5',
@@ -80,13 +81,16 @@ module.exports = {
           '100%': { opacity: '1', transform: 'scale(1) translateZ(0)' },
         },
         carousel: {
-          '0%': { transform: 'translateX(450px) rotateY(-2deg) scale(0.7)', zIndex: '1', opacity: '1' },
-          '25%': { transform: 'translateX(0) rotateY(0deg) scale(1)', zIndex: '1', opacity: '1' },
-          '50%': { transform: 'translateX(-450px) rotateY(2deg) scale(0.7)', zIndex: '-1', opacity: '1' },
-          '63%': { transform: 'translateX(-225px) rotateY(0deg) scale(0.5)', opacity: '0' },
-          '85%': { transform: 'translateX(0) rotateY(-1deg) scale(0.5)', zIndex: '1', opacity: '0' },
-          '100%': { transform: 'translateX(450px) rotateY(-2deg) scale(0.7)', zIndex: '1', opacity: '1' },
+          '0%': { transform: 'translateX(225px) rotateY(-15deg) translateZ(-200px) scale(0)', zIndex: '-1', opacity: '0' },
+          '25%': { transform: 'translateX(400px) rotateY(-15deg) translateZ(-300px) scale(0.7)', zIndex: '-1', opacity: '1' },
+          '50%': { transform: 'translateX(0) rotateY(0deg) translateZ(0) scale(1)', zIndex: '1', opacity: '1' },
+          '75%': { transform: 'translateX(-400px) rotateY(15deg) translateZ(-200px) scale(0.7)', zIndex: '-1', opacity: '1' },
+          '100%': { transform: 'translateX(-225px) rotateY(-15deg) translateZ(-200px) scale(0)', zIndex: '-1', opacity: '0' },
         },
+        flowCarousel: {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(-50%)', }
+        }
       },
       animation: {
         portalEntrance: 'portal-entrance 3s ease infinite',

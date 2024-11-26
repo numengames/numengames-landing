@@ -1,0 +1,138 @@
+<section class="sectionHero">
+	<div class="container">
+		<div class="tunnel">
+			<img class="arch" src="/assets/union.svg" alt="Arco capa 1" />
+			<img class="arch" src="/assets/union.svg" alt="Arco capa 2" />
+			<img class="arch" src="/assets/union.svg" alt="Arco capa 3" />
+			<img class="arch" src="/assets/union.svg" alt="Arco capa 4" />
+			<img class="arch" src="/assets/union.svg" alt="Arco capa 5" />
+			<img class="arch" src="/assets/union.svg" alt="Arco capa 6" />
+			<img class="arch" src="/assets/union.svg" alt="Arco capa 7" />
+			<img class="arch" src="/assets/union.svg" alt="Arco capa 8" />
+			<img class="arch" src="/assets/union.svg" alt="Arco capa 9" />
+			<img class="arch" src="/assets/union.svg" alt="Arco capa 10" />
+		</div>
+	</div>
+</section>
+
+<style>
+	.sectionHero {
+		background-color: #212123;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 100dvh;
+		width: 100%;
+		margin: 0;
+		padding-top: 250px;
+		overflow: hidden;
+	}
+
+	.btnLineLight {
+		border-radius: 0.25rem;
+		padding: 0.75rem 1.5rem;
+		border: 0.5px solid rgba(255, 255, 255, 0.2705882353);
+		text-decoration: none;
+		color: white;
+		font-size: 1rem;
+		line-height: 1.5rem;
+		position: relative;
+		z-index: 9;
+		transition: 0.6s all ease;
+	}
+	.btnLineLight:hover {
+		text-decoration: none;
+		transition: 0.6s all ease;
+		cursor: pointer;
+		background-color: #f35059;
+		border: 0.3px solid #f35059;
+		box-shadow: 0 0 20px 0 #f35059;
+		color: white;
+	}
+
+	.tunnel {
+		position: relative;
+		width: 100%;
+		height: 100vh;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.arch {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		width: 280px;
+		height: auto;
+		animation: tunnelAnimation 27s linear infinite;
+		animation-fill-mode: both;
+		transform: translate(-50%, -50%) scale(0.8);
+		opacity: 0;
+	}
+
+	@media screen and (max-width: 1280px) {
+		.arch {
+			width: 60%;
+		}
+	}
+
+	.arch:nth-child(1) {
+		animation-delay: -27s;
+	}
+
+	.arch:nth-child(2) {
+		animation-delay: -24s;
+	}
+
+	.arch:nth-child(3) {
+		animation-delay: -21s;
+	}
+
+	.arch:nth-child(4) {
+		animation-delay: -18s;
+	}
+
+	.arch:nth-child(5) {
+		animation-delay: -15s;
+	}
+
+	.arch:nth-child(6) {
+		animation-delay: -12s;
+	}
+
+	.arch:nth-child(7) {
+		animation-delay: -9s;
+	}
+
+	.arch:nth-child(8) {
+		animation-delay: -6s;
+	}
+
+	.arch:nth-child(9) {
+		animation-delay: -3s;
+	}
+
+	.arch:nth-child(10) {
+		animation-delay: 0s;
+	}
+
+	@keyframes tunnelAnimation {
+		0% {
+			transform: translate(-50%, -50%) scale(0.5);
+			opacity: 0;
+		}
+		50% {
+			transform: translate(-50%, -50%) scale(2);
+			opacity: 0.2;
+		}
+		70% {
+			transform: translate(-50%, -50%) scale(2.5);
+			opacity: 0;
+		}
+		100% {
+			transform: translate(-50%, -50%) scale(3);
+			opacity: 0;
+		}
+	}
+</style>

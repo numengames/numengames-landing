@@ -1,10 +1,13 @@
 ---
 import Container from "@components/Container.astro";
-import ServicesContainer from "./Services.svelte";
+
+import ServicesDesktopContainer from "./ServicesDesktop.svelte";
+import ServicesMobileContainer from "./ServicesMobile.svelte";
 ---
 
 <Container
-	class="flex flex-col items-center justify-center pt-[7rem]"
+	class="flex flex-col items-center justify-center pt-24 xl:pt-28"
 	bgColor="bg-primary-panther">
-	<ServicesContainer client:only="svelte" />
+	<div class="xl:flex"><ServicesDesktopContainer client:only="svelte" /></div>
+	<!-- <div class="xl:hidden"><ServicesMobileContainer client:only="svelte" /></div> -->
 </Container>

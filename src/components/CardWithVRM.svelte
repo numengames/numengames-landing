@@ -26,7 +26,7 @@
 			{categoryLabel}
 		</p>
 		<div class="mt-2 2xl:mt-3">
-			<h4 class="text-2xl font-medium text-gray-600">
+			<h4 class="text-3xl font-medium text-primary-panther">
 				{title}
 			</h4>
 			<p
