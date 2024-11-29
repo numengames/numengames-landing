@@ -13,7 +13,7 @@
 
 	function initialize3DViewer() {
 		window.initDimensions({
-			account: "d8s-usv8ev",
+			account: "d8s-q7pxeu",
 			viewers: ["3D"],
 			threeDViewer: {
 				viewer: {

@@ -1,6 +1,7 @@
 <script>
-	export let iconFileName;
+	export let iconPath;
 	export let buttonText;
+	export let className = "";
 	export let isAnimating = false;
 
 	let animate = false;
@@ -18,17 +19,19 @@
 </script>
 
 <button
-	class="button flex items-center gap-4 px-4 py-3 2xl:px-6 2xl:py-4 border border-solid rounded-md relative overflow-hidden"
+	class={`button flex items-center gap-4 px-4 py-3 2xl:px-6 2xl:py-4 border border-white/10 rounded-md relative overflow-hidden  ${className}`}
 	class:animate
 	on:click>
-	<div class="p-2 bg-white/10 rounded-full">
+	<div
+		class="flex items-center justify-center min-w-8 w-8 h-8 bg-white/10 rounded-full border border-white/20 shadow-[0_0_20px_0_rgba(243,80,89,0.25)]">
 		<img
-			class="h-6 w-6"
+			class="block w-6 h-6 object-contain"
 			loading="lazy"
-			src={`icons/${iconFileName}`}
+			src={iconPath}
 			alt="icon" />
 	</div>
-	<span class="text-base 2xl:text-xl font-light text-left text-basics-white">
+	<span
+		class={`text-base 2xl:text-xl font-light text-left ${isAnimating ? "text-basics-white" : "text-basics-white/40"}`}>
 		{buttonText}
 	</span>
 </button>
@@ -46,7 +49,7 @@
 	}
 
 	.button.animate::after {
-		animation: loading 10s linear forwards;
+		animation: loading 20s linear forwards;
 		background: rgba(255, 255, 255, 0.2);
 	}
 

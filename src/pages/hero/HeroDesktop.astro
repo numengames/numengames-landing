@@ -4,6 +4,7 @@ const { class: className } = Astro.props;
 import Container from "@components/Container.astro";
 import HeroAnimation from "@components/HeroAnimation.astro";
 
+import PulseAnimatedBtn from "@components/PulseAnimatedBtn.svelte";
 import BracketedContent from "@components/BracketedContent.svelte";
 ---
 
@@ -59,11 +60,10 @@ import BracketedContent from "@components/BracketedContent.svelte";
 
 	<div class="absolute inset-0 flex justify-center items-center z-10">
 		<div class="relative">
-			<button
-				class="text-primary-beige py-6 px-10 text-lg font-light rounded-lg hover:bg-primary-darkRed/10 cursor-pointer"
-				style="border: 0.3px solid #f35059; box-shadow: 0 0 20px 0 #f35059;">
-				Ready to talk?
-			</button>
+			<PulseAnimatedBtn
+				className="top-24 form-toggle-button"
+				text="Ready to Talk"
+			/>
 		</div>
 	</div>
 

@@ -2,21 +2,20 @@
 import { Picture } from "astro:assets";
 
 import Layout from "@layouts/Layout.astro";
-// import Container from "@components/Container.astro";
-// import heroImage from "@assets/hero-culture.webp";
+import Container from "@components/Container.astro";
 ---
 
 <Layout title="Numen Games - Culture">
 	<main>
-		<!-- <article>
+		<article>
 			<Container
 				class="text-basics-white flex flex-col items-center relative bg-primary-panther">
 				<div class="mt-44 mb-4 max-w-[45%]">
 					<div class="relative w-full aspect-[8/4]">
-						<Picture
+						<img
 							alt="Descripción de la imagen"
-							src={heroImage}
-							class="w-full h-full object-cover"
+							src="/assets/hero-culture.webp"
+							class:list="w-full h-full object-cover"
 						/>
 						<div
 							class="absolute bottom-0 left-0 w-full flex flex-col items-start justify-center font-light bg-black/50 p-4">
@@ -155,6 +154,6 @@ import Layout from "@layouts/Layout.astro";
 					</section>
 				</div>
 			</Container>
-		</article> -->
+		</article>
 	</main>
 </Layout>

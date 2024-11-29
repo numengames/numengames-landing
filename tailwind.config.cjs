@@ -10,7 +10,7 @@ module.exports = {
           coralRed: '#F35059',
           darkRed: '#D33440',
           panther: '#212123',
-          mediterranean: '##A6DAD5'
+          mediterranean: '#A6DAD5'
         },
         supportDetails: {
           mediterranean: '#A6DAD5',

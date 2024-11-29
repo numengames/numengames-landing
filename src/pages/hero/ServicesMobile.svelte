@@ -1,7 +1,7 @@
 <script>
 	import { onMount, onDestroy } from "svelte";
 
-	import CardWithVRM from "@components/CardWithVRM.svelte";
+	import CardWithVRMAndCTA from "@components/CardWithVRMAndCTA.svelte";
 	import LoadingButton from "@components/LoadingButton.svelte";
 	import BracketedContent from "@components/BracketedContent.svelte";
 

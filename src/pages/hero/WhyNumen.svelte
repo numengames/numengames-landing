@@ -3,7 +3,7 @@
 
 	import FeaturePoint from "@components/FeaturePoint.svelte";
 	import BracketedContent from "@components/BracketedContent.svelte";
-	import CardWithBottomImage from "@components/CardWithBottomImage.svelte";
+	import CardWithTextOverlay from "@components/cards/WithTextOverlay.svelte";
 
 	let timeoutId;
 	let rotationInterval = 20000;
@@ -67,15 +67,15 @@
 <div class="py-[6.2rem] flex justify-between text-primary-beige">
 	<div class="flex justify-between items-stretch min-h-[300px]">
 		<div class="flex w-[46.5%] h-full">
-			<CardWithBottomImage
+			<CardWithTextOverlay
 				image="/assets/Mushrooms.png"
 				description="Planning and executing professional events often lead to unforeseen expenses that quickly add up. From travel to venue costs, traditional event formats can become unsustainable for organizations. But by exploring immersive virtual experiences, you can reduce costs and still create impactful, memorable events."
 				isAnimating={activeContent === "EventCost"} />
-			<CardWithBottomImage
+			<CardWithTextOverlay
 				image="/assets/spring-1.png"
 				description="Remote teams often struggle to maintain a strong company culture through video calls. Building meaningful connections and fostering engagement is challenging when communication feels impersonal and disjointed. However, with the right tools, remote teams can develop deeper bonds and a sense of unity through immersive, interactive environments."
 				isAnimating={activeContent === "CultureFadesOverZoom"} />
-			<CardWithBottomImage
+			<CardWithTextOverlay
 				image="/assets/icosahedron-1.png"
 				description="Managing the logistics of team-building events or conferences can take significant time and effort. Coordinating schedules, venues, and activities often pulls valuable resources away from core business functions. Virtualizing these events frees up your team, allowing for greater flexibility and scalability without sacrificing engagement."
 				isAnimating={activeContent === "LogisticDrainsResources"} />
