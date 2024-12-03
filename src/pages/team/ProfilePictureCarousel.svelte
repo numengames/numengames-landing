@@ -1,7 +1,7 @@
 <script>
 	import { onMount, onDestroy } from "svelte";
 
-	import Profile from "@components/cards/Profile.svelte";
+	import ProfileCard from "@components/cards/Profile.svelte";
 
 	export let profileList;
 
@@ -35,7 +35,7 @@
 <div class="w-full h-40 overflow-x-hidden text-white">
 	<div class="flex transition-transform duration-500" bind:this={carousel}>
 		{#each profileList as profile}
-			<Profile {...profile} />
+			<ProfileCard {...profile} />
 		{/each}
 	</div>
 	<button class="absolute left-0" on:click={prevSlide}>Prev</button>

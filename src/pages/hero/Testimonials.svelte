@@ -6,34 +6,35 @@
 	export let testimonialList = [
 		{
 			quote:
-				'Receive tailored solutions that meet your goals. Finally, select from our diverse range of gamified solutions to enhance and elevate your employee training program."',
-			author: "Leandro Carelenda Silva",
-			position: "",
+				"On A Pathway To An Open Metaverse. We are going to make a run at changing the arc of history. It is a Return of the Jedi vs the Death Star style mission. They have the money and the power.",
+			author: "Punk 6529",
+			position: "Open Metaverse Defender",
 			hueRotate: "hue-rotate-180",
 			animationDelay: "",
 		},
 		{
 			quote:
-				'My favorite part of this training is the immersive learning ability for students is really incredible and the instructor was great!"',
-			author: "Manuel Castro",
-			position: "Program Specialist at Hayward Unified School District Office",
+				"I think these are the timelines we need to be looking at - the one-hundred- or two-hundrd-year horizons. Because most of the really bad stuff that's happening right now is the result of very short-term thinking.",
+			author: "Jane McGonigal",
+			position: "Game developer",
 			hueRotate: "hue-rotate-90",
-			animationDelay: "[animation-delay:-8s]",
+			animationDelay: "[animation-delay:-12s]",
 		},
 		{
 			quote:
-				'Receive tailored solutions that meet your goals. Finally, select from our diverse range of gamified solutions to enhance and elevate your employee training program."',
-			author: "Leandro Carelenda Silva",
-			position: "",
+				"Human-focused design is a journey into the soul of the user. You're not just solving problems-you're touching lives, shaping futures, creating magic.",
+			author: "Yu-kai Chou",
+			position: "Gamification Expert",
 			hueRotate: "hue-rotate-[25deg]",
-			animationDelay: "[animation-delay:-16s]",
+			animationDelay: "[animation-delay:-24s]",
 		},
 		{
-			quote: 'This is a test."',
-			author: "Leandro Carelenda Silva",
-			position: "",
+			quote:
+				"My favorite part of this training is the immersive learning ability for students is really incredible and the instructor was great!",
+			author: "",
+			position: "Program Specialist at Hayward Unified School District Office",
 			hueRotate: "hue-rotate-[45deg]",
-			animationDelay: "[animation-delay:-24s]",
+			animationDelay: "[animation-delay:-36s]",
 		},
 	];
 </script>
@@ -47,8 +48,8 @@
 		</h3>
 		<p
 			class="text-primary-beige/70 max-w-[26rem] 2xl:max-w-[32rem] 3xl:max-w-[38rem] font-[84] text-base 2xl:text-xl 3xl:text-2xl text-right">
-			Our clients’ stories reflect our commitment to excellence and results. See
-			how we’ve helped them achieve success.
+			Our clients' stories showcase our passion for delivering great results.
+			Take a look at how we've helped them succeed.
 		</p>
 	</div>
 	<div
@@ -61,7 +62,7 @@
 		</h4>
 		<FlowCarousel
 			list={[
-				{ name: "adigital-logo", link: "https://example.com/adigital-logo" },
+				{ name: "adigital-logo", link: "https://adigital.org/" },
 				{ name: "adigital-logo", link: "https://example.com/adigital-logo" },
 				{ name: "adigital-logo", link: "https://example.com/adigital-logo" },
 				{ name: "adigital-logo", link: "https://example.com/adigital-logo" },

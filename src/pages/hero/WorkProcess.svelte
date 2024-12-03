@@ -7,19 +7,19 @@
 			number: "01",
 			title: "Act",
 			description:
-				"Provide your requirements and employee persona to help us design a solution perfectly suited to your team's needs.",
+				"Share your requirements and employee profiles to enable us to craft a solution tailored to your team’s unique needs.",
 		},
 		{
 			number: "02",
 			title: "Infer",
 			description:
-				"We thoroughly assess your needs. Our specialists will evaluate and develop tailored simulation solutions designed to align perfectly with your employees' skill sets.",
+				"Our approach involves an in-depth assessment of your needs, ensuring the simulation solutions we create are perfectly aligned with your team's expertise.",
 		},
 		{
 			number: "03",
 			title: "Serv",
 			description:
-				"Receive tailored solutions that meet your goals. Finally, select from our diverse range of gamified solutions to enhance and elevate your employee training program.",
+				"Get customized solutions designed to achieve your goals. Then, choose from our wide variety of gamified options to boost your employee training program.",
 		},
 	];
 
@@ -48,18 +48,18 @@
 	});
 </script>
 
-<div class="flex flex-col max-w-[580px] 3xl:max-w-[720px] relative">
+<div class="flex flex-col items-center relative">
 	<div
 		class="h-[600px] sticky top-[100px] flex flex-col items-center z-20 text-primary-beige">
 		<BracketedContent text="WORK_PROCESS" />
 		<h2 class="text-5xl 3xl:text-6xl font-medium text-center mt-3">
-			How We Collaborate
+			How we collaborate with you.
 		</h2>
 	</div>
 
 	{#each steps as step, index}
 		<div
-			class="work-process-step sticky opacity-0 transition-opacity duration-700 p-6 bg-gradient-to-tr from-[#2C2C2C] via-[#3B2C36] to-[#1F2C2C] rounded-lg shadow-lg mx-12"
+			class="max-w-[450px] 2xl:max-w-[600px] work-process-step sticky opacity-0 transition-opacity duration-700 p-6 bg-gradient-to-tr from-[#2C2C2C] via-[#3B2C36] to-[#1F2C2C] rounded-lg shadow-lg mx-12"
 			style={`top: ${280 + index * 120}px; z-index: ${3 + index}; transform: rotate(${index % 2 === 0 ? "-3deg" : "3deg"}); margin-bottom: ${[144, 0, -144][index] || 0}px;`}>
 			<p
 				class="px-5 mt-2 text-2xl font-light text-primary-coralRed font-IBMPlexMono">
@@ -75,7 +75,7 @@
 				{#if index === steps.length - 1}
 					<div class="relative inline-block">
 						<button
-							class="text-base px-6 py-3 rounded-md border border-solid border-[#F350594D] backdrop-blur-[25px] shadow-[0_0_20px_0_#F35059] mt-10 text-primary-beige">
+							class="text-base px-6 py-3 rounded-md border border-solid border-[#F350594D] backdrop-blur-[25px] shadow-[0_0_20px_0_#F35059] mt-10 text-primary-beige form-toggle-button">
 							Digital Team Readiness Assessment
 						</button>
 						<span

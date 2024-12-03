@@ -1,6 +1,8 @@
 ---
 import Layout from "@layouts/Layout.astro";
 
+import OriginsSection from "./Origins.astro";
+import PartnersSection from "./Partners.astro";
 import HeroDesktopSection from "./HeroDesktop.astro";
 import ProfilePictureCarouselSection from "./ProfilePictureCarousel.astro";
 
@@ -12,5 +14,7 @@ const { frontmatter } = markdownFile[0];
 	<main>
 		<HeroDesktopSection textObj={frontmatter.heroSection} class="xl:flex" />
 		<ProfilePictureCarouselSection textObj={frontmatter.profiles} />
+		<OriginsSection textObj={frontmatter.origins} />
+		<PartnersSection textObj={frontmatter.partners} />
 	</main>
 </Layout>

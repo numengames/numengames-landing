@@ -3,7 +3,7 @@ import Container from "@components/Container.astro";
 
 import HeroDesktopServices from "./HeroDesktop.svelte";
 
-const { textObj } = Astro.props;
+const { textObj } = Astro.props || {};
 ---
 
 <Container

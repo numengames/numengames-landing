@@ -45,10 +45,12 @@
 		</h3>
 		<div class="flex text-primary-beige font-light gap-6">
 			<PulseAnimatedBtn text={textObj?.ctaButtons?.primary?.text} />
-			<button
-				class="text-xs px-6 py-3 bg-basics-white/10 border-basics-white/20 rounded border hover:bg-basics-white/30">
-				{textObj?.ctaButtons?.secondary?.text}
-			</button>
+			<a target="_blank" href={textObj?.ctaButtons?.secondary?.link}>
+				<button
+					class="text-xs px-6 py-3 bg-basics-white/10 border-basics-white/20 rounded border hover:bg-basics-white/30">
+					{textObj?.ctaButtons?.secondary?.text}
+				</button>
+			</a>
 		</div>
 	</div>
 

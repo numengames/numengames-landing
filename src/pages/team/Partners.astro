@@ -1,7 +1,7 @@
 ---
 import Container from "@components/Container.astro";
 
-import ProfilePictureCarouselServices from "./ProfilePictureCarousel.svelte";
+import PartnersDesktop from "./Partners.svelte";
 
 const { textObj } = Astro.props || {};
 ---
@@ -9,5 +9,5 @@ const { textObj } = Astro.props || {};
 <Container
 	class="flex flex-col items-center justify-center pt-24 xl:pt-28"
 	bgColor="bg-[#171717]">
-	<ProfilePictureCarouselServices profileList={textObj} client:only="svelte" />
+	<PartnersDesktop {textObj} client:only="svelte" />
 </Container>

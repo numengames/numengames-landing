@@ -28,7 +28,9 @@
 				<span class="text-primary-coralRed">{textObj?.header?.titlePart2}</span>
 			</h2>
 		</div>
-		<PulseAnimatedBtn text={textObj?.ctaButtons?.primary?.text} />
+		<PulseAnimatedBtn
+			text={textObj?.ctaButtons?.primary?.text}
+			className="form-toggle-button" />
 	</div>
 	<div class="w-[53%] flex flex-col items-end gap-10 my-24">
 		{#each textObj?.list as faq, index}

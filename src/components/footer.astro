@@ -1,5 +1,7 @@
 ---
 import { Icon } from "astro-icon/components";
+
+import PulseAnimatedBtn from "@components/PulseAnimatedBtn.svelte";
 ---
 
 <footer class="flex flex-col bg-[#171717] pt-24 pb-6 px-10">
@@ -14,12 +16,10 @@ import { Icon } from "astro-icon/components";
 					experience with us now!
 				</h2>
 				<div class="flex flex-row text-base">
-					<a
-						href="/contact"
-						class="text-primary-beige py-3 px-7 mr-9 rounded-lg hover:bg-opacity-90 transition-all font-medium"
-						style="box-shadow: 0 0 5px #F35059, 0 0 10px #F35059, 0 0 15px #F35059;">
-						Ready to talk?
-					</a>
+					<PulseAnimatedBtn
+						className="mr-9 form-toggle-button text-primary-beige"
+						text="Ready to Talk"
+					/>
 					<a
 						href="https://v2.oncyber.io/the_gates_of_numinia"
 						class="text-primary-beige py-3 px-7 rounded-lg hover:bg-opacity-90 transition-all"

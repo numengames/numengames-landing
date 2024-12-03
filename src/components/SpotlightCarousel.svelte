@@ -15,7 +15,7 @@
 		<div
 			role="menuitem"
 			tabindex="-1"
-			class={`card absolute flex flex-col bg-white text-primary-panther rounded-lg p-6 w-[30vw] max-w-[459px] h-[400px] shadow-lg animate-[carousel_32s_infinite_ease-in-out] ${item.hueRotate} ${item.animationDelay}`}
+			class={`card absolute flex flex-col bg-white text-primary-panther rounded-lg p-6 w-[30vw] max-w-[459px] h-[400px] shadow-lg animate-[carousel_48s_infinite_ease-in-out] ${item.hueRotate} ${item.animationDelay}`}
 			style="transform-style: preserve-3d; backface-visibility: hidden; transition: transform 1s ease, opacity 1s ease;"
 			on:mouseenter={() => toggleAnimationPlayState("paused")}
 			on:mouseleave={() => toggleAnimationPlayState("running")}>

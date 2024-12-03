@@ -1,11 +1,15 @@
 <script>
 	export let text = "";
+	export let icon = "";
 	export let className = "";
 </script>
 
 <button
-	class={`relative text-xs px-6 py-3 rounded-md border-[#F3505940] text-white backdrop-blur-[25px] shadow-[0_0_20px_0_#F35059] btnAnimated ${className}`}>
+	class={`relative text-xs px-6 py-3 rounded-md border-[#F3505940] text-basics-white backdrop-blur-[25px] shadow-[0_0_20px_0_#F35059] btnAnimated flex items-center justify-center ${className}`}>
 	{text}
+	{#if icon}
+		<img src={icon} alt="icon" class="ml-2 inline-block w-4 h-4" />
+	{/if}
 </button>
 
 <style>

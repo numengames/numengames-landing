@@ -23,13 +23,14 @@
 
 <div
 	class="h-screen flex justify-between items-center relative before:bg-[url('/icons/khepri.svg')] before:bg-repeat before:bg-[length:15%] before:content-[''] before:absolute before:w-[calc(100%+4.5rem)] before:h-[90vh] before:left-[-2.5rem] after:content-[''] after:absolute after:w-full after:left-[-2.5rem] after:h-[90%] after:top-1/2 after:transform after:-translate-y-1/2">
-	<section class="max-w-[50%] space-y-6 z-10">
+	<section class="max-w-[56%] space-y-6 z-10">
 		<header>
 			<BracketedContent text="SERVICES" />
 			<h2
 				class="text-4xl leading-tight 2xl:text-5xl 2xl:leading-tight font-normal text-left mt-3 text-primary-beige pr-10">
-				High <span class="text-primary-coralRed">adaptability experiences</span>
-				to different organizational needs
+				Tailored, highly <span class="text-primary-coralRed"
+					>adaptable experiences</span>
+				<span class="block">that fit with your organization's needs.</span>
 			</h2>
 		</header>
 		<div class="flex gap-6">
@@ -60,33 +61,33 @@
 			logoName="adigital"
 			buttonHref="/services/engage"
 			viewerId="Logo-Khepri-0.1.3-29-10-2024"
-			categoryLabel="ENGAGING"
+			categoryLabel="ENGAGE"
 			highlightMetricValue="35%"
 			isAnimating={activeIndex === 0}
 			highlightMetricDescription="Engagement boost"
-			description="Create immersive 3D environments that strengthen your organization's talent retention, values, and culture. Our gamified solutions ensure that processes like onboarding are both effective and engaging, helping to build a cohesive and motivated workforce." />
+			description="Create immersive 3D environments that support your organization's talent retention, values, and culture. Through gamified solutions, we make processes like onboarding engaging and impactful, helping foster a motivated, cohesive workforce." />
 		<CardWithVRMAndCTA
-			title="Expert-led training"
+			title="Learning experiences, guided by experts."
 			logoFileName="zombie.svg"
 			logoName="adigital"
 			buttonHref="/services/training"
-			viewerId="Procyon-29-10-2024"
+			viewerId="Procyon-3-11-2024"
 			categoryLabel="TRAINING"
 			highlightMetricValue="26%"
 			isAnimating={activeIndex === 1}
 			highlightMetricDescription="Engagement boost"
-			description="Create immersive 3D environments that strengthen your organization's talent retention, values, and culture. Our gamified solutions ensure that processes like onboarding are both effective and engaging, helping to build a cohesive and motivated workforce." />
+			description="Revolutionize your training programs with our interactive, gamified solutions. Learning becomes a dynamic experience that not only teaches but empowers. From building practical skills to fostering team collaboration, we create training journeys that accelerate growth." />
 		<CardWithVRMAndCTA
 			title="Fully customized gamified experiences"
 			logoFileName="zombie.svg"
 			logoName="adigital"
 			buttonHref="/services/experience"
 			viewerId="Ruins-Website-Model-29-10-2024"
-			categoryLabel="EXPERIENCE DESIGN"
+			categoryLabel="EXPERIENCE"
 			highlightMetricValue="26%"
 			isAnimating={activeIndex === 2}
 			highlightMetricDescription="Engagement boost"
-			description="We design fully customized gamified experiences that align with your organization's goals. Whether it's enhancing leadership development or creating a unique personal event—such as a custom proposal—our experiences deliver lasting impact and engagement." />
+			description="Our custom gamified experiences are designed to match your organization’s goals and spark real engagement. Whether boosting leadership skills or crafting a once-in-a-lifetime event, like a personalized proposal, we deliver memorable moments with lasting effects." />
 	</aside>
 	<div
 		class="w-[calc(100vw-40px)] left-[-40px] absolute inset-0 flex items-center justify-center mx-auto my-auto h-[35%] bg-gradient-to-b from-primary-panther/80 via-primary-panther to-primary-panther/80">

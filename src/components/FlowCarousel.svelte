@@ -12,7 +12,7 @@
 	<div
 		tabindex="-1"
 		role="menuitem"
-		class="flow-carousel-item animate-[flowCarousel_16s_infinite_linear] flex gap-10"
+		class="flow-carousel-item animate-[flowCarousel_64s_infinite_linear] flex gap-10"
 		on:mouseenter={() => toggleAnimationPlayState("paused")}
 		on:mouseleave={() => toggleAnimationPlayState("running")}>
 		{#each list.concat(list) as { name, link }, index (index)}
