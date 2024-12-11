@@ -2,26 +2,10 @@
 	import BracketedContent from "@components/BracketedContent.svelte";
 
 	export let textObj;
-
-	let currentIndex = 0;
-	const images = [
-		"/assets/6529.png",
-		"/assets/active-inference-institute.png",
-		"/assets/6529.png",
-		"/assets/6529.png",
-	];
-
-	function nextImage() {
-		currentIndex = (currentIndex + 1) % images.length;
-	}
-
-	function prevImage() {
-		currentIndex = (currentIndex - 1 + images.length) % images.length;
-	}
 </script>
 
 <div class="w-full flex flex-col relative">
-	<div class="w-full flex flex-col items-start z-10">
+	<div class="w-full flex flex-col items-center z-10">
 		<BracketedContent
 			className="text-primary-beige/75"
 			text={textObj?.bracketedContent} />
@@ -36,18 +20,14 @@
 		</div>
 	</div>
 	<div class="flex flex-col items-center w-full">
-		<img src={images[currentIndex]} alt="Gallery Image" class="w-40 mb-4" />
-		<div class="flex justify-center w-full">
-			<button
-				on:click={prevImage}
-				class="bg-primary-coralRed text-white p-2 rounded-full mx-2">
-				&lt;
-			</button>
-			<button
-				on:click={nextImage}
-				class="bg-primary-coralRed text-white p-2 rounded-full mx-2">
-				&gt;
-			</button>
-		</div>
+		<iframe
+			width="929"
+			height="523"
+			src="https://www.youtube.com/embed/2GweAC5ItvM"
+			title="Welcome to Numinia City"
+			frameborder="0"
+			allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+			referrerpolicy="strict-origin-when-cross-origin"
+			allowfullscreen></iframe>
 	</div>
 </div>

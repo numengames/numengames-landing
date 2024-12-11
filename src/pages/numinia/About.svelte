@@ -11,7 +11,7 @@
 	};
 </script>
 
-<div class="w-full flex flex-col relative h-[745px]">
+<div class="w-full flex flex-col relative">
 	<div class="w-full h-full flex items-center gap-6">
 		<div class="w-full flex flex-col">
 			<BracketedContent
@@ -44,7 +44,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="flex justify-between items-center w-full">
+	<div class="flex justify-between items-center w-full mt-10">
 		{#each textObj?.steps as step, index}
 			<button
 				type="button"
