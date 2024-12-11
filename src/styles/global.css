@@ -58,12 +58,12 @@
 	font-style: normal;
 }
 
-@font-face {
+/* @font-face {
 	font-family: "Geist";
 	src: url("/fonts/Geist/Geist-ExtraBlack.woff2") format("woff2");
 	font-weight: 950;
 	font-style: normal;
-}
+} */
 
 @font-face {
 	font-family: "IBMPlexMono";
