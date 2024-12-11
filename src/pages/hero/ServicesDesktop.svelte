@@ -57,19 +57,19 @@
 		data-aos-delay="600">
 		<CardWithVRMAndCTA
 			title="Immersive 3D environments"
-			logoFileName="zombie.svg"
-			logoName="adigital"
+			logoFileName="strategy.svg"
+			logoName="Engage"
 			buttonHref="/services/engage"
 			viewerId="Logo-Khepri-0.1.3-29-10-2024"
 			categoryLabel="ENGAGE"
-			highlightMetricValue="35%"
+			highlightMetricValue="+60%"
 			isAnimating={activeIndex === 0}
-			highlightMetricDescription="Engagement boost"
+			highlightMetricDescription="Employee Engagement"
 			description="Create immersive 3D environments that support your organization's talent retention, values, and culture. Through gamified solutions, we make processes like onboarding engaging and impactful, helping foster a motivated, cohesive workforce." />
 		<CardWithVRMAndCTA
 			title="Learning experiences, guided by experts."
-			logoFileName="zombie.svg"
-			logoName="adigital"
+			logoFileName="sword.svg"
+			logoName="Training"
 			buttonHref="/services/training"
 			viewerId="Procyon-3-11-2024"
 			categoryLabel="TRAINING"
@@ -79,8 +79,8 @@
 			description="Revolutionize your training programs with our interactive, gamified solutions. Learning becomes a dynamic experience that not only teaches but empowers. From building practical skills to fostering team collaboration, we create training journeys that accelerate growth." />
 		<CardWithVRMAndCTA
 			title="Fully customized gamified experiences"
-			logoFileName="zombie.svg"
-			logoName="adigital"
+			logoFileName="game-controller.svg"
+			logoName="Experience"
 			buttonHref="/services/experience"
 			viewerId="Ruins-Website-Model-29-10-2024"
 			categoryLabel="EXPERIENCE"

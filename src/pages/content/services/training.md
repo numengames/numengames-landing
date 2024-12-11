@@ -3,10 +3,10 @@ title: "Numen Games - Training"
 heroSection:
   bracketedContent: "TRAINING"
   header:
-    titlePart1: "Tailored"
-    titlePart2: "Gamified"
-    titlePart3: "Experiences"
-    subtitle: "We design fully customized gamified experiences to meet specific business objectives."
+    titlePart1: "Training"
+    titlePart2: "designed to"
+    titlePart3: "empower"
+    subtitle: "Our expert-led programs empower teams with the skills and confidence to excel. By focusing on practical knowledge, leadership, and effective collaboration, we equip employees to tackle challenges and achieve success together."
   ctaButtons:
     primary:
       text: "Pricing"
@@ -35,23 +35,29 @@ heroSection:
     }
   ]
 impactNumbersSection:
-  bracketedContent: "A-DIGITAL"
+  bracketedContent: "TAILORED"
   header:
     titlePart1: "Engage tech applied to"
-    titlePart2: "Adigital"
+    titlePart2: "YOU"
     subtitle: "Here are the main KPIs adigital has improved with Numen."
   cards: [
     {
-      kpi: "+172",
-      text: "Our installation team serves as your creative partner, transforming your renovation dreams into reality."
+      link: "https://www.amplifai.com/blog/gamification-statistics",
+      kpi: "+83%",
+      linkText: "AmplifAI",
+      text: "83% of employees who undergo gamified training feel motivated, compared to 61% with traditional training."
     },
     {
-      kpi: "50%",
-      text: "Our installation team serves as your creative partner, transforming your renovation dreams into reality."
+      kpi: "+50%",
+      linkText: "Statista",
+      link: "https://www.statista.com/statistics/608824/gamification-market-value-worldwide/",
+      text: "Organizations using gamified training programs see a 50% reduction in training time."
     },
     {
-      kpi: "10k",
-      text: "Our installation team serves as your creative partner, transforming your renovation dreams into reality."
+      kpi: "+50%",
+      linkText: "Deloitte Insights",
+      text: "Gamified learning systems reduce work errors caused by lack of knowledge by 50%.",
+      link: "https://www2.deloitte.com/content/dam/insights/us/articles/gaming-away-leadership-gap-developing-leaders/DUP_3072_GamingAwayLeadershipGap.pdf",
     }
   ]
 comparisonSection:

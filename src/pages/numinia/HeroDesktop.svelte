@@ -18,6 +18,7 @@
 		<div class="flex flex-col items-end z-10">
 			<PulseAnimatedBtn
 				icon="/icons/sword.svg"
+				link={textObj?.ctaButtons?.primary?.link}
 				className="bg-primary-coralRed mb-6 mr-2"
 				text={textObj?.ctaButtons?.primary?.text} />
 			<img class="w-full" src="/assets/numinia-logo.png" alt="numinia_logo" />

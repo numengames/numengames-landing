@@ -3,10 +3,10 @@ title: "Numen Games - Experience"
 heroSection:
   bracketedContent: "EXPERIENCE"
   header:
-    titlePart1: "Tailored"
-    titlePart2: "Gamified"
-    titlePart3: "Experiences"
-    subtitle: "We design fully customized gamified experiences to meet specific business objectives."
+    titlePart1: "Experiences"
+    titlePart2: "to redefine"
+    titlePart3: "how teams connect and grow"
+    subtitle: "Custom challenges, gamified learning, and immersive 3D worlds—our solutions aren’t just tools; they’re experiences. We blend innovation with fun to create memorable moments that inspire teams and deliver real results."
   ctaButtons:
     primary:
       text: "Pricing"
@@ -35,23 +35,29 @@ heroSection:
     }
   ]
 impactNumbersSection:
-  bracketedContent: "A-DIGITAL"
+  bracketedContent: "TAILORED"
   header:
     titlePart1: "Engage tech applied to"
     titlePart2: "Adigital"
     subtitle: "Here are the main KPIs adigital has improved with Numen."
   cards: [
     {
-      kpi: "+172",
-      text: "Our installation team serves as your creative partner, transforming your renovation dreams into reality."
+      link: "https://www.amplifai.com/blog/gamification-statistics",
+      kpi: "+22%",
+      linkText: "AmplifAI",
+      text: "Businesses with gamified loyalty programs witness a 22% increase in customer retention."
     },
     {
-      kpi: "50%",
-      text: "Our installation team serves as your creative partner, transforming your renovation dreams into reality."
+      link: "https://www.amplifai.com/blog/gamification-statistics",
+      kpi: "x7",
+      linkText: "AmplifAI",
+      text: "Companies employing gamification are seven times more profitable than those that do not."
     },
     {
-      kpi: "10k",
-      text: "Our installation team serves as your creative partner, transforming your renovation dreams into reality."
+      link: "https://www.amplifai.com/blog/gamification-statistics",
+      kpi: "+50%",
+      linkText: "AmplifAI",
+      text: "Gamification can lead to a 50% increase in conversion rates when the correct approach is used."
     }
   ]
 comparisonSection:

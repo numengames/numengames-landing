@@ -64,17 +64,19 @@
 		<FlowCarousel
 			list={[
 				{ name: "adigital-logo", link: "https://adigital.org/" },
-				{ name: "adigital-logo", link: "https://example.com/adigital-logo" },
-				{ name: "adigital-logo", link: "https://example.com/adigital-logo" },
-				{ name: "adigital-logo", link: "https://example.com/adigital-logo" },
-				{ name: "adigital-logo", link: "https://example.com/adigital-logo" },
-				{ name: "adigital-logo", link: "https://example.com/adigital-logo" },
-				{ name: "adigital-logo", link: "https://example.com/adigital-logo" },
-				{ name: "adigital-logo", link: "https://example.com/adigital-logo" },
-				{ name: "adigital-logo", link: "https://example.com/adigital-logo" },
-				{ name: "adigital-logo", link: "https://example.com/adigital-logo" },
-				{ name: "adigital-logo", link: "https://example.com/adigital-logo" },
-				{ name: "adigital-logo", link: "https://example.com/adigital-logo" },
+				{
+					name: "art-unchained-logo",
+					link: "https://art-unchained.io",
+				},
+				{
+					name: "active-inference-logo",
+					link: "https://activeinference.institute",
+				},
+				{ name: "ath21-logo", link: "https://ath21.com" },
+				{ name: "oncyber-logo", link: "https://oncyber.io" },
+				{ name: "hyperfy-logo", link: "https://hyperfy.io" },
+				{ name: "reset-logo", link: "https://www.r3s3t.xyz" },
+				{ name: "spacedata-logo", link: "https://en.spacedata.jp" },
 			]} />
 	</div>
 </div>

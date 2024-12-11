@@ -102,7 +102,7 @@ partners:
       {
         imgPath: "/assets/oncyber-logo.png",
         name: "Oncyber",
-        link: "https://v2.oncyber.io",
+        link: "https://oncyber.io",
       },
       {
         imgPath: "/assets/hyperfy-logo.png",

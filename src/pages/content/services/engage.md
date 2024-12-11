@@ -3,17 +3,17 @@ title: "Numen Games - Engage"
 heroSection:
   bracketedContent: "ENGAGE"
   header:
-    titlePart1: "Tailored"
-    titlePart2: "Gamified"
-    titlePart3: "Experiences"
-    subtitle: "We design fully customized gamified experiences to meet specific business objectives."
+    titlePart1: "Engagement"
+    titlePart2: "to strengthen"
+    titlePart3: "culture"
+    subtitle: "From fostering trust to building alignment and elevating company culture, our solutions engage employees at every level. By creating meaningful connections and empowering growth, we help teams thrive and organizations succeed."
   ctaButtons:
     primary:
       text: "Pricing"
       link: "#pricing"
     secondary:
       text: "Try a demo"
-      link: "https://v2.oncyber.io/age_of_ai"
+      link: "https://v2.oncyber.io/numen_games"
   features: [
     {
       iconPathBtn: "/icons/target.svg",
@@ -35,23 +35,29 @@ heroSection:
     }
   ]
 impactNumbersSection:
-  bracketedContent: "NUMEN"
+  bracketedContent: "TAILORED"
   header:
     titlePart1: "Engage tech applied to"
     titlePart2: "YOU"
     subtitle: "Here are the main KPIs you can improve with Numen."
   cards: [
     {
-      kpi: "+172",
-      text: "Our installation team serves as your creative partner, transforming your renovation dreams into reality."
+      link: "https://financesonline.com/gamification-statistics/",
+      kpi: "+60%",
+      linkText: "FinancesOnline",
+      text: "Companies implementing gamification have seen a 60% increase in employee engagement."
     },
     {
-      kpi: "50%",
-      text: "Our installation team serves as your creative partner, transforming your renovation dreams into reality."
+      link: "https://www.amplifai.com/blog/gamification-statistics",
+      kpi: "+50%",
+      linkText: "AmplifAI",
+      text: "Organizations utilizing gamified elements report a 50% boost in workforce productivity."
     },
     {
-      kpi: "10k",
-      text: "Our installation team serves as your creative partner, transforming your renovation dreams into reality."
+      link: "https://earthweb.com/blog/gamification-statistics/",
+      kpi: "+90%",
+      linkText: "EarthWeb",
+      text: "90% of employees feel more productive when their work environment is gamified."
     }
   ]
 comparisonSection:

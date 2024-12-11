@@ -28,6 +28,7 @@
 					<PulseAnimatedBtn
 						icon="/icons/sword.svg"
 						className="bg-primary-coralRed mt-6"
+						link={textObj?.ctaButtons?.primary?.link}
 						text={textObj?.ctaButtons?.primary?.text} />
 				</div>
 				<div
