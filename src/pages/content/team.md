@@ -4,7 +4,7 @@ heroSection:
   bracketedContent: "TEAM"
   header:
     titlePart1: "Meet"
-    titlePart2: "Our"
+    titlePart2: "ur"
     titlePart3: "beautiful team"
     subtitle: "Our philosophy: we are a brand for everyone who imagines without limits."
   ctaButtons:
@@ -19,34 +19,38 @@ profiles:
     {
       imgPath: "/assets/daniel-perez-garrido.png",
       name: "Daniel Pérez Garrido",
-      subtitle: "Oracle | Profile",
-      discordUrl: "",
-      linkedinUrl: "",
-      twitterUrl: "",
+      subtitle: "Analytics Wizard and Oracle",
+      socials: { linkedinUrl: "#", xUrl: "#" },
     },
     {
-      imgPath: "/assets/daniel-perez-garrido.png",
-      name: "Daniel Pérez Garrido",
-      subtitle: "Oracle | Profile",
-      discordUrl: "",
-      linkedinUrl: "",
-      twitterUrl: "",
+      imgPath: "/assets/pablo-fernandez-maquieira.jpg",
+      name: "Pablo Fernández Maquieira",
+      subtitle: "CEO and Oracle",
+      socials: { linkedinUrl: "#", xUrl: "#" },
     },
     {
-      imgPath: "/assets/daniel-perez-garrido.png",
-      name: "Daniel Pérez Garrido",
-      subtitle: "Oracle | Profile",
-      discordUrl: "",
-      linkedinUrl: "",
-      twitterUrl: "",
+      imgPath: "/assets/clio-beruete.jpg",
+      name: "Clio Beruete",
+      subtitle: "CMO and Oracle",
+      socials: { linkedinUrl: "#", xUrl: "#" },
     },
     {
-      imgPath: "/assets/daniel-perez-garrido.png",
-      name: "Daniel Pérez Garrido",
-      subtitle: "Oracle | Profile",
-      discordUrl: "",
-      linkedinUrl: "",
-      twitterUrl: "",
+      imgPath: "/assets/jesus-huerta-arrabal.jpg",
+      name: "Jesús H. (@DevStarlight)",
+      subtitle: "CTO and Oracle",
+      socials: { linkedinUrl: "#", xUrl: "#" },
+    },
+    {
+      imgPath: "/assets/christian-profile.jpg",
+      name: "Christian Märtens",
+      subtitle: "Chief Storyteller and Oracle",
+      socials: { linkedinUrl: "#", xUrl: "#" },
+    },
+    {
+      imgPath: "/assets/kevin-clark.jpg",
+      name: "Kevin Clark Kent",
+      subtitle: "Director of Business Development",
+      socials: { linkedinUrl: "#", xUrl: "#" },
     },
   ]
 origins:
@@ -96,29 +100,39 @@ partners:
         link: "https://adigital.com",
       },
       {
-        imgPath: "/assets/adigital-logo.png",
-        name: "Adigital",
-        link: "https://adigital.com",
+        imgPath: "/assets/oncyber-logo.png",
+        name: "Oncyber",
+        link: "https://v2.oncyber.io",
       },
       {
-        imgPath: "/assets/adigital-logo.png",
-        name: "Adigital",
-        link: "https://adigital.com",
+        imgPath: "/assets/hyperfy-logo.png",
+        name: "Hyperfy",
+        link: "https://hyperfy.io",
       },
       {
-        imgPath: "/assets/adigital-logo.png",
-        name: "Adigital",
-        link: "https://adigital.com",
+        imgPath: "/assets/active-inference-logo.png",
+        name: "Active Inference Institute",
+        link: "https://activeinference.institute",
       },
       {
-        imgPath: "/assets/adigital-logo.png",
-        name: "Adigital",
-        link: "https://adigital.com",
+        imgPath: "/assets/art-unchained-logo.png",
+        name: "Art Unchained",
+        link: "https://art-unchained.io",
       },
       {
-        imgPath: "/assets/adigital-logo.png",
-        name: "Adigital",
-        link: "https://adigital.com",
+        imgPath: "/assets/ath21-logo.png",
+        name: "ATH21",
+        link: "https://ath21.com",
+      },
+      {
+        imgPath: "/assets/spacedata-logo.png",
+        name: "SpaceData",
+        link: "https://en.spacedata.jp",
+      },
+      {
+        imgPath: "/assets/reset-logo.png",
+        name: "Reset",
+        link: "https://www.r3s3t.xyz",
       },
     ]
 ---

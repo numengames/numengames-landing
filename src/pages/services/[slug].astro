@@ -7,7 +7,7 @@ import HeroDesktopSection from "./HeroDesktop.astro";
 import ImpactNumbersSection from "./ImpactNumbers.astro";
 
 const { slug } = Astro.params;
-const markdownFiles = await Astro.glob("./content/*.md");
+const markdownFiles = await Astro.glob("../content/services/*.md");
 const content = markdownFiles.find((file) => file.url?.includes(slug));
 
 if (!content) {

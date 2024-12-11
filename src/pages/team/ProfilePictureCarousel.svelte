@@ -9,8 +9,9 @@
 	let currentIndex = 0;
 
 	function updateCarousel() {
-		const width = carousel.clientWidth;
-		carousel.style.transform = `translateX(-${currentIndex * width}px)`;
+		const maxOffset = (profileList.length - 1) * 449;
+		const offset = Math.min(currentIndex * 449, maxOffset);
+		carousel.style.transform = `translateX(-${offset}px)`;
 	}
 
 	function prevSlide() {
@@ -23,21 +24,49 @@
 		updateCarousel();
 	}
 
+	function goToSlide(index) {
+		currentIndex = index;
+		updateCarousel();
+	}
+
 	onMount(() => {
 		updateCarousel();
 	});
 
-	onDestroy(() => {
-		// Cleanup if necessary
-	});
+	onDestroy(() => {});
 </script>
 
-<div class="w-full h-40 overflow-x-hidden text-white">
-	<div class="flex transition-transform duration-500" bind:this={carousel}>
-		{#each profileList as profile}
-			<ProfileCard {...profile} />
+<div class="relative w-full h-auto text-white">
+	<div
+		class="flex transition-transform duration-500 ease-in-out overflow-hidden"
+		bind:this={carousel}
+		style="width: calc(449px * {profileList.length});">
+		{#each profileList as profile, index}
+			<ProfileCard
+				{...profile}
+				className={`w-[449px] h-[529px] transition-all duration-500 ease-in-out ${
+					index === currentIndex
+						? "scale-95 border-2 border-primary-darkRed shadow-[0px_0px_20px_0px_#F35059]"
+						: "scale-90 opacity-75"
+				}`}
+				on:click={() => goToSlide(index)} />
 		{/each}
 	</div>
-	<button class="absolute left-0" on:click={prevSlide}>Prev</button>
-	<button class="absolute right-0" on:click={nextSlide}>Next</button>
+
+	<button
+		class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-primary-coralRed bg-opacity-50 p-3 rounded-full text-white hover:bg-opacity-75"
+		on:click={prevSlide}>
+		<img
+			src="/icons/arrow-down.svg"
+			class="w-6 h-6 transform rotate-90"
+			alt="arrow" />
+	</button>
+	<button
+		class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-primary-coralRed bg-opacity-50 p-3 rounded-full text-white hover:bg-opacity-75"
+		on:click={nextSlide}>
+		<img
+			src="/icons/arrow-down.svg"
+			class="w-6 h-6 transform -rotate-90"
+			alt="arrow" />
+	</button>
 </div>

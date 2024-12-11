@@ -30,7 +30,7 @@
 				class="text-4xl leading-tight 2xl:text-5xl 2xl:leading-tight font-normal text-left mt-3 text-primary-beige pr-10">
 				Tailored, highly <span class="text-primary-coralRed"
 					>adaptable experiences</span>
-				<span class="block">that fit with your organization's needs.</span>
+				that fit with your organization's needs.
 			</h2>
 		</header>
 		<div class="flex gap-6">

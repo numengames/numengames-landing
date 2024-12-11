@@ -2,6 +2,13 @@
 	import BracketedContent from "@components/BracketedContent.svelte";
 
 	export let textObj;
+
+	let selectedYear =
+		textObj?.content?.length > 0 ? Object.keys(textObj.content[0])[0] : null;
+
+	function toggleYearSelection(year) {
+		selectedYear = selectedYear === year ? null : year;
+	}
 </script>
 
 <div class="w-full flex flex-col relative">
@@ -17,42 +24,43 @@
 			</h2>
 		</div>
 	</div>
-	<div class="flex flex-col">
+	<div class="flex flex-col mt-10 h-full">
 		{#each textObj?.content as yearContent}
 			{#each Object.entries(yearContent) as [year, texts]}
-				<div class="flex">
-					<h3 class="year-title text-primary-coralRed">{year}</h3>
-					<div></div>
-					{#each texts as text}
-						<p class="text-primary-beige mt-2">{text}</p>
-					{/each}
-				</div>
+				<button
+					class="flex h-full cursor-pointer relative"
+					on:click={() => toggleYearSelection(year)}
+					on:keydown={(e) => e.key === "Enter" && toggleYearSelection(year)}>
+					<h3
+						class={`year-title font-IBMPlexMono ${selectedYear === year ? "text-red-500" : "text-primary-beige/40"}`}>
+						{year}
+					</h3>
+					<div class="h-full px-16 flex flex-col items-center">
+						<div class="flex w-full items-center justify-center relative z-10">
+							<div
+								class={`rounded-full top-0 ${selectedYear === year ? "bg-primary-coralRed" : "bg-[#909091]/50"} w-6 h-6 opacity-40 absolute`}>
+							</div>
+							<div
+								class={`rounded-full top-1.5 ${
+									selectedYear === year ? "bg-primary-coralRed" : "bg-[#909091]"
+								} w-3 h-3 absolute`}>
+							</div>
+						</div>
+						{#if yearContent !== textObj.content[textObj.content.length - 1]}
+							<div class="absolute w-0.5 h-full top-2.5 bg-primary-panther">
+							</div>
+						{/if}
+					</div>
+					<div class="flex flex-col h-full">
+						{#each texts as text, index}
+							<p
+								class={`text-left ${index === texts.length - 1 ? "pb-16" : ""} ${selectedYear === year ? "text-primary-beige/75" : "text-primary-beige/40"}`}>
+								{text}
+							</p>
+						{/each}
+					</div>
+				</button>
 			{/each}
 		{/each}
 	</div>
-	<!-- <div class="w-full flex gap-6 mt-6">
-		{#each Object.entries(textObj?.list) as [key, texts]}
-			<div
-				class={`w-full rounded-xl py-10 px-6 ${key === "before" ? "border border-white/5" : "border border-[#F3505940] border-opacity-25 shadow-[0_0_50px_0_rgba(243,80,89,0.10)] bg-[#171717]"}`}>
-				<p
-					class={`mb-8 ${key === "before" ? "text-primary-beige" : "text-primary-coralRed"}`}>
-					{key.charAt(0).toUpperCase() + key.slice(1)}
-				</p>
-				{#each texts as text, index}
-					<div
-						class={`text-primary-beige/75 flex items-center py-6 ${index !== texts.length - 1 ? "mb-4" : ""} border rounded-lg ${key === "before" ? "border-white/5 bg-[linear-gradient(90deg,rgba(33,33,35,0.70)_24%,rgba(0,0,0,0.00)_100%)]" : "border-primary-coralRed/25"}`}>
-						<div
-							class={`flex justify-center items-center rounded-full ml-5 w-6 h-6 ${key === "before" ? "bg-white/10" : "bg-primary-coralRed"}`}>
-							{#if key === "before"}
-								<img class="w-4 h-4" src="/icons/x.svg" alt="x" />
-							{:else}
-								<img class="w-4 h-4" src="/icons/check.svg" alt="check" />
-							{/if}
-						</div>
-						<p class="ml-4 font-light text-sm">{text}</p>
-					</div>
-				{/each}
-			</div>
-		{/each}
-	</div> -->
 </div>

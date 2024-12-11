@@ -65,7 +65,7 @@
 					isAnimating={activeIndex === index} />
 			{/each}
 		</div>
-		<div class="w-full">
+		<div class="w-full mt-6">
 			{#each textObj?.features as feature, index}
 				<CardWithTextOverlay
 					className="rounded-b-none"

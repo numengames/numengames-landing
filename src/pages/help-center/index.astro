@@ -5,7 +5,7 @@ import CardHelpCenter from "@components/cards/HelpCenter.astro";
 
 import FaqSection from "./FaqSection.svelte";
 
-const markdownFile = await Astro.glob("./content/help-center.md");
+const markdownFile = await Astro.glob("../content/help-center.md");
 const { frontmatter } = markdownFile[0];
 ---
 

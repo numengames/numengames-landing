@@ -30,7 +30,7 @@
 				{title}
 			</h4>
 			<p
-				class="text-sm 2xl:text-base font-normal text-left mt-4 2xl:mt-6 text-primary-panther/75">
+				class="text-sm 2xl:text-lg font-normal text-left mt-4 2xl:mt-6 text-primary-panther/75">
 				{description}
 			</p>
 			<div class="mt-3 flex flex-col items-start 2xl:mt-6">
@@ -41,13 +41,14 @@
 					</h5>
 				</div>
 				<p
-					class="ml-3 mt-1 2xl:mt-2 text-sm font-light text-primary-panther/60">
+					class="ml-3 mt-1 2xl:mt-2 text-sm 2xl:text-base font-light text-primary-panther/60">
 					{highlightMetricDescription}
 				</p>
 			</div>
 			<a
 				href={buttonHref}
-				class="mt-6 bg-primary-coralRed text-basics-white text-sm font-light rounded py-3 px-6 inline-block">
+				title="Read More"
+				class="mt-6 bg-primary-coralRed text-basics-white text-sm 2xl:text-base font-light rounded py-3 px-6 inline-block">
 				Read More
 			</a>
 		</div>

@@ -60,7 +60,7 @@
 	{#each steps as step, index}
 		<div
 			class="max-w-[450px] 2xl:max-w-[600px] work-process-step sticky opacity-0 transition-opacity duration-700 p-6 bg-gradient-to-tr from-[#2C2C2C] via-[#3B2C36] to-[#1F2C2C] rounded-lg shadow-lg mx-12"
-			style={`top: ${280 + index * 120}px; z-index: ${3 + index}; transform: rotate(${index % 2 === 0 ? "-3deg" : "3deg"}); margin-bottom: ${[144, 0, -144][index] || 0}px;`}>
+			style={`top: ${280 + index * 120}px; z-index: ${3 + index}; transform: rotate(${index % 2 === 0 ? "-3deg" : "3deg"}); margin-bottom: ${[144, 0, -144][index] || 0}px; box-shadow: 1px 1px 30px #18181b`}>
 			<p
 				class="px-5 mt-2 text-2xl font-light text-primary-coralRed font-IBMPlexMono">
 				{step.number}
@@ -69,7 +69,8 @@
 				<h3 class="text-primary-beige text-4xl font-medium text-left mb-3">
 					{step.title}
 				</h3>
-				<p class="text-primary-beige/70 font-thin mt-6 text-base 3xl:text-2xl">
+				<p
+					class="text-primary-beige/70 font-thin mt-6 text-base 2xl:text-xl 3xl:text-2xl">
 					{step.description}
 				</p>
 				{#if index === steps.length - 1}

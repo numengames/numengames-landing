@@ -1,5 +1,5 @@
 ---
-
+import PulseAnimatedBtn from "@components/PulseAnimatedBtn.svelte";
 ---
 
 <form
@@ -15,13 +15,6 @@
 	/>
 	<input type="checkbox" class="hidden" style="display:none" name="botcheck" />
 
-	<h3 class="text-4xl font-medium tracking-[-0.03em] text-primary-beige mt-0">
-		Turn your vision into reality
-	</h3>
-	<p class="text-xl font-light text-primary-beige/75 pr-20">
-		Tell us about your project and we’ll help you find the right match.
-	</p>
-
 	<!-- First Name and Last Name -->
 	<div class="flex space-x-4">
 		<div class="w-full">
@@ -36,7 +29,7 @@
 				id="first-name"
 				name="first-name"
 				placeholder="First name"
-				class="w-full py-5 px-6 rounded-lg border text-[#909091]/50 outline-none bg-[#1F1F1F] font-light text-xl"
+				class="w-full py-5 px-6 rounded-lg border text-primary-beige outline-none bg-white/5 border-white/10 font-light text-xl placeholder-[#BEBEBE]/50"
 			/>
 			<div class="text-red-400 text-sm mt-1 hidden empty-feedback">
 				Please provide your first name.
@@ -54,7 +47,7 @@
 				id="last-name"
 				name="last-name"
 				placeholder="Last name"
-				class="w-full py-5 px-6 rounded-lg border text-[#909091]/50 outline-none bg-[#1F1F1F] font-light text-xl"
+				class="w-full py-5 px-6 rounded-lg border text-primary-beige outline-none bg-white/5 border-white/10 font-light text-xl placeholder-[#BEBEBE]/50"
 			/>
 			<div class="text-red-400 text-sm mt-1 hidden empty-feedback">
 				Please provide your last name.
@@ -75,7 +68,7 @@
 			id="email-address"
 			name="email-address"
 			placeholder="Email Address"
-			class="w-full py-5 px-6 rounded-lg border text-[#909091]/50 outline-none bg-[#1F1F1F] font-light text-xl"
+			class="w-full py-5 px-6 rounded-lg border text-primary-beige outline-none bg-white/5 border-white/10 font-light text-xl placeholder-[#BEBEBE]/50"
 		/>
 		<div class="text-red-400 text-sm mt-1 hidden empty-feedback">
 			Please provide your email address.
@@ -87,11 +80,16 @@
 
 	<!-- Project Description -->
 	<div>
+		<label
+			for="last-name"
+			class="block text-xl font-normal tracking-[-0.03em] text-primary-beige mb-4"
+			>What do you want to build?</label
+		>
 		<textarea
 			name="project-description"
 			required
 			placeholder="What do you want to build?"
-			class="w-full px-4 py-3 border-2 placeholder-gray-800 rounded-md outline-none h-36 focus:ring-4 focus:border-gray-600"
+			class="w-full px-4 py-3 border-2 font-light placeholder-[#BEBEBE]/50 text-xl rounded-md outline-none h-36 focus:ring-4 focus:border-gray-600 bg-white/5 border-white/10 text-primary-beige"
 		></textarea>
 		<div class="text-red-400 text-sm mt-1 hidden empty-feedback">
 			Please enter your project description.
@@ -100,59 +98,85 @@
 
 	<!-- Budget -->
 	<div>
-		<label class="block text-sm font-medium">What’s your project budget?</label>
-		<div class="flex space-x-4 mt-2">
-			<label class="flex items-center">
+		<label
+			class="block text-xl font-normal tracking-[-0.03em] text-primary-beige mb-4"
+			>What’s your project budget?</label
+		>
+		<div class="flex space-x-4 mt-3">
+			<label
+				class="flex items-center justify-center w-full py-5 px-6 rounded-lg bg-white/5 border-white/10 text-primary-beige font-light text-xl relative cursor-pointer">
 				<input
 					type="radio"
 					name="budget"
 					value="2k-to-5k"
-					class="mr-2 text-red-500"
+					class="hidden"
 					required
 				/>
-				$2k to $5k
+				<span class="checkmark"></span>
+				<span class="lbl-check">$15k to $30k</span>
 			</label>
-			<label class="flex items-center">
+			<label
+				class="flex items-center justify-center w-full py-5 px-6 rounded-lg bg-white/5 border-white/10 text-primary-beige font-light text-xl relative cursor-pointer">
 				<input
 					type="radio"
 					name="budget"
 					value="5k-to-10k"
-					class="mr-2 text-red-500"
+					class="hidden"
 					required
 				/>
-				$5k to $10k
+				<span class="checkmark"></span>
+				<span class="lbl-check">$30k to $60k</span>
 			</label>
-			<label class="flex items-center">
+			<label
+				class="flex items-center justify-center w-full py-5 px-6 rounded-lg bg-white/5 border-white/10 font-light text-xl relative text-center cursor-pointer">
 				<input
 					type="radio"
 					name="budget"
 					value="over-10k"
-					class="mr-2 text-red-500"
+					class="hidden"
 					required
 				/>
-				over $10k
+				<span class="checkmark"></span>
+				<span class="lbl-check text-primary-beige">over $60k</span>
 			</label>
 		</div>
 	</div>
+	<style>
+		input[type="radio"]:checked + .checkmark {
+			border: 2px solid #f35059;
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+			border-radius: 8px;
+		}
+
+		input[type="radio"]:checked ~ .lbl-check {
+			color: #f35059;
+		}
+	</style>
 
 	<!-- Terms and Conditions -->
-	<div class="flex items-center space-x-2">
+	<div class="flex items-center space-x-2 mt-6 text-lg">
 		<input
 			type="checkbox"
 			name="terms"
 			id="terms"
-			class="text-red-500"
+			class="text-primary-coralRed"
 			required
 		/>
-		<label for="terms" class="text-sm">
+		<label for="terms" class="font-light text-primary-beige">
 			I agree to Numen Games
-			<a href="#" class="underline">Terms of Service</a> and
-			<a href="#" class="underline">Privacy Policy</a>.
+			<a href="#" class="text-primary-coralRed">Terms and Conditions</a>
 		</label>
 	</div>
 
 	<!-- Submit Button -->
-	<button type="submit">Submit</button>
+	<PulseAnimatedBtn
+		className="text-[1.2rem] form-toggle-button text-primary-beige"
+		text="Submit"
+	/>
 
 	<!-- Result -->
 	<div id="result" class="mt-3 text-center"></div>

@@ -6,12 +6,12 @@ import PartnersSection from "./Partners.astro";
 import HeroDesktopSection from "./HeroDesktop.astro";
 import ProfilePictureCarouselSection from "./ProfilePictureCarousel.astro";
 
-const markdownFile = await Astro.glob("./content/team.md");
+const markdownFile = await Astro.glob("../content/team.md");
 const { frontmatter } = markdownFile[0];
 ---
 
 <Layout title={frontmatter.title}>
-	<main>
+	<main class="overflow-x-hidden">
 		<HeroDesktopSection textObj={frontmatter.heroSection} class="xl:flex" />
 		<ProfilePictureCarouselSection textObj={frontmatter.profiles} />
 		<OriginsSection textObj={frontmatter.origins} />

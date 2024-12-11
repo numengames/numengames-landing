@@ -57,6 +57,8 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
+		max-width: 460px;
+		margin: 0 auto;
 	}
 
 	.arch {
@@ -69,6 +71,24 @@
 		animation-fill-mode: both;
 		transform: translate(-50%, -50%) scale(0.8);
 		opacity: 0;
+	}
+
+	@media screen and (min-width: 1920px) {
+		.tunnel {
+			max-width: 800px;
+		}
+		.arch {
+			width: 400px;
+		}
+	}
+
+	@media screen and (min-width: 1535px) {
+		.tunnel {
+			max-width: 800px;
+		}
+		.arch {
+			width: 320px;
+		}
 	}
 
 	@media screen and (max-width: 1280px) {

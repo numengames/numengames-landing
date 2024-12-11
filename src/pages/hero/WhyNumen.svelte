@@ -106,7 +106,7 @@
 					Start designing your 3D environment
 				</p>
 				<PulseAnimatedBtn
-					className="top-4 form-toggle-button"
+					className="mt-4 2xl:mt-6 2xl:text-lg text-primary-beige form-toggle-button"
 					text="Ready to Talk" />
 			</div>
 		</section>

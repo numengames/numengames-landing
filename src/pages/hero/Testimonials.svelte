@@ -57,7 +57,8 @@
 		<SpotlightCarousel list={testimonialList} />
 	</div>
 	<div class="flex flex-col align-middle justify-center mt-16">
-		<h4 class="text-primary-beige/60 text-base font-light text-center">
+		<h4
+			class="text-primary-beige/60 text-base font-light text-center 2xl:text-xl">
 			Working with ecosystem leaders
 		</h4>
 		<FlowCarousel

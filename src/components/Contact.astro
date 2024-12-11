@@ -1,7 +1,8 @@
 ---
+import { Icon } from "astro-icon/components";
+
 import Contactform from "@components/ContactForm.astro";
 
-import { Icon } from "astro-icon/components";
 import Logo from "./navbar/Logo.astro";
 ---
 
@@ -16,12 +17,18 @@ import Logo from "./navbar/Logo.astro";
 				<Icon class="text-white h-6 w-6" name="x" />
 			</div>
 		</div>
-		<div class="h-full pb-10 flex justify-between mx-10 gap-10">
+		<div class="flex justify-between mx-10 gap-16">
 			<iframe
 				src="https://app.spline.design/file/c9b86da0-7c77-4710-9e84-04d7cc6ae33c?view=preview&fullscreen=false"
-				class="w-1/2 h-full object-cover relative border border-white/70 rounded-xl shadow-[0px_0px_40px_0px_#FFFFFF66]"
+				class="object-cover relative border border-primary-beige/70 rounded-xl shadow-[0px_0px_40px_0px_#FFFFFF66] w-[50%]"
 			></iframe>
-			<div class="w-1/2 my-8">
+			<div class="w-[50%]">
+				<h3 class="text-4xl font-medium tracking-[-0.03em] text-primary-beige">
+					Turn your vision into reality
+				</h3>
+				<p class="text-lg font-light text-primary-beige/75 pr-20">
+					Tell us about your project and we’ll help you find the right match.
+				</p>
 				<Contactform />
 			</div>
 		</div>
