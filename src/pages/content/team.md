@@ -17,40 +17,70 @@ heroSection:
 profiles:
   [
     {
-      imgPath: "/assets/daniel-perez-garrido.png",
-      name: "Daniel Pérez Garrido",
-      subtitle: "Analytics Wizard and Oracle",
-      socials: { linkedinUrl: "#", xUrl: "#" },
+      imgPath: "/assets/clio-beruete.jpg",
+      name: "Clio Beruete",
+      subtitle: "Co-CEO & Oracle",
+      socials:
+        {
+          linkedinUrl: "https://www.linkedin.com/in/clio-beruete/",
+          xUrl: "https://x.com/MyLadyNFT",
+          discordUrl: "https://discord.com/invite/ASwwdd24pp",
+        },
     },
     {
       imgPath: "/assets/pablo-fernandez-maquieira.jpg",
       name: "Pablo Fernández Maquieira",
-      subtitle: "CEO and Oracle",
-      socials: { linkedinUrl: "#", xUrl: "#" },
-    },
-    {
-      imgPath: "/assets/clio-beruete.jpg",
-      name: "Clio Beruete",
-      subtitle: "CMO and Oracle",
-      socials: { linkedinUrl: "#", xUrl: "#" },
-    },
-    {
-      imgPath: "/assets/jesus-huerta-arrabal.jpg",
-      name: "Jesús H. (@DevStarlight)",
-      subtitle: "CTO and Oracle",
-      socials: { linkedinUrl: "#", xUrl: "#" },
+      subtitle: "CEO & Oracle",
+      socials:
+        {
+          linkedinUrl: "https://www.linkedin.com/in/pablofm/",
+          xUrl: "https://x.com/Pablo_FMM",
+          discordUrl: "https://discord.com/invite/ASwwdd24pp",
+        },
     },
     {
       imgPath: "/assets/christian-profile.jpg",
       name: "Christian Märtens",
-      subtitle: "Chief Storyteller and Oracle",
-      socials: { linkedinUrl: "#", xUrl: "#" },
+      subtitle: "Chief Storyteller & Oracle",
+      socials:
+        {
+          linkedinUrl: "https://www.linkedin.com/in/christian-märtens-23471750/",
+          xUrl: "https://x.com/WolfsteinWagen",
+          discordUrl: "https://discord.com/invite/ASwwdd24pp",
+        },
+    },
+    {
+      imgPath: "/assets/jesus-huerta-arrabal.jpg",
+      name: "Jesús H. (@DevStarlight)",
+      subtitle: "CTO & Oracle",
+      socials:
+        {
+          linkedinUrl: "https://www.linkedin.com/in/jesushuertaarrabal/",
+          xUrl: "https://x.com/DevStarlight",
+          discordUrl: "https://discord.com/invite/ASwwdd24pp",
+        },
     },
     {
       imgPath: "/assets/kevin-clark.jpg",
       name: "Kevin Clark Kent",
       subtitle: "Director of Business Development",
-      socials: { linkedinUrl: "#", xUrl: "#" },
+      socials:
+        {
+          linkedinUrl: "https://www.linkedin.com/in/kevinclarkonearth/",
+          xUrl: "https://x.com/kevinonearth999",
+          discordUrl: "https://discord.com/invite/ASwwdd24pp",
+        },
+    },
+    {
+      imgPath: "/assets/daniel-perez-garrido.png",
+      name: "Daniel Pérez Garrido",
+      subtitle: "Analytics Wizard & Oracle",
+      socials:
+        {
+          linkedinUrl: "https://www.linkedin.com/in/daniel-garrido-pérez/",
+          xUrl: "https://x.com/xdhanny",
+          discordUrl: "https://discord.com/invite/ASwwdd24pp",
+        },
     },
   ]
 origins:
@@ -61,30 +91,34 @@ origins:
   content:
     [
       {
-        2021:
+        2020:
           [
-            "Lorem ipsum dolor sit amet consectetur. Rhoncus accumsan pharetra ultrices dui amet mollis. Viverra in et viverra faucibus netus risus nisl posuere odio. Nunc at amet ut convallis vel fringilla. Laoreet lacus adipiscing turpis in. Amet ornare venenatis et et vulputate auctor vitae et. Tortor odio integer ac volutpat nunc cursus eu.Blandit risus sagittis eget tristique erat. Vitae sed enim duis a proin.",
-            "Lorem ipsum dolor sit amet consectetur. Rhoncus accumsan pharetra ultrices dui amet mollis. Viverra in et viverra faucibus netus risus nisl posuere odio. Nunc at amet ut convallis vel fringilla. Laoreet lacus adipiscing turpis in. Amet ornare venenatis et et vulputate auctor vitae et. Tortor odio integer ac volutpat nunc cursus eu Blandit risus sagittis eget tristique erat. Vitae sed enim duis a proin.",
+            "Year 2020. Cyber dawn. The Oracles vision birthed Numinia, a quest to level up organizations through digital interaction and gaming at the metaverse, inspired by role-playing adventures with passion for shaping the future for the ones to come.",
           ],
       },
       {
-        2022:
+        2021:
           [
-            "Lorem ipsum dolor sit amet consectetur. Rhoncus accumsan pharetra ultrices dui amet mollis. Viverra in et viverra faucibus netus risus nisl posuere odio. Nunc at amet ut convallis vel fringilla. Laoreet lacus adipiscing turpis in. Amet ornare venenatis et et vulputate auctor vitae et. Tortor odio integer ac volutpat nunc cursus eu. Blandit risus sagittis eget tristique erat. Vitae sed enim duis a proin.",
+            "Throughout 2021, the Oracles began reconstructing the city of Numinia, recovering its history and legends from obscurity and creating its first digital records in the form of news. Guilds and factions were established in visionary spaces.",
           ],
       },
+      { 2022: [
+            "In 2022, Numinia expanded its presence in various metaverses and virtual environments, developing its first adventures and minigames by leveraging the resources of these visionary spaces. Initial gamified experiences were introduced on Discord.
+            ",
+          ] },
       {
         2023:
           [
-            "Lorem ipsum dolor sit amet consectetur. Rhoncus accumsan pharetra ultrices dui amet mollis. Viverra in et viverra faucibus netus risus nisl posuere odio. Nunc at amet ut convallis vel fringilla. Laoreet lacus adipiscing turpis in. Amet ornare venenatis et et vulputate auctor vitae et. Tortor odio integer ac volutpat nunc cursus eu. Blandit risus sagittis eget tristique erat. Vitae sed enim duis a proin.",
+            "The Oracles established their structural foundation, using System Thinking and Active Inference as guiding principles. Through these, they developed a system of Adventures, Missions, and incentives. Session Zero and Season One: Steiner’s Dreams were created.",
           ],
       },
       {
         2024:
           [
-            "Lorem ipsum dolor sit amet consectetur. Rhoncus accumsan pharetra ultrices dui amet mollis. Viverra in et viverra faucibus netus risus nisl posuere odio. Nunc at amet ut convallis vel fringilla. Laoreet lacus adipiscing turpis in. Amet ornare venenatis et et vulputate auctor vitae et. Tortor odio integer ac volutpat nunc cursus eu. Blandit risus sagittis eget tristique erat. Vitae sed enim duis a proin.",
+            "This was the pinnacle year of Numinia’s splendor. Its spaces took on complex forms in metaverses like Oncyber and Hyperfy, featuring diverse mechanics and 3D environments. The vision of its early days emerged with strength, illuminating the path to the future.",
           ],
       },
+      { 2025: ["Buidling."] },
     ]
 partners:
   bracketedContent: "OUR_PARTNERS"
