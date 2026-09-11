@@ -1,34 +1,9 @@
 ---
-import type { GetStaticPaths } from "astro";
+// Deprecated (2026-09-11): legacy portfolio (metaverse projects) retired as part of the
+// pivot to live-event gamification experiences. Redirects to home.
+import { getLocaleStaticPaths } from "../../../i18n";
 
-import Layout from "@layouts/Layout.astro";
-import { getLocaleStaticPaths, type SupportedLocale } from "../../../i18n";
+export const getStaticPaths = getLocaleStaticPaths;
 
-import Container from "@components/Container.svelte";
-
-import PortfolioHero from "./_PortfolioHero.svelte";
-import PortfolioCards from "./_PortfolioCards.svelte";
-
-export const getStaticPaths: GetStaticPaths = getLocaleStaticPaths;
-
-const { locale } = Astro.params;
-const currentLocale = (locale as SupportedLocale) || "en";
+return Astro.redirect("/", 302);
 ---
-
-<Layout title="Numen Games - Portfolio" locale={currentLocale}>
-  <!-- Hero -->
-  <Container
-    className="flex flex-col items-center justify-center pt-16 xl:pt-20 pb-6"
-    bgColor="bg-[#171717]"
-  >
-    <PortfolioHero client:only="svelte" />
-  </Container>
-
-  <!-- Cards -->
-  <Container
-    className="flex flex-col items-center justify-center pb-20"
-    bgColor="bg-[#141414]"
-  >
-    <PortfolioCards client:only="svelte" />
-  </Container>
-</Layout>
