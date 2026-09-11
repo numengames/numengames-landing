@@ -6,6 +6,11 @@ on:
   pull_request:
     branches: [main]
 
+# SEC-008 (STD-015): the workflow token is read-only by default. Write is
+# granted per job, to the job that needs it. This one only reads the code.
+permissions:
+  contents: read
+
 jobs:
   test-and-build:
     runs-on: ubuntu-latest
@@ -25,8 +30,29 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
+      # ARC-001 (STD-015): el pipeline es type-check -> lint -> test -> build.
+      # Faltaba el type-check, y no es teórico: el 2026-09-11 una limpieza del
+      # diccionario dejó seis referencias a claves inexistentes. `pnpm build`
+      # pasó en verde igualmente -- Astro no valida los tipos del contenido al
+      # construir -- y la web habría publicado `undefined` en los textos. Lo
+      # detectó `astro check` a mano. Si no se ejecuta aquí, no se ejecuta.
+      - name: Type-check
+        run: pnpm exec astro check
+
       - name: Run tests
         run: pnpm test
 
       - name: Build site
         run: pnpm build
+
+      # TRC-007 (STD-015): cada guarda declara qué NO mira, en éxito y en
+      # fallo. Un verde aquí no prueba que el sitio publicado sea correcto:
+      # prueba que compila, que los tipos cuadran y que los tests pasan.
+      - name: Qué no mira esta guarda
+        if: always()
+        run: |
+          echo "Esta guarda NO comprueba:"
+          echo "  - que el Worker sirva las rutas (solo wrangler dev lo prueba)"
+          echo "  - que la página se vea bien (ningún test mira píxeles)"
+          echo "  - que los textos publicados sean ciertos"
+          echo "  - que los secretos de despliegue existan (eso lo mira deploy.yml)"

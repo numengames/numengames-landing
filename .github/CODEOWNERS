@@ -1,0 +1,29 @@
+# CODEOWNERS — numengames-web
+#
+# SEC-010 (STD-015): CODEOWNERS covering LICENSE*, .github/workflows/ and
+# auth packages.
+#
+# GitHub requests a review from every owner listed for a touched path. For
+# this repository the Oracle's sign-off is required on the paths that decide
+# what the site publishes, what it costs legally, and how it reaches
+# production.
+#
+# Being listed here does not by itself block the merge: the ruleset requires
+# one approval and does not have `require_code_owner_review` enabled. Turning
+# that on is an admin act — see docs/nwos-compliance.md.
+
+# Everything, by default: the three people who review this site.
+*                       @PabloFMM @MariaGarciaJordan @Christian-Numen
+
+# Licensing — the Oracle signs (AUT-006: licensing is canon-adjacent).
+/LICENSE*               @PabloFMM
+/LICENSES/              @PabloFMM
+/REUSE.toml             @PabloFMM
+
+# How the site reaches production, and under whose credentials.
+/.github/               @PabloFMM
+/wrangler.jsonc         @PabloFMM
+/worker/                @PabloFMM
+
+# What the site claims in public: positioning and published copy.
+/src/content/           @PabloFMM
