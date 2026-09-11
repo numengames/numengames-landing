@@ -59,10 +59,22 @@ Force-pushing to `main` is blocked, as is deleting it.
 
 ## What CI checks
 
-`ci.yml` runs type-check, tests and build on Node 24. `deploy.yml` runs on a
-green CI on `main` and refuses to publish if `PUBLIC_WEB3FORMS_KEY` is
-missing — a contact form that silently discards submissions is worse than no
-form at all.
+`ci.yml` runs type-check, tests and build on Node 24, in a job named
+**`build`**.
+
+That name is load-bearing. Branch protection requires a status check *by
+name*, and `build` is the value used in `numinia-nwos`, `numinia-web` and
+here — one value, so the rule is literally identical in all three rather than
+three similar rules with different names.
+
+**Renaming that job silently breaks the repository.** A required check that
+no workflow produces stays `pending` forever and blocks every merge, even
+with everything else green. If you rename it, change the ruleset in the same
+move.
+
+`deploy.yml` runs on a green CI on `main` and refuses to publish if
+`PUBLIC_WEB3FORMS_KEY` is missing — a contact form that silently discards
+submissions is worse than no form at all.
 
 A guard is verified by its step in the job, never by the run's colour
 (`TRC-006`).

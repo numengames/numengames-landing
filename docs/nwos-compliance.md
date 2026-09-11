@@ -68,21 +68,28 @@ discards every submission is worse than no form.
 If a secret is wrong the run fails red **without touching production** — the
 SHA stamp is validated in `dist` before `wrangler deploy` runs.
 
-### 2. Ruleset: require status checks (`ARC-002`)
+### 2. Ruleset: require status checks (`ARC-002`) — DONE, verify the name
 
-`Settings → Rules → proteger-main → Add rule → Require status checks to pass`
+Added on 2026-09-11 at 16:59. `strict_required_status_checks_policy` is
+`true`, and it works: pull request #7 moved to `BEHIND` on its own. The rule
+you asked for — a branch must be up to date with `main` — is now enforced by
+GitHub rather than by anyone remembering it.
 
-- add the `test-and-build` check
-- tick **Require branches to be up to date before merging**
+One correction was needed. The ruleset requires a check named **`build`**,
+which is the right name — it is the same value in `numinia-nwos` and
+`numinia-web`, so the rule is literally identical across the three
+repositories. But this repository's CI job was called `test-and-build`, so
+the required check never arrived.
 
-Today the ruleset has `pull_request`, `deletion`, `non_fast_forward` and
-`required_linear_history` — but **no status check rule**. Two consequences:
-CI does not have to be green to merge, and nothing enforces being up to date
-with `main`. `numinia-nwos` has this rule with
-`strict_required_status_checks_policy: true`; this repository does not.
+A required check that no workflow produces stays `pending` forever and blocks
+every merge, even with everything else green. Measured with a probe pull
+request: branch up to date with `main`, five checks passing,
+`mergeable_state: blocked`.
 
-This is what makes "always be ahead of main" automatic instead of depending
-on anyone remembering it.
+Fixed by renaming the job to `build` in `ci.yml`. Nothing to do in the
+ruleset.
+
+**If you ever rename that job again, change the ruleset in the same move.**
 
 ### 3. Ruleset: require code owner review (`SEC-010`)
 
