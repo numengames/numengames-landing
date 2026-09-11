@@ -72,3 +72,4 @@ Ordered by what blocks value reaching a visitor.
       appears under its technical name, in plain language, or not at all.
 - [ ] Confirm the Arcasiles relationship can be stated publicly, and that the
       Nerdearla image is ours to publish under CC0 (`LIC-001`).
+
