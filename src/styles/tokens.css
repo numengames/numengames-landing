@@ -1,0 +1,119 @@
+/* ============================================================
+   NUMEN GAMES — Design tokens (borrador de reconstrucción)
+   ============================================================
+   Origen: paleta y escalas adaptadas del Design System "Khepri"
+   v3.3.0 (documentado en numengames-experiments/docs/brand), con
+   el aparato de juego/RPG retirado: esta reconstrucción no es una
+   aventura gráfica, es un sitio de servicio profesional.
+
+   IMPORTANTE — según el plan "Numen Games | Plan profesional de
+   web revisado" (2026-09-09), §5: "No son códigos oficiales de
+   marca: ajustar con los activos originales." Estos valores son
+   un punto de partida defendible (contraste AA ya verificado),
+   NO la paleta de marca confirmada por Numen. No usar en
+   materiales oficiales sin validación del equipo.
+   ============================================================ */
+
+:root {
+  /* ---- Paleta base ------------------------------------------ */
+  --color-carbon: #14110f; /* fondo principal, modo noche */
+  --color-carbon-raised: #1e1a17;
+  --color-carbon-elevated: #292420;
+  --color-marfil: #f9ebdc; /* tinta sobre oscuro / superficie clara */
+  --color-marfil-velada: #c4b5a6;
+  --color-ceniza: #8a7d72;
+  --color-linea: #241f1b;
+  --color-linea-fuerte: #3a332d;
+
+  --color-dorado: #efa517; /* acento único: acciones y énfasis */
+  --color-dorado-texto-claro: #7a5100; /* variante AA sobre fondo claro */
+  --color-turquesa: #018ea1; /* secundario: enlaces e interactivo */
+  --color-turquesa-texto-oscuro: #1f9cac; /* AA verificado sobre carbón, 4.69:1 */
+  --color-turquesa-texto-claro: #016e7d;
+  --color-alerta: #d33440;
+
+  /* ---- Tema (oscuro por defecto, claro opcional) ------------- */
+  --surface: var(--color-carbon);
+  --surface-raised: var(--color-carbon-raised);
+  --surface-elevated: var(--color-carbon-elevated);
+  --ink: var(--color-marfil);
+  --ink-muted: var(--color-marfil-velada);
+  --ink-faint: var(--color-ceniza);
+  --line: var(--color-linea);
+  --line-strong: var(--color-linea-fuerte);
+  --interactive: var(--color-turquesa-texto-oscuro);
+  --accent: var(--color-dorado);
+  --accent-ink: #14110f; /* texto sobre botón dorado */
+  --focus-ring: var(--color-turquesa);
+
+  /* ---- Tipografía --------------------------------------------
+     Serif editorial para titulares + sans de alta legibilidad
+     para texto y controles, tal como pide el plan §5. Se usan
+     fuentes del sistema mientras no haya activos tipográficos
+     oficiales que instalar (self-hosted, como manda accesibilidad). */
+  --font-titular: Georgia, "Iowan Old Style", "Palatino Linotype", serif;
+  --font-cuerpo:
+    -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+
+  --text-xs: 0.8rem;
+  --text-sm: 0.9rem;
+  --text-base: 1.125rem; /* ~18px, cuerpo según referencia de maquetación del plan */
+  --text-lg: 1.35rem;
+  --text-xl: clamp(1.6rem, 1.3rem + 1.2vw, 2.1rem);
+  --text-2xl: clamp(2rem, 1.5rem + 2vw, 2.75rem);
+  --text-3xl: clamp(2.5rem, 1.8rem + 3vw, 3.75rem);
+
+  --leading-tight: 1.15;
+  --leading-normal: 1.55; /* referencia de maquetación del plan */
+  --measure: 66ch;
+
+  /* ---- Espacio -------------------------------------------------
+     Referencia del plan §5: ancho máx. 1280px, márgenes móviles
+     20-24px, retícula 12 columnas en escritorio. */
+  --content-max: 1280px;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-24: 6rem;
+  --gutter-mobile: clamp(20px, 5vw, 24px);
+
+  --radius: 4px; /* cantos casi rectos, tono editorial no lúdico */
+  --radius-pill: 999px;
+
+  /* ---- Movimiento -----------------------------------------------
+     Plan §5: "transiciones discretas... nada que retrase el
+     acceso al mensaje o al contacto". */
+  --ease-out: cubic-bezier(0.2, 0, 0, 1);
+  --dur-fast: 150ms;
+  --dur-normal: 250ms;
+
+  --z-header: 50;
+  --z-notice: 70;
+}
+
+/* ---- Tema claro opcional (oscuro es el por defecto de marca) --- */
+[data-theme="light"] {
+  --surface: var(--color-marfil);
+  --surface-raised: #fdf6ee;
+  --surface-elevated: #fdf6ee;
+  --ink: var(--color-carbon);
+  --ink-muted: #4a423b;
+  --ink-faint: #6e6259;
+  --line: #e2d3c2;
+  --line-strong: #c8b6a2;
+  --interactive: var(--color-turquesa-texto-claro);
+  --accent: var(--color-dorado-texto-claro);
+  --accent-ink: var(--color-marfil);
+  --focus-ring: var(--color-turquesa-texto-claro);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --dur-fast: 0ms;
+    --dur-normal: 0ms;
+  }
+}

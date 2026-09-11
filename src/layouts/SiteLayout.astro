@@ -1,0 +1,63 @@
+---
+// Layout de la reconstrucción (borrador). Reemplaza el layout legacy
+// para las rutas nuevas; el árbol [locale] antiguo sigue usando
+// Layout.astro (retirado a redirects, ver commit ccb62df).
+import { SEO } from "astro-seo";
+import "../styles/tokens.css";
+import "../styles/site.css";
+import SiteHeader from "@components/site/SiteHeader.astro";
+import SiteFooter from "@components/site/SiteFooter.astro";
+import SkipLink from "@components/site/SkipLink.astro";
+import { type SupportedLocale } from "@lib/locale";
+
+export interface Props {
+	title: string;
+	description: string;
+	locale: SupportedLocale;
+	/** Ruta actual sin locale, p.ej. "/experiencias" o "/" */
+	path: string;
+}
+
+const { title, description, locale, path } = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
+const resolvedImage = new URL("/opengraph.png", Astro.site).toString();
+---
+
+<!doctype html>
+<html lang={locale}>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="icon" type="image/png" href="/favicon.png" />
+		<meta name="generator" content={Astro.generator} />
+
+		<SEO
+			title={title}
+			description={description}
+			canonical={canonicalURL}
+			openGraph={{
+				basic: {
+					title,
+					type: "website",
+					image: resolvedImage,
+				},
+			}}
+			twitter={{
+				card: "summary_large_image",
+			}}
+		/>
+
+		<link rel="alternate" hreflang="es" href={new URL(`/es${path}`, Astro.site).toString()} />
+		<link rel="alternate" hreflang="en" href={new URL(`/en${path}`, Astro.site).toString()} />
+		<link rel="alternate" hreflang="x-default" href={new URL(`/es${path}`, Astro.site).toString()} />
+	</head>
+	<body>
+		<SkipLink locale={locale} />
+		<SiteHeader locale={locale} currentPath={path} />
+		<main id="contenido">
+			<slot />
+		</main>
+		<SiteFooter locale={locale} />
+	</body>
+</html>

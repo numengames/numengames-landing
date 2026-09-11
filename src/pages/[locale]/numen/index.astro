@@ -1,0 +1,67 @@
+---
+import SiteLayout from "@layouts/SiteLayout.astro";
+import { getDictionary } from "@content/dictionary";
+import { localizedPath, type SupportedLocale } from "@lib/locale";
+import "@styles/inner-pages.css";
+
+export const prerender = true;
+export async function getStaticPaths() {
+	return [{ params: { locale: "es" } }, { params: { locale: "en" } }];
+}
+
+const { locale } = Astro.params as { locale: SupportedLocale };
+const t = getDictionary(locale);
+const n = t.numen;
+---
+
+<SiteLayout title={`Numen Games — ${n.title}`} description={n.lead} locale={locale} path="/numen">
+	<section class="page-hero">
+		<div class="container">
+			<h1>{n.title}</h1>
+			<p class="page-hero__lead measure">{n.lead}</p>
+		</div>
+	</section>
+
+	<section class="section page-section">
+		<div class="container">
+			<h2>{n.filosofiaTitle}</h2>
+			<blockquote class="numen-quote measure">
+				<p>{n.filosofiaBody}</p>
+			</blockquote>
+		</div>
+	</section>
+
+	<section class="section section--raised page-section">
+		<div class="container">
+			<h2>{n.equipoTitle}</h2>
+			<p class="measure page-note">{n.equipoNote}</p>
+		</div>
+	</section>
+
+	<section class="section page-section">
+		<div class="container">
+			<h2>{n.colaboracionTitle}</h2>
+			<p class="measure">{n.colaboracionBody}</p>
+		</div>
+	</section>
+
+	<section class="page-cta section--raised">
+		<div class="container">
+			<a href={localizedPath("/contacto", locale)} class="btn btn--accent">{n.cta}</a>
+		</div>
+	</section>
+</SiteLayout>
+
+<style>
+	.numen-quote {
+		margin: 0;
+		border: 0;
+		padding: 0;
+	}
+	.numen-quote p {
+		font-family: var(--font-titular);
+		font-size: var(--text-xl);
+		line-height: var(--leading-tight);
+		color: var(--ink);
+	}
+</style>

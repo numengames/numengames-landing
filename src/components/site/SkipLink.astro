@@ -1,0 +1,30 @@
+---
+import type { SupportedLocale } from "@lib/locale";
+
+interface Props {
+	locale: SupportedLocale;
+}
+const { locale } = Astro.props;
+const label = locale === "en" ? "Skip to content" : "Ir al contenido";
+---
+
+<a href="#contenido" class="skip-link">{label}</a>
+
+<style>
+	.skip-link {
+		position: absolute;
+		top: -100%;
+		left: var(--space-4);
+		z-index: var(--z-notice);
+		background: var(--accent);
+		color: var(--accent-ink);
+		padding: var(--space-3) var(--space-4);
+		border-radius: var(--radius);
+		font-weight: 600;
+		text-decoration: none;
+		transition: top var(--dur-fast) var(--ease-out);
+	}
+	.skip-link:focus {
+		top: var(--space-4);
+	}
+</style>

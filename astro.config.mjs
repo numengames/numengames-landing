@@ -87,6 +87,8 @@ export default defineConfig({
     resolve: {
       alias: {
         "@lib": "/src/lib",
+        "@content": "/src/content",
+        "@styles": "/src/styles",
         "@utils": "/src/utils",
         "@components": "/src/components",
         "@icons": "/src/icons",

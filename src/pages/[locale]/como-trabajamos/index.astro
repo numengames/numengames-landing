@@ -1,0 +1,61 @@
+---
+import SiteLayout from "@layouts/SiteLayout.astro";
+import { getDictionary } from "@content/dictionary";
+import { localizedPath, type SupportedLocale } from "@lib/locale";
+import "@styles/inner-pages.css";
+
+export const prerender = true;
+export async function getStaticPaths() {
+	return [{ params: { locale: "es" } }, { params: { locale: "en" } }];
+}
+
+const { locale } = Astro.params as { locale: SupportedLocale };
+const t = getDictionary(locale);
+const c = t.comoTrabajamos;
+---
+
+<SiteLayout title={`Numen Games — ${c.title}`} description={c.lead} locale={locale} path="/como-trabajamos">
+	<section class="page-hero">
+		<div class="container">
+			<h1>{c.title}</h1>
+			<p class="page-hero__lead measure">{c.lead}</p>
+		</div>
+	</section>
+
+	<section class="section page-section">
+		<div class="container">
+			<div class="card-grid card-grid--3 fases">
+				{c.fases.map((f) => (
+					<div>
+						<h3>{f.title}</h3>
+						<p>{f.body}</p>
+						<p class="fases__resp">{f.responsabilidad}</p>
+					</div>
+				))}
+			</div>
+		</div>
+	</section>
+
+	<section class="section section--raised page-section">
+		<div class="container">
+			<h2>{c.validacionTitle}</h2>
+			<p class="measure">{c.validacionBody}</p>
+		</div>
+	</section>
+
+	<section class="page-cta">
+		<div class="container">
+			<a href={localizedPath("/contacto", locale)} class="btn btn--accent">{c.cta}</a>
+		</div>
+	</section>
+</SiteLayout>
+
+<style>
+	.fases__resp {
+		margin-top: var(--space-4);
+		padding-top: var(--space-4);
+		border-top: 1px solid var(--line);
+		font-size: var(--text-xs);
+		color: var(--ink-faint);
+	}
+</style>

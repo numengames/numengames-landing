@@ -1,11 +1,325 @@
 ---
-// Deprecated (2026-09-11): legacy localized home (metaverse/3D-worlds
-// messaging) retired as part of the pivot to live-event gamification
-// experiences. Redirects to the apex Coming Soon page, which carries the
-// current, accurate message.
+import SiteLayout from "@layouts/SiteLayout.astro";
+import { getDictionary } from "@content/dictionary";
+import { localizedPath, type SupportedLocale } from "@lib/locale";
+
+export const prerender = true;
 export async function getStaticPaths() {
-	return [{ params: { locale: "en" } }, { params: { locale: "es" } }];
+	return [{ params: { locale: "es" } }, { params: { locale: "en" } }];
 }
 
-return Astro.redirect("/", 302);
+const { locale } = Astro.params as { locale: SupportedLocale };
+const t = getDictionary(locale);
+const description = t.home.lead;
 ---
+
+<SiteLayout title={`Numen Games — ${t.home.eyebrow}`} description={description} locale={locale} path="/">
+	<section class="hero section">
+		<div class="container hero__grid">
+			<div class="hero__copy">
+				<span class="eyebrow">{t.home.eyebrow}</span>
+				<h1 class="hero__title">{t.home.title}</h1>
+				<p class="hero__lead measure">{t.home.lead}</p>
+				<div class="hero__actions">
+					<a href={localizedPath("/contacto", locale)} class="btn btn--accent">{t.home.ctaPrimary}</a>
+					<a href={localizedPath("/como-trabajamos", locale)} class="btn btn--ghost">{t.home.ctaSecondary}</a>
+				</div>
+				<p class="hero__support">{t.home.supportLine}</p>
+			</div>
+			<div class="hero__media" role="img" aria-label={t.home.imageCaption}>
+				<div class="hero__media-placeholder">
+					<span>{t.home.imageCaption}</span>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="section section--raised">
+		<div class="container bloque2">
+			<h2 class="bloque2__title">{t.home.bloque2.title}</h2>
+			<p class="bloque2__body measure">{t.home.bloque2.body}</p>
+			<ol class="sequence" aria-label={t.home.bloque2.sequenceNote}>
+				{t.home.bloque2.sequence.map((step, i) => (
+					<li>
+						<span class="sequence__index" aria-hidden="true">{i + 1}</span>
+						<span>{step}</span>
+					</li>
+				))}
+			</ol>
+			<p class="bloque2__note">{t.home.bloque2.sequenceNote}</p>
+		</div>
+	</section>
+
+	<section class="section">
+		<div class="container">
+			<h2>{t.home.momentos.title}</h2>
+			<div class="momentos">
+				{t.home.momentos.rows.map((row) => (
+					<div class="momentos__card">
+						<h3>{row.momento}</h3>
+						<p>{row.contenido}</p>
+						<p class="momentos__base">{row.base}</p>
+					</div>
+				))}
+			</div>
+			<p class="momentos__closing measure">{t.home.momentos.closingNote}</p>
+		</div>
+	</section>
+
+	<section class="section section--raised">
+		<div class="container">
+			<h2>{t.home.entregables.title}</h2>
+			<div class="entregables">
+				{t.home.entregables.items.map((item) => (
+					<article class="entregables__item">
+						<h3>{item.name}</h3>
+						<p>{item.description}</p>
+					</article>
+				))}
+			</div>
+			<p class="entregables__note measure">{t.home.entregables.scopeNote}</p>
+		</div>
+	</section>
+
+	<section class="section">
+		<div class="container">
+			<h2>{t.home.valor.title}</h2>
+			<div class="valor">
+				{t.home.valor.audiencias.map((a) => (
+					<div class="valor__card">
+						<h3>{a.label}</h3>
+						<p>{a.body}</p>
+					</div>
+				))}
+			</div>
+			<p class="valor__note measure">{t.home.valor.note}</p>
+		</div>
+	</section>
+
+	<section class="section section--raised">
+		<div class="container evidencia">
+			<h2>{t.home.evidencia.title}</h2>
+			<p class="measure">{t.home.evidencia.note}</p>
+		</div>
+	</section>
+
+	<section class="section">
+		<div class="container filosofia">
+			<blockquote>
+				<p class="measure">{t.home.filosofia.quote}</p>
+			</blockquote>
+			<p class="filosofia__canon">«{t.home.filosofia.canonQuote}»</p>
+			<p class="filosofia__note">{t.home.filosofia.note}</p>
+		</div>
+	</section>
+
+	<section class="section section--raised closing">
+		<div class="container closing__inner">
+			<h2>{t.home.closing.title}</h2>
+			<p class="measure">{t.home.closing.body}</p>
+			<a href={localizedPath("/contacto", locale)} class="btn btn--accent">{t.home.closing.cta}</a>
+		</div>
+	</section>
+</SiteLayout>
+
+<style>
+	.hero__grid {
+		display: grid;
+		gap: var(--space-12);
+	}
+	.hero__title {
+		font-size: var(--text-3xl);
+		margin-block: var(--space-4);
+	}
+	.hero__lead {
+		font-size: var(--text-lg);
+		color: var(--ink-muted);
+		margin-bottom: var(--space-8);
+	}
+	.hero__actions {
+		display: flex;
+		flex-wrap: wrap;
+		gap: var(--space-4);
+	}
+	.hero__support {
+		margin-top: var(--space-6);
+		font-size: var(--text-sm);
+		color: var(--ink-faint);
+	}
+	.hero__media-placeholder {
+		aspect-ratio: 4 / 3;
+		border: 1px dashed var(--line-strong);
+		border-radius: var(--radius);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		color: var(--ink-faint);
+		font-size: var(--text-sm);
+		text-align: center;
+		padding: var(--space-6);
+	}
+
+	.bloque2__title {
+		font-size: var(--text-2xl);
+		max-width: 28ch;
+		margin-bottom: var(--space-6);
+	}
+	.bloque2__body {
+		color: var(--ink-muted);
+		margin-bottom: var(--space-8);
+	}
+	.sequence {
+		display: flex;
+		flex-wrap: wrap;
+		gap: var(--space-4);
+		list-style: none;
+		margin: 0 0 var(--space-4);
+		padding: 0;
+	}
+	.sequence li {
+		display: flex;
+		align-items: center;
+		gap: var(--space-3);
+		background: var(--surface-elevated);
+		border: 1px solid var(--line);
+		border-radius: var(--radius);
+		padding: var(--space-3) var(--space-4);
+		font-size: var(--text-sm);
+	}
+	.sequence__index {
+		color: var(--accent);
+		font-weight: 700;
+	}
+	.bloque2__note {
+		color: var(--ink-faint);
+		font-size: var(--text-xs);
+	}
+
+	h2 {
+		font-size: var(--text-2xl);
+		margin-bottom: var(--space-8);
+	}
+
+	.momentos {
+		display: grid;
+		gap: var(--space-6);
+		margin-bottom: var(--space-8);
+	}
+	.momentos__card {
+		border: 1px solid var(--line);
+		border-radius: var(--radius);
+		padding: var(--space-6);
+	}
+	.momentos__card h3 {
+		color: var(--interactive);
+		font-size: var(--text-lg);
+		margin-bottom: var(--space-3);
+	}
+	.momentos__card p {
+		color: var(--ink-muted);
+		margin-bottom: var(--space-3);
+	}
+	.momentos__base {
+		font-size: var(--text-xs);
+		color: var(--ink-faint);
+	}
+	.momentos__closing {
+		color: var(--ink);
+		font-size: var(--text-lg);
+	}
+
+	.entregables {
+		display: grid;
+		gap: var(--space-6);
+		margin-bottom: var(--space-8);
+	}
+	.entregables__item {
+		border-left: 2px solid var(--accent);
+		padding-left: var(--space-4);
+	}
+	.entregables__item h3 {
+		font-size: var(--text-lg);
+		margin-bottom: var(--space-2);
+	}
+	.entregables__item p {
+		color: var(--ink-muted);
+	}
+	.entregables__note {
+		color: var(--ink-faint);
+		font-size: var(--text-sm);
+	}
+
+	.valor {
+		display: grid;
+		gap: var(--space-6);
+		margin-bottom: var(--space-8);
+	}
+	.valor__card h3 {
+		font-size: var(--text-lg);
+		margin-bottom: var(--space-2);
+	}
+	.valor__card p {
+		color: var(--ink-muted);
+	}
+	.valor__note {
+		color: var(--ink-faint);
+		font-size: var(--text-sm);
+	}
+
+	.evidencia {
+		text-align: center;
+	}
+	.evidencia p {
+		margin-inline: auto;
+		color: var(--ink-faint);
+		font-style: italic;
+	}
+
+	.filosofia blockquote {
+		margin: 0 0 var(--space-6);
+		border: 0;
+		padding: 0;
+	}
+	.filosofia blockquote p {
+		font-family: var(--font-titular);
+		font-size: var(--text-xl);
+		line-height: var(--leading-tight);
+	}
+	.filosofia__canon {
+		color: var(--accent);
+		font-size: var(--text-lg);
+		margin-bottom: var(--space-3);
+	}
+	.filosofia__note {
+		color: var(--ink-faint);
+		font-size: var(--text-xs);
+	}
+
+	.closing__inner {
+		text-align: center;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: var(--space-6);
+	}
+	.closing h2 {
+		margin-bottom: 0;
+	}
+
+	@media (min-width: 960px) {
+		.hero__grid {
+			grid-template-columns: 1.1fr 1fr;
+			align-items: center;
+		}
+		.momentos {
+			grid-template-columns: repeat(3, 1fr);
+		}
+		.entregables {
+			grid-template-columns: repeat(2, 1fr);
+			gap: var(--space-8);
+		}
+		.valor {
+			grid-template-columns: repeat(3, 1fr);
+		}
+	}
+</style>
