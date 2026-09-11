@@ -10,13 +10,16 @@ jobs:
   test-and-build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
 
-      - uses: pnpm/action-setup@v4
+      - uses: pnpm/action-setup@fc06bc1257f339d1d5d8b3a19a8cae5388b55320 # v4.4.0
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
         with:
-          node-version: 22
+          # Misma versión que usa el deploy (.nvmrc): si CI construye con una
+          # versión distinta de la que publica, el verde de CI no prueba que
+          # el build de producción funcione.
+          node-version-file: .nvmrc
           cache: pnpm
 
       - name: Install dependencies
