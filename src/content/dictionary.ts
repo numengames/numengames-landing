@@ -22,7 +22,6 @@ export interface SiteDictionary {
 		ctaPrimary: string;
 		ctaSecondary: string;
 		supportLine: string;
-		imageCaption: string;
 		bloque2: {
 			title: string;
 			body: string;
@@ -103,8 +102,6 @@ export interface SiteDictionary {
 		lead: string;
 		filosofiaTitle: string;
 		filosofiaBody: string;
-		equipoTitle: string;
-		equipoNote: string;
 		colaboracionTitle: string;
 		colaboracionBody: string;
 		cta: string;
@@ -147,7 +144,6 @@ const es: SiteDictionary = {
 		ctaPrimary: "Cuéntanos tu evento",
 		ctaSecondary: "Así funciona",
 		supportLine: "Diseño a medida. Ejecución en vivo. Entregables después del evento.",
-		imageCaption: "Ejemplo ilustrativo de una experiencia",
 		bloque2: {
 			title: "No añadimos un juego al programa. Diseñamos cómo participa la gente.",
 			body: "Cada experiencia conecta un objetivo del organizador con una forma concreta de participar: aportar una perspectiva, encontrar a alguien con quien construir, contrastar una idea o resolver un reto. La narrativa da sentido al recorrido; nuestro equipo ayuda a que suceda.",
@@ -319,8 +315,6 @@ const es: SiteDictionary = {
 		lead: "Diseñamos sistemas de participación, no decoramos eventos con un juego añadido.",
 		filosofiaTitle: "Cómo pensamos",
 		filosofiaBody: "El juego nos interesa por lo que permite hacer juntos. La narrativa da sentido a la participación. Y la tecnología debe ayudar a conservar lo que una comunidad descubre, sin quitarle el protagonismo.",
-		equipoTitle: "Equipo",
-		equipoNote: "Sección pendiente de confirmación de nombres, roles y permisos antes de publicar.",
 		colaboracionTitle: "Cómo colaboramos",
 		colaboracionBody: "Trabajamos en conversación directa con quien decide la experiencia, el programa o la producción de tu encuentro. Empezamos por entender el objetivo antes de proponer una forma de conseguirlo.",
 		cta: "Conocer al equipo y conversar",
@@ -368,7 +362,6 @@ const en: SiteDictionary = {
 		ctaPrimary: "Tell us about your event",
 		ctaSecondary: "How it works",
 		supportLine: "Custom design. Live delivery. Deliverables after the event.",
-		imageCaption: "Illustrative example of an experience",
 		bloque2: {
 			title: "We don't add a game to the agenda. We design how people take part.",
 			body: "Every experience connects an organizer's goal with a concrete way to participate: contributing a perspective, finding someone to build with, testing an idea, or solving a challenge. The narrative gives the journey meaning; our team helps it happen.",
@@ -540,8 +533,6 @@ const en: SiteDictionary = {
 		lead: "We design participation systems, we don't decorate events with an added game.",
 		filosofiaTitle: "How we think",
 		filosofiaBody: "We care about games for what they let us do together. Narrative gives participation meaning. And technology should help preserve what a community discovers, without taking the spotlight from it.",
-		equipoTitle: "Team",
-		equipoNote: "Section pending confirmation of names, roles, and permissions before publishing.",
 		colaboracionTitle: "How we collaborate",
 		colaboracionBody: "We work in direct conversation with whoever decides the experience, program, or production of your gathering. We start by understanding the goal before proposing a way to achieve it.",
 		cta: "Meet the team and talk",

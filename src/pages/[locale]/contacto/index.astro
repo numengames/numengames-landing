@@ -42,12 +42,12 @@ const web3FormsKey = import.meta.env.PUBLIC_WEB3FORMS_KEY ?? "";
 
 				<div class="field">
 					<label for="org">{c.fields.org}</label>
-					<input id="org" name="organización_o_evento" type="text" required autocomplete="organization" />
+					<input id="org" name="organization" type="text" required autocomplete="organization" />
 				</div>
 
 				<div class="field">
 					<label for="goal">{c.fields.goal}</label>
-					<textarea id="goal" name="qué_busca_conseguir" required rows="4"></textarea>
+					<textarea id="goal" name="goal" required rows="4"></textarea>
 				</div>
 
 				<fieldset class="field-group">
@@ -56,19 +56,19 @@ const web3FormsKey = import.meta.env.PUBLIC_WEB3FORMS_KEY ?? "";
 					</legend>
 					<div class="field">
 						<label for="date">{c.fields.dateOptional}</label>
-						<input id="date" name="fecha" type="text" />
+						<input id="date" name="event_date" type="text" />
 					</div>
 					<div class="field">
 						<label for="city">{c.fields.cityOptional}</label>
-						<input id="city" name="ciudad" type="text" />
+						<input id="city" name="city" type="text" />
 					</div>
 					<div class="field">
 						<label for="size">{c.fields.sizeOptional}</label>
-						<input id="size" name="tamaño_aproximado" type="text" />
+						<input id="size" name="audience_size" type="text" />
 					</div>
 					<div class="field">
 						<label for="phone">{c.fields.phoneOptional}</label>
-						<input id="phone" name="teléfono" type="tel" autocomplete="tel" />
+						<input id="phone" name="phone" type="tel" autocomplete="tel" />
 					</div>
 				</fieldset>
 
