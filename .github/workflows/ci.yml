@@ -12,7 +12,18 @@ permissions:
   contents: read
 
 jobs:
-  test-and-build:
+  # El nombre de este job ES el contexto del check que exige la protección de
+  # rama, y vale `build` en los tres repositorios de la familia
+  # (numinia-nwos, numinia-web y este). Un solo valor, regla literalmente
+  # idéntica: no tres reglas parecidas con tres nombres distintos.
+  #
+  # No lo renombres sin cambiar el ruleset a la vez. Un check requerido que
+  # ningún workflow produce se queda en `pending` para siempre y bloquea toda
+  # fusión aunque el resto esté en verde. Pasó aquí el 2026-09-11: el ruleset
+  # pedía `build`, el job se llamaba `test-and-build`, y el repositorio quedó
+  # imposible de fusionar hasta detectarlo con una PR de sonda.
+  build:
+    name: build
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
