@@ -46,6 +46,17 @@ export interface SiteDictionary {
 		};
 		evidencia: {
 			title: string;
+			lead: string;
+			proyectos: {
+				slug: string;
+				nombre: string;
+				contexto: string;
+				queHicimos: string;
+				formato: string;
+				duracion: string;
+				enlace: string;
+				enlaceLabel: string;
+			}[];
 			note: string;
 		};
 		filosofia: {
@@ -184,8 +195,61 @@ const es: SiteDictionary = {
 			note: "Esto no es una garantía de ventas ni una autorización para entregar datos personales de asistentes a terceros.",
 		},
 		evidencia: {
-			title: "Evidencia y personas",
-			note: "Sección pendiente de material publicable y autorizado por el equipo. Mientras no exista, se omite de la navegación (ver plan §3, regla de publicación).",
+			title: "Dónde lo hemos hecho",
+			lead: "Cinco experiencias diseñadas para eventos reales, con sus organizadores y su público.",
+			proyectos: [
+				{
+					slug: "nerdearla",
+					nombre: "Nerdearla 2025",
+					contexto: "El mayor evento gratuito de tecnología y cultura digital del mundo hispanohablante, celebrado en Madrid y retransmitido globalmente.",
+					queHicimos: "Con Arcasiles, los organizadores, diseñamos un espacio jugable que permitía recorrer el evento —sus áreas, sus contenidos y sus dinámicas— en un único trayecto que integraba información, exploración y juego.",
+					formato: "Búsqueda del tesoro",
+					duracion: "12 min",
+					enlace: "https://nerdearla.es",
+					enlaceLabel: "nerdearla.es",
+				},
+				{
+					slug: "aii-symposium",
+					nombre: "AII Symposium 2025",
+					contexto: "El simposio anual del Active Inference Institute, que reúne a investigadores de todo el mundo en torno a un marco científico sobre cómo los sistemas inteligentes perciben, actúan y aprenden.",
+					queHicimos: "Diseñamos un entorno donde los asistentes accedían a toda la información del simposio mientras recorrían una aventura de tipo escape room que introducía por experiencia los fundamentos del mapa de Active Inference: los cuatro estados y sus relaciones.",
+					formato: "Emparejamiento conceptual",
+					duracion: "25 min",
+					enlace: "https://activeinference.institute/symposium",
+					enlaceLabel: "activeinference.institute",
+				},
+				{
+					slug: "merge",
+					nombre: "Merge 2025",
+					contexto: "Conferencia internacional sobre Web3 y activos digitales que actúa como puente entre los ecosistemas tecnológicos y financieros de Europa y Latinoamérica.",
+					queHicimos: "Construimos un gemelo digital de la sede con elementos que simbolizan ese encuentro transatlántico, con acceso ordenado a la información de patrocinadores y socios y un enigma interactivo sobre qué representa Merge.",
+					formato: "Emparejamiento conceptual",
+					duracion: "15 min",
+					enlace: "https://mmerge.io/es",
+					enlaceLabel: "mmerge.io",
+				},
+				{
+					slug: "dominio-publico",
+					nombre: "Misterio en la imprenta",
+					contexto: "Cada 1 de enero nuevas obras entran en dominio público. Lo celebramos porque es coherente con nuestro compromiso con el código abierto y la producción en dominio público.",
+					queHicimos: "Una aventura jugable ambientada en una imprenta ficticia que mezcla lo antiguo y lo futurista, donde se recorre la historia del copyright y el dominio público explorando en lugar de leyendo.",
+					formato: "Descifrado de claves",
+					duracion: "18 min",
+					enlace: "https://pdinfo.com",
+					enlaceLabel: "pdinfo.com",
+				},
+				{
+					slug: "curiosidad",
+					nombre: "La aventura de la curiosidad",
+					contexto: "Colaboración con el Active Inference Institute para comunicar por experiencia directa cómo los sistemas inteligentes reducen incertidumbre al interactuar con su entorno.",
+					queHicimos: "Un recorrido que usa la percepción de la música como hilo conductor para atravesar los cuatro estados del modelo, desde los estados internos del cerebro hasta el mundo exterior.",
+					formato: "Problema de lógica",
+					duracion: "20 min",
+					enlace: "https://activeinference.institute",
+					enlaceLabel: "activeinference.institute",
+				},
+			],
+			note: "Cada experiencia entrega a quien participa un objeto digital coleccionable y conmemorativo del evento.",
 		},
 		filosofia: {
 			quote: "El juego nos interesa por lo que permite hacer juntos. La narrativa da sentido a la participación. Y la tecnología debe ayudar a conservar lo que una comunidad descubre, sin quitarle el protagonismo.",
@@ -352,8 +416,61 @@ const en: SiteDictionary = {
 			note: "This is not a sales guarantee nor authorization to hand attendees' personal data to third parties.",
 		},
 		evidencia: {
-			title: "Evidence and people",
-			note: "Section pending publishable, authorized material from the team. Until it exists, it is omitted from navigation (see plan §3, publication rule).",
+			title: "Where we have done it",
+			lead: "Five experiences designed for real events, with their organizers and their audiences.",
+			proyectos: [
+				{
+					slug: "nerdearla",
+					nombre: "Nerdearla 2025",
+					contexto: "The largest free technology and digital culture event in the Spanish-speaking world, held in Madrid and streamed globally.",
+					queHicimos: "With Arcasiles, the organizers, we designed a playable space that let visitors move through the event —its areas, its content and its dynamics— in a single journey combining information, exploration and play.",
+					formato: "Treasure hunt",
+					duracion: "12 min",
+					enlace: "https://nerdearla.es",
+					enlaceLabel: "nerdearla.es",
+				},
+				{
+					slug: "aii-symposium",
+					nombre: "AII Symposium 2025",
+					contexto: "The annual symposium of the Active Inference Institute, bringing together researchers worldwide around a scientific framework for how intelligent systems perceive, act and learn.",
+					queHicimos: "We designed an environment where attendees reached all symposium information while moving through an escape-room adventure that introduced the foundations of the Active Inference map by experience: the four states and their relations.",
+					formato: "Conceptual matching",
+					duracion: "25 min",
+					enlace: "https://activeinference.institute/symposium",
+					enlaceLabel: "activeinference.institute",
+				},
+				{
+					slug: "merge",
+					nombre: "Merge 2025",
+					contexto: "An international conference on Web3 and digital assets acting as a bridge between the technological and financial ecosystems of Europe and Latin America.",
+					queHicimos: "We built a digital twin of the venue with elements symbolising that transatlantic encounter, offering structured access to sponsor and partner information and an interactive puzzle about what Merge represents.",
+					formato: "Conceptual matching",
+					duracion: "15 min",
+					enlace: "https://mmerge.io/es",
+					enlaceLabel: "mmerge.io",
+				},
+				{
+					slug: "dominio-publico",
+					nombre: "Mystery at the printing house",
+					contexto: "Every January 1st new works enter the public domain. We celebrate it because it is coherent with our commitment to open-source code and public domain production.",
+					queHicimos: "A playable adventure set in a fictional printing press mixing the antique and the futuristic, where the history of copyright and the public domain is covered by exploring rather than reading.",
+					formato: "Cipher decryption",
+					duracion: "18 min",
+					enlace: "https://pdinfo.com",
+					enlaceLabel: "pdinfo.com",
+				},
+				{
+					slug: "curiosidad",
+					nombre: "The adventure of curiosity",
+					contexto: "A collaboration with the Active Inference Institute to communicate through direct experience how intelligent systems reduce uncertainty by interacting with their environment.",
+					queHicimos: "A journey using the perception of music as its guiding thread to move through the four states of the model, from internal brain states to the external world.",
+					formato: "Logic problem",
+					duracion: "20 min",
+					enlace: "https://activeinference.institute",
+					enlaceLabel: "activeinference.institute",
+				},
+			],
+			note: "Each experience gives participants a collectible digital object commemorating the event.",
 		},
 		filosofia: {
 			quote: "We care about games for what they let us do together. Narrative gives participation meaning. And technology should help preserve what a community discovers, without taking the spotlight from it.",

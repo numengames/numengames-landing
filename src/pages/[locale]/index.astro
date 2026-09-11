@@ -99,7 +99,35 @@ const description = t.home.lead;
 	<section class="section section--raised">
 		<div class="container evidencia">
 			<h2>{t.home.evidencia.title}</h2>
-			<p class="measure">{t.home.evidencia.note}</p>
+			<p class="measure evidencia__lead">{t.home.evidencia.lead}</p>
+			<ul class="proyectos">
+				{t.home.evidencia.proyectos.map((p) => (
+					<li class="proyecto">
+						<img
+							class="proyecto__img"
+							src={`/proyectos/${p.slug}.jpg`}
+							alt={`${p.nombre}: entorno diseñado por Numen Games`}
+							width="800"
+							height="450"
+							loading="lazy"
+							decoding="async"
+						/>
+						<div class="proyecto__body">
+							<h3 class="proyecto__nombre">{p.nombre}</h3>
+							<p class="proyecto__contexto">{p.contexto}</p>
+							<p class="proyecto__hicimos">{p.queHicimos}</p>
+							<p class="proyecto__meta">
+								<span>{p.formato}</span>
+								<span aria-hidden="true">·</span>
+								<span>{p.duracion}</span>
+								<span aria-hidden="true">·</span>
+								<a href={p.enlace} rel="noopener noreferrer external" target="_blank">{p.enlaceLabel}</a>
+							</p>
+						</div>
+					</li>
+				))}
+			</ul>
+			<p class="evidencia__note measure">{t.home.evidencia.note}</p>
 		</div>
 	</section>
 
@@ -269,10 +297,67 @@ const description = t.home.lead;
 	.evidencia {
 		text-align: center;
 	}
-	.evidencia p {
+	.evidencia__lead {
 		margin-inline: auto;
+		color: var(--ink-muted);
+	}
+
+	/* Las tarjetas van a una columna por defecto y a dos desde 960px:
+	   cada ficha lleva contexto + qué hicimos, y por debajo de ese ancho
+	   dos columnas dejarían la línea de texto demasiado corta. */
+	.proyectos {
+		list-style: none;
+		margin: var(--space-8) 0 0;
+		padding: 0;
+		display: grid;
+		gap: var(--space-6);
+		text-align: start;
+	}
+	.proyecto {
+		border: 1px solid var(--line);
+		border-radius: var(--radius);
+		overflow: hidden;
+		background: var(--surface);
+		display: flex;
+		flex-direction: column;
+	}
+	.proyecto__img {
+		display: block;
+		width: 100%;
+		height: auto;
+		aspect-ratio: 16 / 9;
+		object-fit: cover;
+		border-bottom: 1px solid var(--line);
+	}
+	.proyecto__body {
+		padding: var(--space-6);
+		display: flex;
+		flex-direction: column;
+		gap: var(--space-3);
+	}
+	.proyecto__nombre {
+		margin: 0;
+		font-size: var(--text-xl);
+	}
+	.proyecto__contexto,
+	.proyecto__hicimos {
+		margin: 0;
+		color: var(--ink-muted);
+		font-size: var(--text-sm);
+	}
+	.proyecto__meta {
+		margin: var(--space-2) 0 0;
+		display: flex;
+		flex-wrap: wrap;
+		gap: var(--space-2);
+		align-items: baseline;
+		font-size: var(--text-sm);
 		color: var(--ink-faint);
-		font-style: italic;
+	}
+	.evidencia__note {
+		margin: var(--space-8) auto 0;
+		color: var(--ink-faint);
+		font-size: var(--text-sm);
 	}
 
 	.filosofia blockquote {
@@ -307,6 +392,10 @@ const description = t.home.lead;
 	}
 
 	@media (min-width: 960px) {
+		.proyectos {
+			grid-template-columns: repeat(2, 1fr);
+			gap: var(--space-8);
+		}
 		.hero__grid {
 			grid-template-columns: 1.1fr 1fr;
 			align-items: center;
