@@ -26,11 +26,6 @@ const description = t.home.lead;
 				</div>
 				<p class="hero__support">{t.home.supportLine}</p>
 			</div>
-			<div class="hero__media" role="img" aria-label={t.home.imageCaption}>
-				<div class="hero__media-placeholder">
-					<span>{t.home.imageCaption}</span>
-				</div>
-			</div>
 		</div>
 	</section>
 
@@ -96,13 +91,6 @@ const description = t.home.lead;
 		</div>
 	</section>
 
-	<section class="section section--raised">
-		<div class="container evidencia">
-			<h2>{t.home.evidencia.title}</h2>
-			<p class="measure">{t.home.evidencia.note}</p>
-		</div>
-	</section>
-
 	<section class="section">
 		<div class="container filosofia">
 			<blockquote>
@@ -145,18 +133,6 @@ const description = t.home.lead;
 		margin-top: var(--space-6);
 		font-size: var(--text-sm);
 		color: var(--ink-faint);
-	}
-	.hero__media-placeholder {
-		aspect-ratio: 4 / 3;
-		border: 1px dashed var(--line-strong);
-		border-radius: var(--radius);
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		color: var(--ink-faint);
-		font-size: var(--text-sm);
-		text-align: center;
-		padding: var(--space-6);
 	}
 
 	.bloque2__title {
@@ -266,14 +242,6 @@ const description = t.home.lead;
 		font-size: var(--text-sm);
 	}
 
-	.evidencia {
-		text-align: center;
-	}
-	.evidencia p {
-		margin-inline: auto;
-		color: var(--ink-faint);
-		font-style: italic;
-	}
 
 	.filosofia blockquote {
 		margin: 0 0 var(--space-6);
@@ -307,10 +275,6 @@ const description = t.home.lead;
 	}
 
 	@media (min-width: 960px) {
-		.hero__grid {
-			grid-template-columns: 1.1fr 1fr;
-			align-items: center;
-		}
 		.momentos {
 			grid-template-columns: repeat(3, 1fr);
 		}
