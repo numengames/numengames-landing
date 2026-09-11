@@ -1,25 +1,9 @@
 ---
-import type { GetStaticPaths } from 'astro';
-import { getLocaleStaticPaths, type SupportedLocale } from "../../../i18n";
-import Layout from "@layouts/Layout.astro";
-
-import AboutSection from "./_About.astro";
-import GallerySection from "./_Gallery.astro";
-import HeroDesktopSection from "./_HeroDesktop.astro";
+// Deprecated (2026-09-11): legacy metaverse-lore Numinia page retired as part of the
+// pivot to live-event gamification experiences. Redirects to home.
+import { getLocaleStaticPaths } from "../../../i18n";
 
 export const getStaticPaths = getLocaleStaticPaths;
 
-const { locale } = Astro.params;
-const currentLocale = (locale as SupportedLocale) || 'en';
-
-const markdownFile = Object.values(import.meta.glob("@pages/content/numinia.md", { eager: true })) as any[];
-const { frontmatter } = markdownFile[0];
+return Astro.redirect("/", 302);
 ---
-
-<Layout title={frontmatter.title} locale={currentLocale}>
-	<main>
-		<HeroDesktopSection textObj={frontmatter.heroSection} />
-		<AboutSection textObj={frontmatter.aboutSection} />
-		<GallerySection textObj={frontmatter.gallerySection} />
-	</main>
-</Layout>
