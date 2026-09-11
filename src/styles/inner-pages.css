@@ -32,7 +32,10 @@
 	border-radius: var(--radius);
 	padding: var(--space-6);
 }
-.card-grid h3 {
+/* Los títulos de tarjeta son h2: van directos bajo el h1 de la página,
+   sin h2 intermedio que justifique un h3 (salto de jerarquía). El
+   tamaño es el de un subtítulo, no el de una sección. */
+.card-grid h2 {
 	font-size: var(--text-lg);
 	margin-bottom: var(--space-3);
 	font-family: var(--font-titular);

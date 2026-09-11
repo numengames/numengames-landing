@@ -9,9 +9,21 @@
    IMPORTANTE — según el plan "Numen Games | Plan profesional de
    web revisado" (2026-09-09), §5: "No son códigos oficiales de
    marca: ajustar con los activos originales." Estos valores son
-   un punto de partida defendible (contraste AA ya verificado),
-   NO la paleta de marca confirmada por Numen. No usar en
-   materiales oficiales sin validación del equipo.
+   un punto de partida defendible, NO la paleta de marca confirmada
+   por Numen. No usar en materiales oficiales sin validación del
+   equipo.
+
+   CONTRASTE. Todos los pares texto/superficie en uso cumplen WCAG
+   2.1 AA (>= 4.5:1 para texto normal), verificado por cálculo de
+   luminancia relativa en scripts/check-contrast.mjs, que corre en
+   `pnpm test`. Corrección 2026-09-11: esta nota afirmaba "contraste
+   AA ya verificado" sin que nadie lo hubiera medido. Al medirlo
+   fallaban tres pares reales — --color-ceniza sobre las superficies
+   elevadas (4.33:1 y 3.84:1) y --color-alerta sobre las tres
+   (3.88/3.57/3.17:1), siendo este último el mensaje de error del
+   formulario de contacto. Los valores se corrigieron y el test
+   existe para que la afirmación no vuelva a ir por delante de la
+   comprobación.
    ============================================================ */
 
 :root {
@@ -21,7 +33,7 @@
   --color-carbon-elevated: #292420;
   --color-marfil: #f9ebdc; /* tinta sobre oscuro / superficie clara */
   --color-marfil-velada: #c4b5a6;
-  --color-ceniza: #8a7d72;
+  --color-ceniza: #998d84; /* AA sobre las tres superficies oscuras, mín. 4.75:1 */
   --color-linea: #241f1b;
   --color-linea-fuerte: #3a332d;
 
@@ -30,7 +42,8 @@
   --color-turquesa: #018ea1; /* secundario: enlaces e interactivo */
   --color-turquesa-texto-oscuro: #1f9cac; /* AA verificado sobre carbón, 4.69:1 */
   --color-turquesa-texto-claro: #016e7d;
-  --color-alerta: #d33440;
+  --color-alerta: #df6a72; /* AA sobre superficies oscuras, mín. 4.71:1 */
+  --color-alerta-claro: #c62b37; /* variante AA para tema claro, mín. 4.72:1 */
 
   /* ---- Tema (oscuro por defecto, claro opcional) ------------- */
   --surface: var(--color-carbon);
@@ -45,6 +58,7 @@
   --accent: var(--color-dorado);
   --accent-ink: #14110f; /* texto sobre botón dorado */
   --focus-ring: var(--color-turquesa);
+  --alerta: var(--color-alerta); /* errores; el tema claro lo reasigna */
 
   /* ---- Tipografía --------------------------------------------
      Serif editorial para titulares + sans de alta legibilidad
@@ -109,6 +123,8 @@
   --accent: var(--color-dorado-texto-claro);
   --accent-ink: var(--color-marfil);
   --focus-ring: var(--color-turquesa-texto-claro);
+  /* El rojo del tema oscuro es demasiado claro sobre marfil (4.14:1). */
+  --alerta: var(--color-alerta-claro);
 }
 
 @media (prefers-reduced-motion: reduce) {
