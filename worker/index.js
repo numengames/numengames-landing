@@ -1,16 +1,20 @@
 // Explicit list of legacy routes from the pre-pivot metaverse/3D-worlds
 // catalog (pricing, team, portfolio, numinia lore, manifesto, help center,
-// services + subpages, the old localized home, and the old Terms page).
-// Deprecated 2026-09-11 as part of the pivot to live-event gamification
-// experiences (see plan "Numen Games | Plan profesional de web revisado").
+// services + subpages, and the old Terms page). Deprecated 2026-09-11 as
+// part of the pivot to live-event gamification experiences (see plan
+// "Numen Games | Plan profesional de web revisado").
+//
+// NOTE: "/es" and "/en" (the localized home) were on this list originally,
+// when the only content behind them was the old metaverse messaging. They
+// were removed once the rebuilt live-event home replaced them (see
+// src/pages/[locale]/index.astro) — do not re-add them here once real
+// content exists at a path; add/remove entries as pages are rebuilt.
 //
 // This is an explicit allow-list, not a catch-all on /es/ or /en/, so the
-// upcoming rebuilt site can freely reuse those locale prefixes with new
-// routes without this list getting in the way. Remove entries here once the
+// rebuilt site can freely reuse those locale prefixes with new routes
+// without this list getting in the way. Remove entries here once the
 // corresponding path is reused/replaced by the new site.
 const LEGACY_REDIRECT_PATHS = new Set([
-	"/es",
-	"/en",
 	"/es/pricing",
 	"/en/pricing",
 	"/es/team",

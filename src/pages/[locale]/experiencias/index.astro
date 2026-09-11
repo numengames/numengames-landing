@@ -1,0 +1,76 @@
+---
+import SiteLayout from "@layouts/SiteLayout.astro";
+import { getDictionary } from "@content/dictionary";
+import { localizedPath, type SupportedLocale } from "@lib/locale";
+import "@styles/inner-pages.css";
+
+export const prerender = true;
+export async function getStaticPaths() {
+	return [{ params: { locale: "es" } }, { params: { locale: "en" } }];
+}
+
+const { locale } = Astro.params as { locale: SupportedLocale };
+const t = getDictionary(locale);
+const e = t.experiencias;
+---
+
+<SiteLayout title={`Numen Games — ${e.title}`} description={e.lead} locale={locale} path="/experiencias">
+	<section class="page-hero">
+		<div class="container">
+			<h1>{e.title}</h1>
+			<p class="page-hero__lead measure">{e.lead}</p>
+		</div>
+	</section>
+
+	<section class="section page-section">
+		<div class="container">
+			<div class="card-grid card-grid--2">
+				{e.objetivos.map((o) => (
+					<div>
+						<h3>{o.title}</h3>
+						<p>{o.body}</p>
+					</div>
+				))}
+			</div>
+		</div>
+	</section>
+
+	<section class="section section--raised page-section">
+		<div class="container">
+			<h2>{e.alcanceTitle}</h2>
+			<p class="measure">{e.alcanceBody}</p>
+		</div>
+	</section>
+
+	<section class="section page-section">
+		<div class="container">
+			<h2>{e.soportesTitle}</h2>
+			<ul class="plain-list">
+				{e.soportes.map((s) => (
+					<li>{s}</li>
+				))}
+			</ul>
+		</div>
+	</section>
+
+	<section class="section section--raised page-section">
+		<div class="container">
+			<h2>{e.equipoTitle}</h2>
+			<p class="measure">{e.equipoBody}</p>
+		</div>
+	</section>
+
+	<section class="section page-section">
+		<div class="container">
+			<h2>{e.condicionesTitle}</h2>
+			<p class="measure page-note">{e.condicionesBody}</p>
+		</div>
+	</section>
+
+	<section class="page-cta section--raised">
+		<div class="container">
+			<h2>{e.ctaTitle}</h2>
+			<a href={localizedPath("/contacto", locale)} class="btn btn--accent">{e.cta}</a>
+		</div>
+	</section>
+</SiteLayout>

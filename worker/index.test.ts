@@ -45,10 +45,6 @@ describe("worker fetch handler", () => {
 
 	describe("legacy catalog deprecation (2026-09-11)", () => {
 		const legacyPaths = [
-			"/es",
-			"/es/",
-			"/en",
-			"/en/",
 			"/es/pricing",
 			"/en/pricing",
 			"/es/team",
@@ -87,6 +83,15 @@ describe("worker fetch handler", () => {
 			await worker.fetch(new Request("https://numen.games/es/experiencias"), env);
 
 			expect(env.ASSETS.fetch).toHaveBeenCalledOnce();
+		});
+
+		it("does not redirect the rebuilt localized home (/es/, /en/)", async () => {
+			for (const path of ["/es", "/es/", "/en", "/en/"]) {
+				const env = makeEnv();
+				await worker.fetch(new Request(`https://numen.games${path}`), env);
+
+				expect(env.ASSETS.fetch).toHaveBeenCalledOnce();
+			}
 		});
 
 		it("still serves the apex Coming Soon page itself", async () => {

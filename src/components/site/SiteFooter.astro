@@ -1,0 +1,100 @@
+---
+import { getDictionary } from "@content/dictionary";
+import { localizedPath, type SupportedLocale } from "@lib/locale";
+
+interface Props {
+	locale: SupportedLocale;
+}
+const { locale } = Astro.props;
+const t = getDictionary(locale);
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+	<div class="site-footer__inner">
+		<div class="site-footer__brand">
+			<img src="/assets/Letras_Numen_Games_blanco.png" alt="Numen Games" />
+			<p>{t.footer.tagline}</p>
+		</div>
+
+		<nav aria-label={locale === "en" ? "Footer navigation" : "Navegación de pie de página"}>
+			<ul>
+				{t.nav.links.map((link) => (
+					<li>
+						<a href={localizedPath(link.path, locale)}>{link.label}</a>
+					</li>
+				))}
+				<li>
+					<a href={localizedPath("/contacto", locale)}>{t.nav.ctaPersistent}</a>
+				</li>
+			</ul>
+		</nav>
+
+		<div class="site-footer__contact">
+			<a href={`mailto:${t.footer.contactEmail}`}>{t.footer.contactEmail}</a>
+		</div>
+	</div>
+
+	<div class="site-footer__legal">
+		<p>&copy; {year} {t.footer.rights}</p>
+	</div>
+</footer>
+
+<style>
+	.site-footer {
+		border-top: 1px solid var(--line);
+		margin-top: var(--space-24);
+	}
+	.site-footer__inner {
+		max-width: var(--content-max);
+		margin-inline: auto;
+		padding: var(--space-16) var(--gutter-mobile);
+		display: grid;
+		gap: var(--space-8);
+	}
+	.site-footer__brand img {
+		height: 22px;
+		width: auto;
+		opacity: 0.85;
+	}
+	.site-footer__brand p {
+		margin-top: var(--space-3);
+		color: var(--ink-faint);
+		font-size: var(--text-sm);
+		max-width: 32ch;
+	}
+	.site-footer__inner nav ul {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		display: flex;
+		flex-direction: column;
+		gap: var(--space-3);
+	}
+	.site-footer__inner nav a,
+	.site-footer__contact a {
+		color: var(--ink-muted);
+		text-decoration: none;
+		font-size: var(--text-sm);
+	}
+	.site-footer__inner nav a:hover,
+	.site-footer__contact a:hover {
+		color: var(--interactive);
+	}
+	.site-footer__legal {
+		border-top: 1px solid var(--line);
+		padding: var(--space-6) var(--gutter-mobile);
+		text-align: center;
+	}
+	.site-footer__legal p {
+		color: var(--ink-faint);
+		font-size: var(--text-xs);
+		margin: 0;
+	}
+
+	@media (min-width: 720px) {
+		.site-footer__inner {
+			grid-template-columns: 2fr 1fr 1fr;
+		}
+	}
+</style>

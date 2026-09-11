@@ -1,0 +1,91 @@
+/* Estilos compartidos por las páginas interiores (Experiencias, Cómo
+   trabajamos, Numen). La home tiene sus propios estilos inline porque
+   su estructura es más singular. */
+
+.page-hero {
+	padding-block: var(--space-16) var(--space-12);
+	border-bottom: 1px solid var(--line);
+}
+.page-hero h1 {
+	font-size: var(--text-3xl);
+	margin-bottom: var(--space-4);
+}
+.page-hero__lead {
+	font-size: var(--text-lg);
+	color: var(--ink-muted);
+}
+
+.page-section h2 {
+	font-size: var(--text-2xl);
+	margin-bottom: var(--space-6);
+}
+.page-section + .page-section {
+	border-top: 1px solid var(--line);
+}
+
+.card-grid {
+	display: grid;
+	gap: var(--space-6);
+}
+.card-grid > * {
+	border: 1px solid var(--line);
+	border-radius: var(--radius);
+	padding: var(--space-6);
+}
+.card-grid h3 {
+	font-size: var(--text-lg);
+	margin-bottom: var(--space-3);
+	font-family: var(--font-titular);
+}
+.card-grid p {
+	color: var(--ink-muted);
+}
+
+.plain-list {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-direction: column;
+	gap: var(--space-3);
+}
+.plain-list li {
+	padding-left: var(--space-6);
+	position: relative;
+	color: var(--ink-muted);
+}
+.plain-list li::before {
+	content: "";
+	position: absolute;
+	left: 0;
+	top: 0.6em;
+	width: 6px;
+	height: 6px;
+	background: var(--accent);
+	border-radius: var(--radius-pill);
+}
+
+.page-note {
+	font-size: var(--text-sm);
+	color: var(--ink-faint);
+	font-style: italic;
+}
+
+.page-cta {
+	text-align: center;
+	padding-block: var(--space-16);
+}
+.page-cta h2 {
+	margin-bottom: var(--space-6);
+}
+
+@media (min-width: 720px) {
+	.card-grid--2 {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+@media (min-width: 960px) {
+	.card-grid--3 {
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
