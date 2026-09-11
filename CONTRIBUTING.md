@@ -1,0 +1,89 @@
+---
+id: "CONTRIBUTING"
+title: "Contributing to numengames-web"
+type: documentation
+status: active
+version: "1.0.0"
+created: "2026-09-11T00:00:00Z"
+updated: "2026-09-11T00:00:00Z"
+author: "ursa"
+owner: "oracle"
+tags: [contributing, workflow, review]
+license: "CC-BY-4.0"
+registration: exempt
+registration_reason: "singular document, not a numbered series"
+---
+
+# Contributing
+
+This is the site published at **numen.games**. It is governed by the Numinia
+engineering standard `STD-015`, which lives in the `numinia-nwos` repository
+and is the source of truth. Where this file and `STD-015` disagree,
+`STD-015` wins.
+
+Satisfies `OSS-001`: a stranger can follow it.
+
+## From a clean clone to green tests
+
+```bash
+pnpm install --frozen-lockfile
+pnpm test          # unit tests
+pnpm exec astro check   # types — CI runs this too
+pnpm build         # 11 pages
+```
+
+Node version is pinned in `.nvmrc` (24). CI uses that same version: a green
+run on a different one proves nothing.
+
+To see the site exactly as production serves it — through the Cloudflare
+Worker, with its redirects and 404 handling — build first, then:
+
+```bash
+npx wrangler dev --local
+```
+
+`pnpm dev` runs Astro alone and does **not** exercise the Worker.
+
+## Branch, commit, pull request
+
+1. **Branch from an up-to-date `main`.** The ruleset requires linear history,
+   so a branch behind `main` cannot be merged without rebasing or merging
+   first. Check before you open the pull request, not after.
+2. **Conventional commits** (`ARC-006`): `feat:`, `fix:`, `chore:`, `ci:`,
+   `docs:`. The commit message says *why*, not just what.
+3. **Small pull requests** (`DEV-006`) stating what, why, and how to verify.
+4. **One approval before `main`** (`DEV-007`). `CODEOWNERS` requests review
+   from Pablo, María and Christian.
+
+Force-pushing to `main` is blocked, as is deleting it.
+
+## What CI checks
+
+`ci.yml` runs type-check, tests and build on Node 24. `deploy.yml` runs on a
+green CI on `main` and refuses to publish if `PUBLIC_WEB3FORMS_KEY` is
+missing — a contact form that silently discards submissions is worse than no
+form at all.
+
+A guard is verified by its step in the job, never by the run's colour
+(`TRC-006`).
+
+## Conventions that have bitten us
+
+- **Tests go in `tests/`, never under `src/pages/`.** In Astro a `.test.ts`
+  under `src/pages/` is published as a route.
+- **Form field keys are ASCII.** They travel as JSON keys to Web3Forms;
+  visible labels stay translated.
+- **Do not remove Tailwind.** It looks unused, but it generates the `.grid`
+  and `.hidden` classes the live code depends on.
+- **Check the published site before deleting assets.** The legacy portfolio
+  renders with JavaScript, so an import graph over `src/` does not see the
+  images it uses.
+
+## Licensing
+
+Per `STD-010`: this is a deployable application, so the code is
+`AGPL-3.0-only`. Public assets are `CC0-1.0` and documentation `CC-BY-4.0`.
+Every file declares its licence with an `SPDX-License-Identifier`; the map
+lives in `REUSE.toml`.
+
+Ownership must be demonstrable before anything is published (`LIC-001`).

@@ -1,0 +1,87 @@
+version = 1
+
+# REUSE 3.3 licence map for numengames-web (ARC-003 of STD-015).
+#
+# Regimes follow LIC-002 of STD-010: a deployable application is
+# AGPL-3.0-only, public assets and design are CC0-1.0, documentation is
+# CC-BY-4.0. This repository builds and serves numen.games, so the code
+# regime is AGPL — not the GPL-3.0 the root LICENSE file currently carries.
+# That discrepancy is recorded in docs/nwos-compliance.md and needs an
+# Oracle ruling (AUT-006); this file declares what LIC-002 prescribes.
+#
+# Ordering matters: when several annotations match a file, the LAST one
+# wins. Specific overrides therefore come after their directory.
+
+# --- The application: code that decides what is served ----------------------
+[[annotations]]
+path = [
+  "src/**",
+  "worker/**",
+  "scripts/**",
+  "tests/**",
+  "astro.config.mjs",
+  "vitest.config.ts",
+  "wrangler.jsonc",
+  "package.json",
+  "tsconfig.json",
+  "tailwind.config.*",
+]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2026 Numen Games"
+SPDX-License-Identifier = "AGPL-3.0-only"
+
+# --- CI and repository configuration ---------------------------------------
+# MIT per LIC-002: CI is tooling, not the deciding application.
+[[annotations]]
+path = [
+  ".github/**",
+  ".editorconfig",
+  ".nvmrc",
+  ".gitignore",
+  "pnpm-lock.yaml",
+]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2026 Numen Games"
+SPDX-License-Identifier = "MIT"
+
+# --- Documentation ----------------------------------------------------------
+[[annotations]]
+path = [
+  "README.md",
+  "CONTRIBUTING.md",
+  "SECURITY.md",
+  "CHANGELOG.md",
+  "TODO.md",
+  "docs/**",
+]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2026 Numen Games"
+SPDX-License-Identifier = "CC-BY-4.0"
+
+# --- Published assets -------------------------------------------------------
+# Photographs and renders of experiences delivered for real events. Published
+# under CC0 per LIC-002 ("public assets, data, design").
+#
+# LIC-001 applies: ownership must be demonstrable. These images come from
+# environments built by Numen Games for the events named in the home page.
+# The Nerdearla image shows a venue co-branded with Arcasiles, the event
+# organiser — if that co-authorship is not covered by the engagement, this
+# annotation is wrong and the file must move to the reserved regime.
+[[annotations]]
+path = [
+  "public/proyectos/**",
+  "public/opengraph.jpg",
+  "public/favicon.png",
+]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2026 Numen Games"
+SPDX-License-Identifier = "CC0-1.0"
+
+# --- Brand ------------------------------------------------------------------
+# Lore, brand and identity are reserved (LIC-002, fourth regime): the wordmark
+# is not CC0 and must not be reused outside this site.
+[[annotations]]
+path = ["public/assets/**"]
+precedence = "override"
+SPDX-FileCopyrightText = "2026 Numen Games"
+SPDX-License-Identifier = "LicenseRef-Numen-Reserved"
