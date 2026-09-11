@@ -21,7 +21,10 @@ export interface Props {
 const { title, description, locale, path } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
-const resolvedImage = new URL("/opengraph.png", Astro.site).toString();
+// JPEG de 1200x630 (134 KB). El PNG anterior pesaba 3,4 MB a 1536x1024:
+// fuera del ratio canónico de Open Graph y por encima del límite de
+// descarga de varios clientes, que simplemente no mostraban imagen.
+const resolvedImage = new URL("/opengraph.jpg", Astro.site).toString();
 ---
 
 <!doctype html>

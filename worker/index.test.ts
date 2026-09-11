@@ -1,5 +1,11 @@
 import { describe, expect, it, vi } from "vitest";
-import worker from "./index.js";
+import worker, { pickLocale } from "./index.js";
+import { LEGACY_REDIRECT_PATHS } from "./legacy-routes.js";
+import { SUPPORTED_LOCALES, DEFAULT_LOCALE } from "./locales.js";
+import {
+	SUPPORTED_LOCALES as SITE_LOCALES,
+	DEFAULT_LOCALE as SITE_DEFAULT,
+} from "../src/lib/locale.ts";
 
 const makeEnv = (assetsResponse = new Response("asset")) => ({
 	ASSETS: { fetch: vi.fn(async () => assetsResponse) },
@@ -29,7 +35,7 @@ describe("worker fetch handler", () => {
 	it("serves static assets for the apex domain", async () => {
 		const assetsResponse = new Response("hello");
 		const env = makeEnv(assetsResponse);
-		const request = new Request("https://numen.games/");
+		const request = new Request("https://numen.games/es/");
 		const res = await worker.fetch(request, env);
 
 		expect(res).toBe(assetsResponse);
@@ -38,36 +44,106 @@ describe("worker fetch handler", () => {
 
 	it("serves static assets for any non-www hostname (workers.dev previews)", async () => {
 		const env = makeEnv();
-		await worker.fetch(new Request("https://numengames-web.example.workers.dev/"), env);
+		await worker.fetch(
+			new Request("https://numengames-web.example.workers.dev/es/"),
+			env,
+		);
 
 		expect(env.ASSETS.fetch).toHaveBeenCalledOnce();
 	});
 
+	// El sitio no tiene contenido en "/": vive bajo /es/ y /en/. Hasta el
+	// 2026-09-11 la raíz servía la página "Coming Soon" del catálogo
+	// anterior, que era lo que veía cualquiera que escribiese el dominio.
+	describe("apex root language redirect", () => {
+		const rootRequest = (acceptLanguage) =>
+			new Request(
+				"https://numen.games/",
+				acceptLanguage ? { headers: { "Accept-Language": acceptLanguage } } : undefined,
+			);
+
+		it("redirects / to the default locale when there is no Accept-Language", async () => {
+			const env = makeEnv();
+			const res = await worker.fetch(rootRequest(), env);
+
+			expect(res.status).toBe(302);
+			expect(res.headers.get("location")).toBe(`https://numen.games/${DEFAULT_LOCALE}/`);
+			expect(env.ASSETS.fetch).not.toHaveBeenCalled();
+		});
+
+		it("honours an English Accept-Language", async () => {
+			const env = makeEnv();
+			const res = await worker.fetch(rootRequest("en-GB,en;q=0.9"), env);
+
+			expect(res.headers.get("location")).toBe("https://numen.games/en/");
+		});
+
+		it("honours a Spanish Accept-Language", async () => {
+			const env = makeEnv();
+			const res = await worker.fetch(rootRequest("es-ES,es;q=0.9,en;q=0.8"), env);
+
+			expect(res.headers.get("location")).toBe("https://numen.games/es/");
+		});
+
+		// 301 lo cachearían navegadores e intermediarios de forma permanente,
+		// sirviendo a un visitante el idioma elegido para otro.
+		it("uses 302 + Vary: Accept-Language so the choice is never cached as permanent", async () => {
+			const env = makeEnv();
+			const res = await worker.fetch(rootRequest("en"), env);
+
+			expect(res.status).toBe(302);
+			expect(res.headers.get("vary")).toBe("Accept-Language");
+			expect(res.headers.get("cache-control")).toBe("no-store");
+		});
+
+		it("redirects the www root to the apex first, not to a locale", async () => {
+			const env = makeEnv();
+			const res = await worker.fetch(
+				new Request("https://www.numen.games/", { headers: { "Accept-Language": "en" } }),
+				env,
+			);
+
+			expect(res.status).toBe(301);
+			expect(res.headers.get("location")).toBe("https://numen.games/");
+		});
+	});
+
+	describe("pickLocale", () => {
+		it("falls back to the default locale on missing or empty headers", () => {
+			expect(pickLocale(null)).toBe(DEFAULT_LOCALE);
+			expect(pickLocale("")).toBe(DEFAULT_LOCALE);
+		});
+
+		it("falls back to the default locale when no supported language is cited", () => {
+			expect(pickLocale("de-DE,de;q=0.9,fr;q=0.8")).toBe(DEFAULT_LOCALE);
+		});
+
+		it("ignores the region subtag", () => {
+			expect(pickLocale("en-US")).toBe("en");
+			expect(pickLocale("es-419")).toBe("es");
+		});
+
+		it("respects q-values rather than document order", () => {
+			expect(pickLocale("es;q=0.2,en;q=0.9")).toBe("en");
+			expect(pickLocale("en;q=0.3,es;q=0.7")).toBe("es");
+		});
+
+		it("treats q=0 as an explicit rejection", () => {
+			expect(pickLocale("en;q=0,es;q=0.5")).toBe("es");
+		});
+
+		it("does not crash on malformed headers", () => {
+			expect(SUPPORTED_LOCALES).toContain(pickLocale(";;;q=,,"));
+			expect(SUPPORTED_LOCALES).toContain(pickLocale("en;q=notanumber"));
+		});
+	});
+
 	describe("legacy catalog deprecation (2026-09-11)", () => {
-		const legacyPaths = [
-			"/es/pricing",
-			"/en/pricing",
-			"/es/team",
-			"/en/team",
-			"/es/portfolio",
-			"/en/portfolio",
-			"/es/numinia",
-			"/en/numinia",
-			"/es/manifesto",
-			"/en/manifesto",
-			"/es/help-center",
-			"/en/help-center",
-			"/es/services",
-			"/en/services",
-			"/es/services/training",
-			"/en/services/training",
-			"/es/services/experience",
-			"/en/services/experience",
-			"/es/services/engage",
-			"/en/services/engage",
-			"/Term/terms",
-			"/Term/terms/",
-		];
+		// La lista viaja desde worker/legacy-routes.js, que es también la que
+		// consume astro.config.mjs para excluirlas del sitemap. Enumerarla
+		// aquí a mano dejaría que sitemap y redirecciones divergiesen en
+		// silencio, que es el defecto que la lista compartida evita.
+		const legacyPaths = [...LEGACY_REDIRECT_PATHS, "/Term/terms/"];
 
 		it.each(legacyPaths)("redirects legacy path %s to the apex with a 301", async (path) => {
 			const env = makeEnv();
@@ -76,6 +152,10 @@ describe("worker fetch handler", () => {
 			expect(res.status).toBe(301);
 			expect(res.headers.get("location")).toBe("https://numen.games/");
 			expect(env.ASSETS.fetch).not.toHaveBeenCalled();
+		});
+
+		it("covers the whole deprecated catalog, not a subset", () => {
+			expect(LEGACY_REDIRECT_PATHS.length).toBe(21);
 		});
 
 		it("does not redirect unrelated paths that merely share a prefix", async () => {
@@ -93,12 +173,18 @@ describe("worker fetch handler", () => {
 				expect(env.ASSETS.fetch).toHaveBeenCalledOnce();
 			}
 		});
+	});
 
-		it("still serves the apex Coming Soon page itself", async () => {
-			const env = makeEnv();
-			await worker.fetch(new Request("https://numen.games/"), env);
+	// worker/locales.js duplica los valores de src/lib/locale.ts porque el
+	// Worker se empaqueta sin el resolvedor de TypeScript de Astro. Esta
+	// prueba es la que impide que la duplicación se convierta en divergencia.
+	describe("locale lists stay in sync with the site", () => {
+		it("supports exactly the same locales as src/lib/locale.ts", () => {
+			expect([...SUPPORTED_LOCALES].sort()).toEqual([...SITE_LOCALES].sort());
+		});
 
-			expect(env.ASSETS.fetch).toHaveBeenCalledOnce();
+		it("uses the same default locale as src/lib/locale.ts", () => {
+			expect(DEFAULT_LOCALE).toBe(SITE_DEFAULT);
 		});
 	});
 });

@@ -1,50 +1,34 @@
-// Explicit list of legacy routes from the pre-pivot metaverse/3D-worlds
-// catalog (pricing, team, portfolio, numinia lore, manifesto, help center,
-// services + subpages, and the old Terms page). Deprecated 2026-09-11 as
-// part of the pivot to live-event gamification experiences (see plan
-// "Numen Games | Plan profesional de web revisado").
-//
-// NOTE: "/es" and "/en" (the localized home) were on this list originally,
-// when the only content behind them was the old metaverse messaging. They
-// were removed once the rebuilt live-event home replaced them (see
-// src/pages/[locale]/index.astro) — do not re-add them here once real
-// content exists at a path; add/remove entries as pages are rebuilt.
-//
-// This is an explicit allow-list, not a catch-all on /es/ or /en/, so the
-// rebuilt site can freely reuse those locale prefixes with new routes
-// without this list getting in the way. Remove entries here once the
-// corresponding path is reused/replaced by the new site.
-const LEGACY_REDIRECT_PATHS = new Set([
-	"/es/pricing",
-	"/en/pricing",
-	"/es/team",
-	"/en/team",
-	"/es/portfolio",
-	"/en/portfolio",
-	"/es/numinia",
-	"/en/numinia",
-	"/es/manifesto",
-	"/en/manifesto",
-	"/es/help-center",
-	"/en/help-center",
-	"/es/services",
-	"/en/services",
-	"/es/services/training",
-	"/en/services/training",
-	"/es/services/experience",
-	"/en/services/experience",
-	"/es/services/engage",
-	"/en/services/engage",
-	"/Term/terms",
-]);
+import { isLegacyPath } from "./legacy-routes.js";
+import { SUPPORTED_LOCALES, DEFAULT_LOCALE } from "./locales.js";
 
-function isLegacyPath(pathname) {
-	// Normalize by stripping a single trailing slash (but keep root "/").
-	const normalized =
-		pathname.length > 1 && pathname.endsWith("/")
-			? pathname.slice(0, -1)
-			: pathname;
-	return LEGACY_REDIRECT_PATHS.has(normalized);
+/**
+ * Elige idioma a partir de Accept-Language.
+ *
+ * Devuelve el idioma soportado de mayor q-value. Si la cabecera falta,
+ * está vacía o no cita ninguno de los soportados, cae a DEFAULT_LOCALE.
+ * Deliberadamente tolerante: una cabecera mal formada nunca debe dejar
+ * a nadie sin home.
+ */
+export function pickLocale(acceptLanguage) {
+	if (!acceptLanguage) return DEFAULT_LOCALE;
+
+	const ranked = acceptLanguage
+		.split(",")
+		.map((part) => {
+			const [tag, ...params] = part.trim().split(";");
+			const qParam = params.find((p) => p.trim().startsWith("q="));
+			const q = qParam ? Number.parseFloat(qParam.trim().slice(2)) : 1;
+			return {
+				// "es-ES" -> "es"; el subtag de región no nos interesa.
+				base: tag.trim().toLowerCase().split("-")[0],
+				q: Number.isFinite(q) ? q : 0,
+			};
+		})
+		// q=0 significa "explícitamente no quiero este idioma".
+		.filter((entry) => entry.q > 0 && SUPPORTED_LOCALES.includes(entry.base))
+		.sort((a, b) => b.q - a.q);
+
+	return ranked.length > 0 ? ranked[0].base : DEFAULT_LOCALE;
 }
 
 export default {
@@ -54,6 +38,22 @@ export default {
 		if (url.hostname === "www.numen.games") {
 			url.hostname = "numen.games";
 			return Response.redirect(url.toString(), 301);
+		}
+
+		// La raíz no tiene contenido propio: el sitio vive bajo /es/ y /en/.
+		// 302 (no 301) porque la elección depende del visitante — cachear
+		// esto de forma permanente serviría el idioma equivocado al
+		// siguiente. Vary avisa a las cachés intermedias por la misma razón.
+		if (url.pathname === "/") {
+			const locale = pickLocale(request.headers.get("Accept-Language"));
+			return new Response(null, {
+				status: 302,
+				headers: {
+					Location: new URL(`/${locale}/`, url).toString(),
+					Vary: "Accept-Language",
+					"Cache-Control": "no-store",
+				},
+			});
 		}
 
 		if (isLegacyPath(url.pathname)) {

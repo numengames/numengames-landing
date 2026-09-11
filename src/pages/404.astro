@@ -1,33 +1,58 @@
 ---
-import Layout from "@layouts/Layout404.astro";
-import Container from "@components/Container.svelte";
-import PulseAnimatedBtn from "@components/PulseAnimatedBtn.svelte";
-
-const link = import.meta.env.SITE;
+// 404 del sitio reconstruido.
+//
+// Es el único 404 que sirve Cloudflare: wrangler.jsonc fija
+// not_found_handling: "404-page", que busca /404.html en la raíz del
+// directorio de assets. El 404 anterior era el del catálogo retirado
+// (fondo de estrellas, "Whoops! Lost in space?", enlaces a Pricing y
+// Portfolio) — ofrecía salidas que ahora son 301.
+//
+// En español porque es el idioma por defecto del sitio (DEFAULT_LOCALE)
+// y una URL rota puede no llevar prefijo de idioma del que deducirlo.
+import SiteLayout from "@layouts/SiteLayout.astro";
+import { DEFAULT_LOCALE } from "@lib/locale";
 ---
 
-<Layout title="404 Not Found">
-	<Container
-		className="h-screen flex flex-col items-center justify-center pt-24 xl:pt-28"
-		bgColor="bg-[#171717] flex justify-center items-center">
-		<div class="absolute inset-0">
-			<div class="star-field"></div>
+<SiteLayout
+	title="Numen Games — Página no encontrada"
+	description="La página que buscas no existe o ha cambiado de dirección."
+	locale={DEFAULT_LOCALE}
+	path="/"
+>
+	<section class="page-hero">
+		<div class="container">
+			<p class="notfound__code">404</p>
+			<h1>Esta página no existe</h1>
+			<p class="page-hero__lead measure">
+				Puede que la dirección haya cambiado o que el enlace esté mal
+				copiado. Desde aquí puedes seguir:
+			</p>
+			<ul class="notfound__links">
+				<li><a href="/es/">Inicio</a></li>
+				<li><a href="/es/experiencias/">Experiencias para eventos</a></li>
+				<li><a href="/es/como-trabajamos/">Cómo trabajamos</a></li>
+				<li><a href="/es/contacto/">Contacto</a></li>
+			</ul>
 		</div>
-		<div class="absolute top-0 aspect-square h-screen rotate-45"></div>
-		<div
-			class="absolute top-0 left-1/2 transform -translate-x-1/2 w-[1/2] h-0 border-l-[50vw] border-r-[50vw] border-b-[50vh] border-l-transparent border-r-transparent border-b-[rgba(255,255,255,0.12)] blur-3xl">
-		</div>
-		<div
-			class="flex flex-col justify-center items-center text-center text-primary-beige">
-			<h1 class="text-9xl font-medium">404</h1>
-			<div class="flex flex-col items-center">
-				<p class="text-4xl font-medium mt-10">Whoops! Lost in space?</p>
-				<p class="text-2xl font-extralight mt-4">
-					The page you're looking for isn't found :( <br />We suggest you to
-					back home.
-				</p>
-				<PulseAnimatedBtn link={link} className="mt-6" text="Back Home" />
-			</div>
-		</div>
-	</Container>
-</Layout>
+	</section>
+</SiteLayout>
+
+<style>
+	.notfound__code {
+		font-family: var(--font-titular);
+		font-size: var(--text-2xl);
+		color: var(--ink-faint);
+		margin-bottom: var(--space-2);
+	}
+	.notfound__links {
+		list-style: none;
+		margin: var(--space-8) 0 0;
+		padding: 0;
+		display: flex;
+		flex-wrap: wrap;
+		gap: var(--space-6);
+	}
+	.notfound__links a {
+		color: var(--interactive);
+	}
+</style>
